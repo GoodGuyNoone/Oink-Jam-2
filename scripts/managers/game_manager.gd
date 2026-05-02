@@ -10,7 +10,7 @@ func _ready() -> void:
 
 
 func _on_poison_started(snake):
-	print("Player poisoned" + snake.name)
+	print("Player poisoned: " + snake.name)
 	print("Symptoms" + str(snake.symptoms))
 	# trigger UI, hints, sound, etc 
 

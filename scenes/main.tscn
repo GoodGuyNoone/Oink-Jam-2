@@ -64,4 +64,7 @@ snakes = Array[ExtResource("5_85g3d")]([ExtResource("6_choun"), ExtResource("7_y
 [node name="GameManager" type="Node" parent="Managers" unique_id=242879686]
 script = ExtResource("10_choun")
 
+[node name="SnakeSpawn" type="Node3D" parent="." unique_id=1205766575]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.0912056, 0, -4.264014)
+
 [connection signal="body_entered" from="SnakeTrigger" to="SnakeTrigger" method="_on_body_entered"]
