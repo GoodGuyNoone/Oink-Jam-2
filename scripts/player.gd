@@ -14,7 +14,6 @@ const mouse_sens = 0.25
 var direction = Vector3.ZERO
 
 
-
 func _ready():
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 

@@ -7,19 +7,8 @@ signal poison_updated(time_left: float)
 signal poison_ended(success: bool)
 
 var current_snake: SnakeData
-var time_left: float = 60.0
+var time_left: float = 10.0
 var is_poisoned := false
-
-
-func apply_random_poison():
-	if is_poisoned:
-		return
-
-	current_snake = snakes.pick_random()
-	is_poisoned = true
-
-	print("Bitten by:", current_snake.name)
-	poison_started.emit(current_snake)
 
 
 func _process(delta: float) -> void:
@@ -32,6 +21,17 @@ func _process(delta: float) -> void:
 	if time_left <= 0:
 		is_poisoned = false
 		poison_ended.emit(false)
+
+
+func apply_random_poison():
+	if is_poisoned:
+		return
+
+	current_snake = snakes.pick_random()
+	is_poisoned = true
+
+	print("Bitten by:", current_snake.name)
+	poison_started.emit(current_snake)
 
 
 func try_cure(action: String):
