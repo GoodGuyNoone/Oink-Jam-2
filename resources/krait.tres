@@ -4,4 +4,5 @@
 
 [resource]
 script = ExtResource("1_fxsjy")
+name = "Krait"
 metadata/_custom_type_script = "uid://7c6aeatss7mu"

@@ -22,7 +22,7 @@ func _ready():
 func _input(event):
 	if event is InputEventMouseMotion:
 		rotate_y(deg_to_rad(-event.relative.x * mouse_sens))
-		camera_mount.rotate_x(deg_to_rad(event.relative.y * mouse_sens))
+		camera_mount.rotate_x(deg_to_rad(-event.relative.y * mouse_sens))
 		camera_mount.rotation.x = clamp(camera_mount.rotation.x, deg_to_rad(-89), deg_to_rad(89))
 
 

@@ -3,6 +3,12 @@
 [ext_resource type="Texture2D" uid="uid://bd0av4cahevvj" path="res://assets/textures/texture_01.png" id="1_o5qli"]
 [ext_resource type="PackedScene" uid="uid://bumo5d8a0hhuq" path="res://scenes/player.tscn" id="2_0wfyh"]
 [ext_resource type="Texture2D" uid="uid://dcautrd3gvgt" path="res://assets/textures/qwantani_sunset_puresky_4k.hdr" id="2_sugp2"]
+[ext_resource type="Script" uid="uid://dokib87h0xirp" path="res://scripts/snake_trigger.gd" id="4_85g3d"]
+[ext_resource type="Script" uid="uid://de0wc7vfwkfjt" path="res://scripts/managers/poison_manager.gd" id="4_tipki"]
+[ext_resource type="Script" uid="uid://7c6aeatss7mu" path="res://scripts/snake_data.gd" id="5_85g3d"]
+[ext_resource type="Resource" uid="uid://bpe3iny61t06r" path="res://resources/cobra.tres" id="6_choun"]
+[ext_resource type="Resource" uid="uid://h6ar45tw05i3" path="res://resources/krait.tres" id="7_ya4ey"]
+[ext_resource type="Resource" uid="uid://duyprhsqw2aoj" path="res://resources/viper.tres" id="8_eb6dy"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0wfyh"]
 albedo_texture = ExtResource("1_o5qli")
@@ -19,6 +25,9 @@ background_energy_multiplier = 0.5
 sky = SubResource("Sky_tbgi4")
 ambient_light_source = 3
 sdfgi_enabled = true
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_trceg"]
+size = Vector3(20, 3, 1)
 
 [node name="Main" type="Node3D" unique_id=596857963]
 
@@ -37,3 +46,18 @@ transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0
 environment = SubResource("Environment_0wfyh")
 
 [node name="Player" parent="." unique_id=1304941938 instance=ExtResource("2_0wfyh")]
+
+[node name="SnakeTrigger" type="Area3D" parent="." unique_id=181821574]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -4.016384)
+script = ExtResource("4_85g3d")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SnakeTrigger" unique_id=1217238549]
+shape = SubResource("BoxShape3D_trceg")
+
+[node name="Managers" type="Node" parent="." unique_id=1877332994]
+
+[node name="PoisonManager" type="Node" parent="Managers" unique_id=415290388]
+script = ExtResource("4_tipki")
+snakes = Array[ExtResource("5_85g3d")]([ExtResource("6_choun"), ExtResource("7_ya4ey"), ExtResource("8_eb6dy")])
+
+[connection signal="body_entered" from="SnakeTrigger" to="SnakeTrigger" method="_on_body_entered"]

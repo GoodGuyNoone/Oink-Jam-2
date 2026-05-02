@@ -21,7 +21,7 @@ func apply_random_poison():
 	print("Bitten by:", current_snake.name)
 	poison_started.emit(current_snake)
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
+
 func _process(delta: float) -> void:
 	if not is_poisoned:
 		return
