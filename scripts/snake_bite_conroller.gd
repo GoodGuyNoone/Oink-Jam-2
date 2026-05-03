@@ -3,11 +3,12 @@ extends Area3D
 @onready var poison_manager: Node = $"../Managers/PoisonManager"
 @onready var snake_spawn: Node3D = $"../SnakeSpawn"
 @onready var camera: Camera3D = $"../Player/CameraMount/Camera3D"
-
+@onready var snake_scene: PackedScene = preload("res://scenes/snake.tscn")
+@onready var snake_instance: Node3D
 
 var original_camera_position: Transform3D
 var triggered := false
-# var player = null
+var player = null
 
 
 func _on_body_entered(body):
@@ -15,22 +16,27 @@ func _on_body_entered(body):
 		return
 
 	if body.name == "Player":
+		player = body
 		triggered = true
 		poison_manager.apply_random_poison()
-		spawn_snake(body)
-		play_effects()
-		move_camera_on_snake(body)
+		spawn_snake()
+		await snake_instance.attached_to_player
+		await play_effects()
+		await move_camera_on_snake()
+		await wait_phase()
+		await detach_snake()
+		await restore_camera()
 
 
-func spawn_snake(player):
-	var snake = preload("res://scenes/snake.tscn").instantiate()
-	get_tree().current_scene.add_child(snake)
+func spawn_snake():
+	snake_instance = snake_scene.instantiate()
+	get_tree().current_scene.add_child(snake_instance)
 
-	snake.global_transform.origin = snake_spawn.global_transform.origin
-	snake.target = player
+	snake_instance.global_transform.origin = snake_spawn.global_transform.origin
+	snake_instance.target = player
 
 
-func move_camera_on_snake(player):
+func move_camera_on_snake():
 	print("Camera started moving")
 	var attach_point = player.get_node("SnakeBitePoint")
 	var start_basis = camera.global_transform.basis
@@ -55,15 +61,6 @@ func move_camera_on_snake(player):
 
 	await tween.finished
 
-	# wait for snake animation a run away
-
-	player.set_physics_process(true)
-	player.set_process(true)
-
-	restore_camera()
-
-	player.can_look = true
-
 
 func restore_camera():
 	var start_basis = camera.global_transform.basis
@@ -76,6 +73,9 @@ func restore_camera():
 		0.0, 1.0, 0.5)
 
 	await tween.finished
+	player.can_look = true
+	player.set_physics_process(true)
+	player.set_process(true)
 
 
 func play_effects():
@@ -84,22 +84,16 @@ func play_effects():
 
 	return get_tree().create_timer(0.5).timeout
 
-# # 3. Wait while snake is attached
-# func wait_phase():
-# 	return get_tree().create_timer(2.0).timeout
 
-# # 4. Wiggle + detach
-# func detach_snake():
-# 	await snake.play_wiggle_animation()
+func wait_phase():
+	return get_tree().create_timer(2.0).timeout
 
-# 	snake.detach()
-# 	snake.run_away() # your logic
 
-# 	return get_tree().create_timer(0.5).timeout
+func detach_snake():
+	await snake_instance.play_animation("SnakeArmature|Snake_Idle")
+	snake_instance.queue_free()
 
-# # 5. Restore player + camera
-# func restore_player():
-# 	player.set_physics_process(true)
+	# snake.detach()
+	# snake.run_away() # your logic
 
-# 	camera.move_to(original_camera_target)
-# 	ui.hide_snake_bite_warning()
+	# return get_tree().create_timer(0.5).timeout

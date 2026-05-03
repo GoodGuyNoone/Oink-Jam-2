@@ -1,5 +1,9 @@
 extends Node3D
 
+signal attached_to_player
+
+@onready var animation_player: AnimationPlayer = $AnimationPlayer
+
 
 var target = null
 var speed = 30
@@ -24,9 +28,16 @@ func _physics_process(delta: float) -> void:
 
 func attach_to_player():
 	print("Snake attached to a player")
-	attached = true
 	var attach_point = target.get_node("SnakeBitePoint")
 
 	get_parent().remove_child(self)
 	attach_point.add_child(self)
 	global_transform = attach_point.global_transform
+	attached = true
+	attached_to_player.emit()
+
+
+func play_animation(animation: String) -> void:
+	print("Playing animation" + str(animation))
+	animation_player.play(animation)
+	await animation_player.animation_finished
