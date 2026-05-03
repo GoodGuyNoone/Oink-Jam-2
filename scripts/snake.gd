@@ -23,8 +23,8 @@ func _physics_process(delta: float) -> void:
 
 
 func attach_to_player():
+	print("Snake attached to a player")
 	attached = true
-
 	var attach_point = target.get_node("SnakeBitePoint")
 
 	get_parent().remove_child(self)

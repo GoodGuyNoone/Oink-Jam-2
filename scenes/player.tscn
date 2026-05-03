@@ -18,10 +18,10 @@ shape = SubResource("CylinderShape3D_dqkch")
 transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 0, 0, 0)
 
 [node name="CameraMount" type="Node3D" parent="." unique_id=771436055]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.6532872, 2.6435745)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.6532872, 0.045948267)
 
 [node name="Camera3D" type="Camera3D" parent="CameraMount" unique_id=1599272165]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.22932586)
 
 [node name="SnakeBitePoint" type="Node3D" parent="." unique_id=1981808322]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.71593386, 0.41477698, 0)
+transform = Transform3D(1, 0, 0, 0, 0.9265483, -0.37617576, 0, 0.37617576, 0.9265483, -1.1647537, 0.64012116, 0)
