@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://0ped6c6kfs0p" path="res://scripts/player.gd" id="1_g2els"]
 [ext_resource type="PackedScene" uid="uid://c58nfenn3erbr" path="res://assets/models/mixamo_base.glb" id="2_qhqgy"]
-[ext_resource type="PackedScene" uid="uid://eq587p74uyyo" path="res://scenes/Book/BookUI3D.tscn" id="3_qhqgy"]
+[ext_resource type="PackedScene" uid="uid://eq587p74uyyo" path="res://scenes/Book/BookUI.tscn" id="3_qhqgy"]
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_dqkch"]
 
@@ -24,7 +24,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.6532872, 0.045948267)
 [node name="Camera3D" type="Camera3D" parent="CameraMount" unique_id=1599272165]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.22932586)
 
-[node name="BookUI3D" parent="CameraMount/Camera3D" unique_id=74873095 instance=ExtResource("3_qhqgy")]
+[node name="BookUI" parent="CameraMount/Camera3D" unique_id=74873095 instance=ExtResource("3_qhqgy")]
 transform = Transform3D(1, 0, 0, 0, 0.34202018, -0.93969274, 0, 0.93969274, 0.34202018, 0, -0.4, -1.2)
 
 [node name="SnakeBitePoint" type="Node3D" parent="." unique_id=1981808322]

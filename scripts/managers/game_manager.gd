@@ -1,7 +1,7 @@
 extends Node
+class_name GameManager
 
-@onready var poison_manager: Node = $"../PoisonManager"
-
+@onready var poison_manager: PoisonManager = $"../PoisonManager"
 
 func _ready() -> void:
 	poison_manager.poison_started.connect(_on_poison_started)
@@ -9,18 +9,21 @@ func _ready() -> void:
 	poison_manager.poison_ended.connect(_on_poison_ended)
 
 
-func _on_poison_started(snake):
-	print("Player poisoned: " + snake.name)
-	print("Symptoms" + str(snake.symptoms))
-	# trigger UI, hints, sound, etc 
+func _on_poison_started(snake: SnakeData) -> void:
+	print("Player poisoned by: %s" % snake.display_name)
+	print("Symptoms: %s" % str(snake.symptoms))
+	# TODO: show poison UI, start heartbeat, show hints, play sound.
 
 
-func _on_poison_updated(time_left):
-	return
+func _on_poison_updated(time_left: float) -> void:
+	# TODO: update poison timer UI.
+	pass
 
 
-func _on_poison_ended(success):
+func _on_poison_ended(success: bool) -> void:
 	if success:
 		print("Player survived")
+		# TODO: hide poison UI and play cure feedback.
 	else:
 		print("Game over")
+		# TODO: load fail screen or restart level.

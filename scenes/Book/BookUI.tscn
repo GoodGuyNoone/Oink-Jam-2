@@ -1,13 +1,13 @@
 [gd_scene format=3 uid="uid://eq587p74uyyo"]
 
-[ext_resource type="Script" uid="uid://cu1n3ltwqum6v" path="res://scripts/Book/book_3d_ui.gd" id="1_tolr6"]
-[ext_resource type="Script" uid="uid://ctuh82kf3xt6q" path="res://scripts/Book/book_page_image.gd" id="2_i4qtx"]
-[ext_resource type="Resource" uid="uid://b7rgj2mcgiwkd" path="res://resources/book_pages/page_01_intro.tres" id="3_gdffb"]
-[ext_resource type="Resource" uid="uid://cavvfmlpjma5v" path="res://resources/book_pages/page_02.tres" id="4_3nh06"]
-[ext_resource type="Resource" uid="uid://ckfocosjv2aa" path="res://resources/book_pages/page_03.tres" id="5_yle2f"]
-[ext_resource type="Resource" uid="uid://cmkt5yhslddbh" path="res://resources/book_pages/page_04.tres" id="6_tm2dp"]
-[ext_resource type="Texture2D" uid="uid://rwm72617ojtf" path="res://assets/textures/Book/Frame 1.png" id="7_o54lm"]
-[ext_resource type="Texture2D" uid="uid://dulu188u8be80" path="res://assets/textures/Book/Frame 2.png" id="8_08duu"]
+[ext_resource type="Script" uid="uid://cu1n3ltwqum6v" path="res://scripts/Book/book_ui.gd" id="1_txwgl"]
+[ext_resource type="Script" uid="uid://ctuh82kf3xt6q" path="res://scripts/Book/book_page_image.gd" id="2_st0x1"]
+[ext_resource type="Resource" uid="uid://b7rgj2mcgiwkd" path="res://resources/book_pages/page_01_intro.tres" id="3_m76sb"]
+[ext_resource type="Resource" uid="uid://cavvfmlpjma5v" path="res://resources/book_pages/page_02.tres" id="4_g855h"]
+[ext_resource type="Resource" uid="uid://ckfocosjv2aa" path="res://resources/book_pages/page_03.tres" id="5_agk57"]
+[ext_resource type="Resource" uid="uid://cmkt5yhslddbh" path="res://resources/book_pages/page_04.tres" id="6_7k3e3"]
+[ext_resource type="Texture2D" uid="uid://rwm72617ojtf" path="res://assets/textures/Book/Frame 1.png" id="7_ghbta"]
+[ext_resource type="Texture2D" uid="uid://dulu188u8be80" path="res://assets/textures/Book/Frame 2.png" id="8_3rghl"]
 
 [sub_resource type="QuadMesh" id="QuadMesh_cxoky"]
 size = Vector2(1, 1.4)
@@ -15,31 +15,16 @@ size = Vector2(1, 1.4)
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tolr6"]
 transparency = 1
 cull_mode = 2
-albedo_texture = ExtResource("7_o54lm")
+albedo_texture = ExtResource("7_ghbta")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ufjcn"]
-albedo_texture = ExtResource("8_08duu")
+albedo_texture = ExtResource("8_3rghl")
 
 [sub_resource type="QuadMesh" id="QuadMesh_i4qtx"]
 size = Vector2(1, 1.4)
 
 [sub_resource type="QuadMesh" id="QuadMesh_3nh06"]
 size = Vector2(1, 1.4)
-
-[sub_resource type="Animation" id="Animation_2fk3c"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("FlipPagePivot:rotation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(0, -3.1415927, 0)]
-}
 
 [sub_resource type="Animation" id="Animation_mrsa7"]
 resource_name = "flip_backwards"
@@ -73,22 +58,16 @@ tracks/0/keys = {
 "values": [Vector3(0, 0, 0), Vector3(0, 0, 3.1415927)]
 }
 
-[sub_resource type="Animation" id="Animation_vsa45"]
-resource_name = "flip_page"
-length = 0.35
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_87kn1"]
 _data = {
-&"RESET": SubResource("Animation_2fk3c"),
 &"flip_backward": SubResource("Animation_mrsa7"),
-&"flip_forward": SubResource("Animation_i4qtx"),
-&"flip_page": SubResource("Animation_vsa45")
+&"flip_forward": SubResource("Animation_i4qtx")
 }
 
-[node name="BookUI3D" type="Node3D" unique_id=74873095]
+[node name="BookUI" type="Node3D" unique_id=74873095]
 process_mode = 3
-script = ExtResource("1_tolr6")
-pages = Array[ExtResource("2_i4qtx")]([ExtResource("3_gdffb"), ExtResource("4_3nh06"), ExtResource("5_yle2f"), ExtResource("6_tm2dp")])
+script = ExtResource("1_txwgl")
+pages = Array[ExtResource("2_st0x1")]([ExtResource("3_m76sb"), ExtResource("4_g855h"), ExtResource("5_agk57"), ExtResource("6_7k3e3")])
 
 [node name="BookBase" type="MeshInstance3D" parent="." unique_id=1628821818]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0)
@@ -104,7 +83,7 @@ mesh = SubResource("QuadMesh_cxoky")
 surface_material_override/0 = SubResource("StandardMaterial3D_ufjcn")
 
 [node name="FlipPagePivot" type="Node3D" parent="." unique_id=119824087]
-transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 0, 0.02, 0)
+transform = Transform3D(-1, 8.742278e-08, 0, -8.742278e-08, -1, 0, 0, 0, 1, 0, 0.02, 0)
 
 [node name="FlipPageFront" type="MeshInstance3D" parent="FlipPagePivot" unique_id=1513740274]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0.5, 0.01, 0)
@@ -116,28 +95,3 @@ mesh = SubResource("QuadMesh_3nh06")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=2027942478]
 libraries/ = SubResource("AnimationLibrary_87kn1")
-
-[node name="PreviousButton" type="Button" parent="." unique_id=1339560054]
-offset_left = 286.0
-offset_top = 458.0
-offset_right = 304.0
-offset_bottom = 489.0
-text = "<"
-
-[node name="NextButton" type="Button" parent="." unique_id=1341105646]
-offset_left = 966.0
-offset_top = 451.0
-offset_right = 984.0
-offset_bottom = 482.0
-text = ">"
-
-[node name="CloseButton" type="Button" parent="." unique_id=631951916]
-offset_left = 977.0
-offset_top = 70.0
-offset_right = 995.0
-offset_bottom = 101.0
-text = "X"
-
-[connection signal="pressed" from="PreviousButton" to="." method="_on_previous_button_pressed"]
-[connection signal="pressed" from="NextButton" to="." method="_on_next_button_pressed"]
-[connection signal="pressed" from="CloseButton" to="." method="_on_close_button_pressed"]

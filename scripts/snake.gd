@@ -1,43 +1,45 @@
 extends Node3D
+class_name Snake
 
 signal attached_to_player
 
+@export var move_speed: float = 30.0
+@export var attach_distance: float = 0.5
+
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 
-
-var target = null
-var speed = 30
-var attached = false
-
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
+var target: Node3D
+var is_attached: bool = false
 
 
 func _physics_process(delta: float) -> void:
-	if attached or target == null:
+	if is_attached or target == null:
 		return
 
-	var dir = (target.global_transform.origin - global_transform.origin).normalized()
-	translate(dir * speed * delta)
-	# look_at(target.global_transform.origin, Vector3.UP)
-	print("moving to a player")
-	if global_transform.origin.distance_to(target.global_transform.origin) < 0.5:
+	_move_towards_target(delta)
+
+	if _is_close_enough_to_attach():
 		attach_to_player()
 
 
-func attach_to_player():
-	print("Snake attached to a player")
-	var attach_point = target.get_node("SnakeBitePoint")
+func attach_to_player() -> void:
+	var attach_point := target.get_node("SnakeBitePoint") as Node3D
 
-	get_parent().remove_child(self)
-	attach_point.add_child(self)
+	reparent(attach_point)
 	global_transform = attach_point.global_transform
-	attached = true
+	is_attached = true
 	attached_to_player.emit()
 
 
-func play_animation(animation: String) -> void:
-	print("Playing animation" + str(animation))
-	animation_player.play(animation)
+func play_animation(animation_name: String) -> void:
+	animation_player.play(animation_name)
 	await animation_player.animation_finished
+
+
+func _move_towards_target(delta: float) -> void:
+	var direction := (target.global_position - global_position).normalized()
+	global_position += direction * move_speed * delta
+
+
+func _is_close_enough_to_attach() -> bool:
+	return global_position.distance_to(target.global_position) < attach_distance
