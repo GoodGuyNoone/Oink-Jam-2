@@ -1,10 +1,12 @@
-extends Area3D
+extends Node
 class_name SnakeBiteController
 
-@export var poison_manager: PoisonManager
-@export var snake_spawn: Node3D
-@export var camera: Camera3D
-@export var snake_scene: PackedScene
+@onready var snake_spawn: Node3D = get_node("../../SnakeTrigger")
+@onready var poison_manager: Node = $"../PoisonManager"
+@onready var camera: Camera3D = get_node("../../Player/CameraMount/Camera3D")
+@onready var snake_scene: PackedScene = preload("res://scenes/snake.tscn")
+@onready var snake_instance: Node3D
+
 @export var bite_duration: float = 2.0
 @export var camera_turn_duration: float = 0.5
 

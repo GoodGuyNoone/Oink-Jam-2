@@ -37,5 +37,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.22932586)
 transform = Transform3D(1, 0, 0, 0, 0.34202018, -0.93969274, 0, 0.93969274, 0.34202018, 0, -0.4, -1.2)
 pages = Array[ExtResource("4_smehm")]([ExtResource("5_ur7pv"), ExtResource("6_y4r1p"), ExtResource("7_d2wvv"), ExtResource("8_3v2ag"), ExtResource("9_3v2ag"), ExtResource("10_jej6c"), ExtResource("11_f1ej7"), ExtResource("12_oprun")])
 
+[node name="RayCast3D" type="RayCast3D" parent="CameraMount/Camera3D" unique_id=1640726248]
+target_position = Vector3(0, 0, -1.5)
+collide_with_areas = true
+
 [node name="SnakeBitePoint" type="Node3D" parent="." unique_id=1981808322]
 transform = Transform3D(1, 0, 0, 0, 0.9265483, -0.37617576, 0, 0.37617576, 0.9265483, -1.1647537, 0.64012116, 0)

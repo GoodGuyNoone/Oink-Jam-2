@@ -6,4 +6,5 @@
 script = ExtResource("1_fxsjy")
 name = "Krait"
 symptoms = Array[String](["headache"])
+required_cure = Array[String](["1", "2", "3"])
 metadata/_custom_type_script = "uid://7c6aeatss7mu"

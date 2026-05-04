@@ -1,15 +1,12 @@
 [gd_scene format=3 uid="uid://dbo01qbg0nwcy"]
 
-[ext_resource type="Script" uid="uid://b7htxocjw4ial" path="res://scripts/Book/book_world.gd" id="1_y2ai7"]
-
 [sub_resource type="BoxMesh" id="BoxMesh_3lteu"]
 size = Vector3(0.2, 0.1, 0.2)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ok074"]
 size = Vector3(0.2, 0.1, 0.2)
 
-[node name="Book" type="Area3D" unique_id=411615002]
-script = ExtResource("1_y2ai7")
+[node name="Book" type="Area3D" unique_id=411615002 groups=["interactable"]]
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1874416033]
 mesh = SubResource("BoxMesh_3lteu")

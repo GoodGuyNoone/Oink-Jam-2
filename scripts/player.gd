@@ -1,19 +1,23 @@
 extends CharacterBody3D
 class_name Player
 
+
 @export var walk_speed: float = 5.0
 @export var sprint_speed: float = 8.0
 @export var jump_velocity: float = 5.0
 @export var movement_lerp_speed: float = 5.0
 @export var mouse_sensitivity: float = 0.25
 
+@onready var ray_cast_3d: RayCast3D = $CameraMount/Camera3D/RayCast3D
 @onready var camera_mount: Node3D = $CameraMount
 @onready var book: BookUI = $CameraMount/Camera3D/BookUI
+@onready var interaction_label: Label = get_node("../CanvasLayer/InteractionLabel")
+
 
 var can_look: bool = true
 var _current_speed: float = walk_speed
 var _move_direction: Vector3 = Vector3.ZERO
-
+var current_target: Node
 
 func _ready() -> void:
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
@@ -24,6 +28,11 @@ func _input(event: InputEvent) -> void:
 
 
 func _physics_process(delta: float) -> void:
+	_update_target()
+
+	if Input.is_action_just_pressed("Interact") and current_target:
+		current_target.interact(owner)
+
 	_update_speed()
 	_apply_gravity(delta)
 	_handle_jump()
@@ -72,3 +81,47 @@ func _handle_movement(delta: float) -> void:
 	else:
 		velocity.x = move_toward(velocity.x, 0, _current_speed)
 		velocity.z = move_toward(velocity.z, 0, _current_speed)
+
+
+func _update_target() -> void:
+	current_target = null
+
+	if interaction_label:
+		interaction_label.visible = false
+
+	if not ray_cast_3d:
+		return
+
+	if not ray_cast_3d.is_colliding():
+		return
+
+	var hit := ray_cast_3d.get_collider()
+
+	if hit == null:
+		return
+
+	if not hit.is_in_group("interactable"):
+		return
+
+	if not hit.has_method("interact"):
+		return
+
+	current_target = hit
+
+	if interaction_label:
+		interaction_label.visible = true
+
+		if hit.has_method("get_interaction_text"):
+			interaction_label.text = hit.get_interaction_text()
+		else:
+			interaction_label.text = "Interact"
+
+
+func _try_interact() -> void:
+	if not ray_cast_3d.is_colliding():
+		return
+
+	var hit := ray_cast_3d.get_collider()
+
+	if hit and hit.has_method("interact"):
+		hit.interact()
