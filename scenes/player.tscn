@@ -3,6 +3,15 @@
 [ext_resource type="Script" uid="uid://0ped6c6kfs0p" path="res://scripts/player.gd" id="1_g2els"]
 [ext_resource type="PackedScene" uid="uid://c58nfenn3erbr" path="res://assets/models/mixamo_base.glb" id="2_qhqgy"]
 [ext_resource type="PackedScene" uid="uid://eq587p74uyyo" path="res://scenes/Book/BookUI.tscn" id="3_qhqgy"]
+[ext_resource type="Script" uid="uid://ctuh82kf3xt6q" path="res://scripts/Book/book_page_image.gd" id="4_smehm"]
+[ext_resource type="Resource" uid="uid://b7rgj2mcgiwkd" path="res://resources/book_pages/page_01_intro.tres" id="5_ur7pv"]
+[ext_resource type="Resource" uid="uid://cavvfmlpjma5v" path="res://resources/book_pages/page_02.tres" id="6_y4r1p"]
+[ext_resource type="Resource" uid="uid://ckfocosjv2aa" path="res://resources/book_pages/page_03.tres" id="7_d2wvv"]
+[ext_resource type="Resource" uid="uid://cmkt5yhslddbh" path="res://resources/book_pages/page_04.tres" id="8_3v2ag"]
+[ext_resource type="Resource" uid="uid://b1xqpme87x0fo" path="res://resources/book_pages/page_05.tres" id="9_3v2ag"]
+[ext_resource type="Resource" uid="uid://cim5lmsfpl0j5" path="res://resources/book_pages/page_06.tres" id="10_jej6c"]
+[ext_resource type="Resource" uid="uid://bk6egap07hp12" path="res://resources/book_pages/page_07.tres" id="11_f1ej7"]
+[ext_resource type="Resource" uid="uid://dmxqmh6c4uymm" path="res://resources/book_pages/page_08.tres" id="12_oprun"]
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_dqkch"]
 
@@ -26,6 +35,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.22932586)
 
 [node name="BookUI" parent="CameraMount/Camera3D" unique_id=74873095 instance=ExtResource("3_qhqgy")]
 transform = Transform3D(1, 0, 0, 0, 0.34202018, -0.93969274, 0, 0.93969274, 0.34202018, 0, -0.4, -1.2)
+pages = Array[ExtResource("4_smehm")]([ExtResource("5_ur7pv"), ExtResource("6_y4r1p"), ExtResource("7_d2wvv"), ExtResource("8_3v2ag"), ExtResource("9_3v2ag"), ExtResource("10_jej6c"), ExtResource("11_f1ej7"), ExtResource("12_oprun")])
 
 [node name="SnakeBitePoint" type="Node3D" parent="." unique_id=1981808322]
 transform = Transform3D(1, 0, 0, 0, 0.9265483, -0.37617576, 0, 0.37617576, 0.9265483, -1.1647537, 0.64012116, 0)

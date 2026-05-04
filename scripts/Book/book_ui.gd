@@ -33,9 +33,21 @@ func next_spread() -> void:
 	if is_flipping or current_spread >= _get_total_spreads() - 1:
 		return
 
-	var next_left_page := (current_spread + 1) * 2
-	_set_page_texture(flip_front, _get_page_texture(current_spread * 2 + 1))
-	_set_page_texture(flip_back, _get_page_texture(next_left_page))
+
+	var old_right_index := current_spread * 2 + 1
+	var next_left_index := (current_spread + 1) * 2
+	var next_right_index := next_left_index + 1
+
+	# flipping page: 2 -> 3
+	_set_page_texture(flip_front, pages[old_right_index].texture)
+	_set_page_texture(flip_back, pages[next_left_index].texture)
+
+	# update right page to 4 immediately
+	if next_right_index < pages.size():
+		_set_page_texture(right_page, pages[next_right_index].texture)
+	else:
+		_set_page_texture(right_page, null)
+
 	await _flip_to_spread(current_spread + 1, "flip_forward")
 
 
@@ -43,9 +55,17 @@ func previous_spread() -> void:
 	if is_flipping or current_spread <= 0:
 		return
 
-	var previous_right_page := (current_spread - 1) * 2 + 1
-	_set_page_texture(flip_front, _get_page_texture(current_spread * 2))
-	_set_page_texture(flip_back, _get_page_texture(previous_right_page))
+	var old_left_index := current_spread * 2
+	var prev_left_index := (current_spread - 1) * 2
+	var prev_right_index := prev_left_index + 1
+
+	# flipping page: 3 -> 2
+	_set_page_texture(flip_back, pages[old_left_index].texture)
+	_set_page_texture(flip_front, pages[prev_right_index].texture)
+
+	# update left page to 1 immediately
+	_set_page_texture(left_page, pages[prev_left_index].texture)
+
 	await _flip_to_spread(current_spread - 1, "flip_backward")
 
 
@@ -82,9 +102,14 @@ func _set_page_texture(mesh: MeshInstance3D, texture: Texture2D) -> void:
 
 func _flip_to_spread(new_spread: int, animation_name: String) -> void:
 	is_flipping = true
+
 	flip_pivot.show()
 	animation_player.play(animation_name)
+
 	await animation_player.animation_finished
-	_show_spread(new_spread)
+
+	current_spread = new_spread
+	_show_spread(current_spread)
+
 	flip_pivot.hide()
 	is_flipping = false
