@@ -6,10 +6,12 @@
 [ext_resource type="Script" uid="uid://dystw0u1ub4ph" path="res://scripts/snake_bite_conroller.gd" id="4_choun"]
 [ext_resource type="Script" uid="uid://de0wc7vfwkfjt" path="res://scripts/managers/poison_manager.gd" id="4_tipki"]
 [ext_resource type="Script" uid="uid://7c6aeatss7mu" path="res://scripts/snake_data.gd" id="5_85g3d"]
-[ext_resource type="Resource" uid="uid://bpe3iny61t06r" path="res://resources/cobra.tres" id="6_choun"]
-[ext_resource type="Resource" uid="uid://h6ar45tw05i3" path="res://resources/krait.tres" id="7_ya4ey"]
-[ext_resource type="Resource" uid="uid://duyprhsqw2aoj" path="res://resources/viper.tres" id="8_eb6dy"]
+[ext_resource type="Resource" uid="uid://bpe3iny61t06r" path="res://resources/snakes/cobra.tres" id="6_choun"]
+[ext_resource type="Resource" uid="uid://h6ar45tw05i3" path="res://resources/snakes/krait.tres" id="7_ya4ey"]
+[ext_resource type="Resource" uid="uid://duyprhsqw2aoj" path="res://resources/snakes/viper.tres" id="8_eb6dy"]
 [ext_resource type="Script" uid="uid://bmfg0xx8a43pl" path="res://scripts/managers/game_manager.gd" id="10_choun"]
+[ext_resource type="PackedScene" uid="uid://dbo01qbg0nwcy" path="res://scenes/Book/Book.tscn" id="11_ya4ey"]
+[ext_resource type="Script" uid="uid://d382l3gj2mtgw" path="res://scripts/Book/book_3d_button_ui.gd" id="13_trceg"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0wfyh"]
 albedo_texture = ExtResource("1_o5qli")
@@ -67,4 +69,49 @@ script = ExtResource("10_choun")
 [node name="SnakeSpawn" type="Node3D" parent="." unique_id=1205766575]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.0912056, 0, -4.264014)
 
+[node name="Book" parent="." unique_id=1400363279 node_paths=PackedStringArray("book_3dbutton_ui", "player") instance=ExtResource("11_ya4ey")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.2328815, 1.0737998, 3.267924)
+book_3dbutton_ui = NodePath("../CanvasLayer/BookButtonUI")
+player = NodePath("../Player")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1809641575]
+
+[node name="BookButtonUI" type="Control" parent="CanvasLayer" unique_id=1143446681 node_paths=PackedStringArray("player")]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("13_trceg")
+player = NodePath("../../Player")
+
+[node name="Previous" type="Button" parent="CanvasLayer/BookButtonUI" unique_id=2041380123]
+layout_mode = 0
+offset_left = 196.0
+offset_top = 384.0
+offset_right = 214.0
+offset_bottom = 415.0
+text = "<
+"
+
+[node name="Next" type="Button" parent="CanvasLayer/BookButtonUI" unique_id=1351917259]
+layout_mode = 0
+offset_left = 281.0
+offset_top = 381.0
+offset_right = 299.0
+offset_bottom = 412.0
+text = ">
+"
+
+[node name="Close" type="Button" parent="CanvasLayer/BookButtonUI" unique_id=1692713776]
+layout_mode = 0
+offset_left = 149.0
+offset_top = 322.0
+offset_right = 166.0
+offset_bottom = 353.0
+text = "x
+"
+
 [connection signal="body_entered" from="SnakeTrigger" to="SnakeTrigger" method="_on_body_entered"]
+[connection signal="pressed" from="CanvasLayer/BookButtonUI/Previous" to="CanvasLayer/BookButtonUI" method="_on_previous_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/BookButtonUI/Next" to="CanvasLayer/BookButtonUI" method="_on_next_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/BookButtonUI/Close" to="CanvasLayer/BookButtonUI" method="_on_close_button_pressed"]

@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="BookPageImage" format=3 uid="uid://ckfocosjv2aa"]
+
+[ext_resource type="Script" uid="uid://ctuh82kf3xt6q" path="res://scripts/Book/book_page_image.gd" id="1_h02nh"]
+[ext_resource type="Texture2D" uid="uid://cgk85mp67qapr" path="res://assets/textures/Book/Frame 3.png" id="2_qlsp6"]
+
+[resource]
+script = ExtResource("1_h02nh")
+texture = ExtResource("2_qlsp6")
+metadata/_custom_type_script = "uid://ctuh82kf3xt6q"

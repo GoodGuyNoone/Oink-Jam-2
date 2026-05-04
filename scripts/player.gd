@@ -1,7 +1,7 @@
 extends CharacterBody3D
 
 @onready var camera_mount: Node3D = $CameraMount
-
+@onready var book = $"CameraMount/Camera3D/BookUI3D"
 
 var current_speed = 5.0
 var can_look = true
