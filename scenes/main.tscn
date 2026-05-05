@@ -21,6 +21,10 @@
 [ext_resource type="PackedScene" uid="uid://dbo01qbg0nwcy" path="res://scenes/Book/Book.tscn" id="11_ya4ey"]
 [ext_resource type="Script" uid="uid://d382l3gj2mtgw" path="res://scripts/Book/book_ui_button.gd" id="13_trceg"]
 [ext_resource type="Script" uid="uid://cvq5ydgjrhf1t" path="res://scripts/inventory.gd" id="16_jbj1t"]
+[ext_resource type="PackedScene" uid="uid://c8kb13vfc7awj" path="res://scenes/UI/inventory_slot.tscn" id="22_jscy8"]
+[ext_resource type="Texture2D" uid="uid://cn1wdme3o57sf" path="res://assets/icons/1(1).png" id="22_og1vs"]
+[ext_resource type="Texture2D" uid="uid://bi20plyidpyd" path="res://assets/icons/2.png" id="23_2wyq8"]
+[ext_resource type="Texture2D" uid="uid://u6tbel3snhmj" path="res://assets/icons/3.png" id="24_vxglm"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0wfyh"]
 albedo_texture = ExtResource("1_o5qli")
@@ -63,14 +67,13 @@ script = ExtResource("5_jbj1t")
 interaction_type = 2
 interaction_text = "Open"
 
-[node name="Book" parent="Environment" unique_id=1400363279 node_paths=PackedStringArray("inventory", "poison_manager") instance=ExtResource("11_ya4ey")]
+[node name="Book" parent="Environment" unique_id=1400363279 node_paths=PackedStringArray("inventory") instance=ExtResource("11_ya4ey")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.2328815, 1.0737998, 3.267924)
 script = ExtResource("5_jbj1t")
 interaction_type = 1
 interaction_text = "Pick up"
 item_data = ExtResource("6_yc10j")
 inventory = NodePath("../../CanvasLayer/Inventory")
-poison_manager = NodePath("../../Managers/PoisonManager")
 
 [node name="Bottle" parent="Environment" unique_id=1785250810 instance=ExtResource("5_a8y0u")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.9452686, 0.4411466, -0.28960645)
@@ -168,11 +171,26 @@ offset_bottom = 515.0
 [node name="Inventory" type="Control" parent="CanvasLayer" unique_id=1040566888]
 layout_mode = 3
 anchors_preset = 0
-offset_left = 46.0
-offset_top = 555.0
-offset_right = 86.0
-offset_bottom = 595.0
+offset_left = 52.0
+offset_top = 476.0
+offset_right = 92.0
+offset_bottom = 516.0
 script = ExtResource("16_jbj1t")
+key_icons = Array[Texture2D]([ExtResource("22_og1vs"), ExtResource("23_2wyq8"), ExtResource("24_vxglm")])
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/Inventory" unique_id=1984405335]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="InventorySlot1" parent="CanvasLayer/Inventory/HBoxContainer" unique_id=1278327121 instance=ExtResource("22_jscy8")]
+layout_mode = 2
+
+[node name="InventorySlot2" parent="CanvasLayer/Inventory/HBoxContainer" unique_id=18682814 instance=ExtResource("22_jscy8")]
+layout_mode = 2
+
+[node name="InventorySlot3" parent="CanvasLayer/Inventory/HBoxContainer" unique_id=1926494803 instance=ExtResource("22_jscy8")]
+layout_mode = 2
 
 [connection signal="body_entered" from="SnakeTrigger" to="Managers/SnakeBiteController" method="_on_body_entered"]
 [connection signal="pressed" from="CanvasLayer/BookUIButton/Previous" to="CanvasLayer/BookUIButton" method="_on_previous_button_pressed"]

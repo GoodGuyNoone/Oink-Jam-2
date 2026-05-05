@@ -1,0 +1,75 @@
+[gd_scene format=3 uid="uid://c8kb13vfc7awj"]
+
+[ext_resource type="Script" uid="uid://dgbi7cbvb0yvh" path="res://scripts/UI/inventory_slot.gd" id="1_l3fr4"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_l3fr4"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bjo5i"]
+bg_color = Color(0, 0, 0, 0.02745098)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+shadow_color = Color(0.18431373, 0.18431373, 0.18431373, 0.28235295)
+shadow_size = 15
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_et8er"]
+bg_color = Color(0.15294118, 0.15294118, 0.15294118, 0)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[node name="InventorySlot" type="Panel" unique_id=1278327121]
+custom_minimum_size = Vector2(72, 72)
+offset_right = 35.0
+offset_bottom = 35.0
+theme_override_styles/panel = SubResource("StyleBoxEmpty_l3fr4")
+script = ExtResource("1_l3fr4")
+
+[node name="Panel" type="Panel" parent="." unique_id=558151008]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_bjo5i")
+
+[node name="IconBorder" type="Panel" parent="." unique_id=1854934666]
+custom_minimum_size = Vector2(72, 72)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_et8er")
+
+[node name="ItemIcon" type="TextureRect" parent="IconBorder" unique_id=2144050000]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+expand_mode = 3
+stretch_mode = 5
+
+[node name="KeyIcon" type="TextureRect" parent="." unique_id=1048301448]
+custom_minimum_size = Vector2(24, 24)
+layout_mode = 0
+offset_left = 14.0
+offset_top = 80.0
+offset_right = 54.0
+offset_bottom = 120.0
+expand_mode = 3
+stretch_mode = 5

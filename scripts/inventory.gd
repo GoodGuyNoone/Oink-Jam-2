@@ -3,11 +3,26 @@ class_name Inventory
 
 const MAX_SLOTS := 3
 
-@export var slot_icons: Array[TextureRect]
+@export var key_icons: Array[Texture2D]
 
 signal item_used(item: ItemData, slot_index: int)
 
 var items: Array[ItemData] = [null, null, null]
+var slot_icons: Array[InventorySlot] = []
+
+
+func _ready() -> void:
+	_collect_slots()
+	_setup_key_icons()
+	_refresh_ui()
+	
+
+func _collect_slots() -> void:
+	slot_icons.clear()
+
+	for child in $HBoxContainer.get_children():
+		if child is InventorySlot:
+			slot_icons.append(child)
 
 
 func _process(_delta: float) -> void:
@@ -51,11 +66,10 @@ func use_slot(slot_index: int) -> void:
 
 func _refresh_ui() -> void:
 	for i in range(slot_icons.size()):
-		var icon := slot_icons[i]
+		slot_icons[i].set_item(items[i])
 
-		if items[i] == null:
-			icon.texture = null
-			icon.visible = false
-		else:
-			icon.texture = items[i].icon
-			icon.visible = true
+
+func _setup_key_icons() -> void:
+	for i in range(slot_icons.size()):
+		if i < key_icons.size():
+			slot_icons[i].set_key_icon(key_icons[i])

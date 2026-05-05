@@ -72,8 +72,8 @@ func _pickup_to_inventory() -> void:
 		print("Inventory full")
 		return
 
-	used = true
-	queue_free()
+	# used = true
+	# queue_free()
 
 
 func _play_animation() -> void:
