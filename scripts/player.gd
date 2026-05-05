@@ -8,9 +8,9 @@ class_name Player
 @export var movement_lerp_speed: float = 5.0
 @export var mouse_sensitivity: float = 0.25
 
-@onready var ray_cast_3d: RayCast3D = $CameraMount/Camera3D/RayCast3D
-@onready var camera_mount: Node3D = $CameraMount
 @onready var book: BookUI = $CameraMount/Camera3D/BookUI
+@onready var ray_cast_3d: RayCast3D = get_node("CameraMount/Camera3D/RayCast3D")
+@onready var camera_mount: Node3D = $CameraMount
 @onready var interaction_label: Label = get_node("../CanvasLayer/InteractionLabel")
 
 

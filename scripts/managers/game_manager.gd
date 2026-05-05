@@ -1,40 +1,41 @@
 extends Node
 class_name GameManager
 
-@onready var poison_manager: PoisonManager = $"../PoisonManager"
+@export var player: Player
+@export var poison_manager: PoisonManager
+@export var inventory: Inventory
+
+@onready var book_ui_button: BookUIButton = $"../../CanvasLayer/BookUIButton"
 
 
 func _ready() -> void:
 	poison_manager.poison_started.connect(_on_poison_started)
 	poison_manager.poison_updated.connect(_on_poison_updated)
-	poison_manager.bottle_checked.connect(_on_bottle_checked)
+	poison_manager.item_checked.connect(_on_item_checked)
 	poison_manager.poison_ended.connect(_on_poison_ended)
+	inventory.item_used.connect(_on_inventory_item_used)
 
 
 func _on_poison_started(snake: SnakeData) -> void:
 	print("\n=== POISON STARTED ===")
 	print("Snake:", snake.name)
 	print("Symptoms:", snake.symptoms)
-	print("Required bottles:", snake.required_cure)
+	print("Required items:", snake.required_cure)
 	print("================================")
 
 
 func _on_poison_updated(time_left: float) -> void:
-	print("Time left:", snapped(time_left, 0.1))
+	return
+	# print("Time left:", snapped(time_left, 0.1))
 
 
-func _on_bottle_checked(
-	bottle_id: String,
-	is_correct: bool,
-	picked_correct_count: int,
-	required_count: int
-) -> void:
-	print("\nPicked:", bottle_id)
+func _on_item_checked(item_id: String, is_correct: bool, picked_correct_count: int, required_count: int) -> void:
+	print("\nPicked:", item_id)
 
 	if is_correct:
-		print("→ Correct bottle (+time)")
+		print("→ Correct item (+time)")
 	else:
-		print("→ Wrong bottle (-time)")
+		print("→ Wrong item (-time)")
 
 	print("Progress:", picked_correct_count, "/", required_count)
 
@@ -48,3 +49,16 @@ func _on_poison_ended(success: bool) -> void:
 		print("DEAD 💀")
 
 	print("=============\n")
+
+
+func _on_inventory_item_used(item: ItemData, slot_index: int) -> void:
+	print("Inventory item triggered:", item.item_id)
+
+	match item.item_id:
+		"book":
+				player.book.open_book()
+				book_ui_button.open_ui()
+		"key":
+			print("Use key logic")
+		_:
+			print("No logic for:", item.item_id)

@@ -1,7 +1,7 @@
 extends Node3D
 class_name BookUI
 
-@export var pages: Array[BookPageImage]
+@export var pages: Array[BookPageData]
 
 @onready var left_page: MeshInstance3D = $LeftPage
 @onready var right_page: MeshInstance3D = $RightPage

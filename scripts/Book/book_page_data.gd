@@ -1,4 +1,4 @@
 extends Resource
-class_name BookPageImage
+class_name BookPageData
 
 @export var texture: Texture2D
