@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="SnakeData" format=3 uid="uid://dciv01pvefdil"]
+
+[ext_resource type="Script" uid="uid://7c6aeatss7mu" path="res://scripts/Data/snake_data.gd" id="1_r6v8b"]
+[ext_resource type="Script" uid="uid://cxhyxl8lce2v6" path="res://scripts/Data/symptom_data.gd" id="2_3f23y"]
+
+[resource]
+script = ExtResource("1_r6v8b")
+name = "BlackleafPitViper"
+metadata/_custom_type_script = "uid://7c6aeatss7mu"

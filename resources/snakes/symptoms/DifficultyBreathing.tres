@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="SymptomData" format=3 uid="uid://b63ag8n56rdnb"]
+
+[ext_resource type="Script" uid="uid://cxhyxl8lce2v6" path="res://scripts/Data/symptom_data.gd" id="1_fcsws"]
+
+[resource]
+script = ExtResource("1_fcsws")
+symptom_id = "difficultyBreathing"
+display_name = "Difficulty Breathing"
+sound_effect_id = "difficultyBreathing"
+metadata/_custom_type_script = "uid://cxhyxl8lce2v6"

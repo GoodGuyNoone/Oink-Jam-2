@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="SymptomData" format=3 uid="uid://uqmec5kmrxlx"]
+
+[ext_resource type="Script" uid="uid://cxhyxl8lce2v6" path="res://scripts/Data/symptom_data.gd" id="1_6n2m4"]
+
+[resource]
+script = ExtResource("1_6n2m4")
+symptom_id = "rapidHeartbeat"
+display_name = "Rapid Heartbeat"
+sound_effect_id = "rapidHeartbeat"
+metadata/_custom_type_script = "uid://cxhyxl8lce2v6"

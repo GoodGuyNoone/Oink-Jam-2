@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="SnakeData" format=3 uid="uid://cbpsdo1ki36iq"]
+
+[ext_resource type="Script" uid="uid://7c6aeatss7mu" path="res://scripts/Data/snake_data.gd" id="1_r4b6c"]
+[ext_resource type="Script" uid="uid://cxhyxl8lce2v6" path="res://scripts/Data/symptom_data.gd" id="2_7kffp"]
+[ext_resource type="Resource" uid="uid://b63ag8n56rdnb" path="res://resources/snakes/symptoms/DifficultyBreathing.tres" id="3_7kffp"]
+
+[resource]
+script = ExtResource("1_r4b6c")
+symptoms = Array[ExtResource("2_7kffp")]([ExtResource("3_7kffp")])
+metadata/_custom_type_script = "uid://7c6aeatss7mu"

@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="SymptomData" format=3 uid="uid://cb82idh0qvwnj"]
+
+[ext_resource type="Script" uid="uid://cxhyxl8lce2v6" path="res://scripts/Data/symptom_data.gd" id="1_tyw35"]
+
+[resource]
+script = ExtResource("1_tyw35")
+symptom_id = "tremor"
+display_name = "Tremor"
+visual_effect_id = "tremor"
+metadata/_custom_type_script = "uid://cxhyxl8lce2v6"

@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="SymptomData" format=3 uid="uid://bnjoaxvdxwina"]
+
+[ext_resource type="Script" uid="uid://cxhyxl8lce2v6" path="res://scripts/Data/symptom_data.gd" id="1_1ehjg"]
+
+[resource]
+script = ExtResource("1_1ehjg")
+symptom_id = "dizziness"
+display_name = "Dizziness"
+visual_effect_id = "dizziness"
+metadata/_custom_type_script = "uid://cxhyxl8lce2v6"

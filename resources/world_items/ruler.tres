@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://bfl3dw5aq14g2"]
 
-[ext_resource type="Script" uid="uid://dtfbka8p7vikm" path="res://scripts/item_data.gd" id="1_ddbt2"]
+[ext_resource type="Script" uid="uid://dtfbka8p7vikm" path="res://scripts/Data/item_data.gd" id="1_ddbt2"]
 [ext_resource type="Texture2D" uid="uid://cppq53oqt4eug" path="res://assets/icons/book.jpg" id="1_j3qum"]
 
 [resource]
@@ -8,3 +8,4 @@ script = ExtResource("1_ddbt2")
 item_id = "ruler"
 display_name = "Ruler"
 icon = ExtResource("1_j3qum")
+goes_to_inventory = true

@@ -4,6 +4,7 @@ class_name GameManager
 @export var player: Player
 @export var poison_manager: PoisonManager
 @export var inventory: Inventory
+@export var symptom_effects_controller: SymptomEffectsController
 
 @onready var book_ui_button: BookUIButton = $"../../UI/BookUIButton"
 
@@ -14,12 +15,13 @@ func _ready() -> void:
 	poison_manager.item_checked.connect(_on_item_checked)
 	poison_manager.poison_ended.connect(_on_poison_ended)
 	inventory.item_used.connect(_on_inventory_item_used)
+	symptom_effects_controller.symptom_effect_triggered.connect(_on_symptom_effect_triggered)
 
 
 func _on_poison_started(snake: SnakeData) -> void:
 	print("\n=== POISON STARTED ===")
 	print("Snake:", snake.name)
-	print("Symptoms:", snake.symptoms)
+	print("Symptoms:", str(snake.symptoms))
 	print("Required items:", snake.required_cure)
 	print("================================")
 
@@ -62,3 +64,23 @@ func _on_inventory_item_used(item: ItemData, slot_index: int) -> void:
 			print("Use key logic")
 		_:
 			print("No logic for:", item.item_id)
+
+
+func _on_symptom_effect_triggered(
+	symptom: SymptomData,
+	symptom_index: int
+) -> void:
+	print("Symptom queue index:", symptom_index)
+
+	match symptom.symptom_id:
+		"headache":
+			print("Trigger headache UI")
+
+		"pulse":
+			print("Trigger pulse sound")
+
+		"shivering":
+			print("Trigger shivering effect")
+
+		"blurred_vision":
+			print("Trigger blur effect")
