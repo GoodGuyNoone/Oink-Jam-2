@@ -8,5 +8,6 @@
 [resource]
 script = ExtResource("1_i7wsr")
 name = "AmberRibbonsnake"
+required_cure = Array[String](["orangeSyringe", "whiteTablets", "pinkSyrup"])
 symptoms = Array[ExtResource("2_j3sic")]([ExtResource("3_s86ye"), ExtResource("4_ru60f")])
 metadata/_custom_type_script = "uid://7c6aeatss7mu"

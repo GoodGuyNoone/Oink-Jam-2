@@ -5,7 +5,7 @@ const MAX_SLOTS := 3
 
 @export var key_icons: Array[Texture2D]
 
-signal item_used(item: ItemData, slot_index: int)
+signal item_used(item: ItemData)
 
 var items: Array[ItemData] = [null, null, null]
 var slot_icons: Array[InventorySlot] = []
@@ -60,7 +60,7 @@ func use_slot(slot_index: int) -> void:
 
 	print("Used inventory item:", item.display_name)
 
-	item_used.emit(item, slot_index)
+	item_used.emit(item)
 	_refresh_ui()
 
 

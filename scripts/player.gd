@@ -15,6 +15,7 @@ class_name Player
 
 
 var can_look: bool = true
+var can_move: bool = true
 var _current_speed: float = walk_speed
 var _move_direction: Vector3 = Vector3.ZERO
 var current_target: Node
@@ -71,6 +72,8 @@ func _apply_gravity(delta: float) -> void:
 
 
 func _handle_movement(delta: float) -> void:
+	if not can_move:
+		return
 	var input_dir := Input.get_vector("left", "right", "forward", "back")
 	var target_direction := (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
 	_move_direction = lerp(_move_direction, target_direction, movement_lerp_speed * delta)

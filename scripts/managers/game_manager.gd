@@ -5,8 +5,10 @@ class_name GameManager
 @export var poison_manager: PoisonManager
 @export var inventory: Inventory
 @export var symptom_effects_controller: SymptomEffectsController
+@export var inspection_ui: InspectionUI
 
 @onready var book_ui_button: BookUIButton = $"../../UI/BookUIButton"
+@onready var inspection_sprite: TextureRect = $"../../UI/InspectionUI/InspectionSprite"
 
 
 func _ready() -> void:
@@ -53,18 +55,27 @@ func _on_poison_ended(success: bool) -> void:
 	print("=============\n")
 
 
-func _on_inventory_item_used(item: ItemData, slot_index: int) -> void:
+func _on_inventory_item_used(item: ItemData) -> void:
 	print("Inventory item triggered:", item.item_id)
 
 	match item.item_id:
 		"book":
 				player.book.open_book()
 				book_ui_button.open_ui()
-		"key":
-			print("Use key logic")
+		"thermometer":
+			inspection_ui.open(
+				poison_manager.current_snake.temperature_sprite,
+				false
+			)
+
+		"ruler":
+			inspection_ui.open(
+				poison_manager.current_snake.bite_sprite,
+				true
+			)
+
 		_:
 			print("No logic for:", item.item_id)
-
 
 func _on_symptom_effect_triggered(
 	symptom: SymptomData,

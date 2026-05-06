@@ -6,4 +6,5 @@
 [resource]
 script = ExtResource("1_r6v8b")
 name = "BlackleafPitViper"
+required_cure = Array[String](["redSyringe", "yellowTablets", "purpleSyrup"])
 metadata/_custom_type_script = "uid://7c6aeatss7mu"

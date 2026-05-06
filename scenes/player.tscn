@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://0ped6c6kfs0p" path="res://scripts/player.gd" id="1_g2els"]
 [ext_resource type="PackedScene" uid="uid://c58nfenn3erbr" path="res://assets/models/mixamo_base.glb" id="2_qhqgy"]
-[ext_resource type="PackedScene" uid="uid://eq587p74uyyo" path="res://scenes/Book/BookUI.tscn" id="3_qhqgy"]
+[ext_resource type="PackedScene" uid="uid://eq587p74uyyo" path="res://scenes/WorldItems/Book/BookUI.tscn" id="3_qhqgy"]
 [ext_resource type="Script" uid="uid://cqdom8ap5egeo" path="res://scripts/Book/book_page_data.gd" id="4_dqkch"]
 [ext_resource type="Resource" uid="uid://b7rgj2mcgiwkd" path="res://resources/book_pages/page_01_intro.tres" id="5_3v2ag"]
 [ext_resource type="Resource" uid="uid://cavvfmlpjma5v" path="res://resources/book_pages/page_02.tres" id="6_jej6c"]

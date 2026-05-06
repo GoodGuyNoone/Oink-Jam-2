@@ -1,11 +1,10 @@
 [gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://dnd3lj4gtwmwd"]
 
 [ext_resource type="Script" uid="uid://dtfbka8p7vikm" path="res://scripts/Data/item_data.gd" id="1_63sr6"]
-[ext_resource type="Texture2D" uid="uid://cppq53oqt4eug" path="res://assets/icons/book.jpg" id="1_ox6p7"]
+[ext_resource type="Texture2D" uid="uid://btdgqlj1jsm6s" path="res://assets/icons/thermometer.jpg" id="1_ox6p7"]
 
 [resource]
 script = ExtResource("1_63sr6")
 item_id = "thermometer"
 display_name = "Thermometer"
 icon = ExtResource("1_ox6p7")
-goes_to_inventory = true

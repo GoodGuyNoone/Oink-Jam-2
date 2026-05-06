@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://c5cmxhagp5ibg"]
+
+[node name="InspectionUI" type="Control" unique_id=494579209]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 707.0
+offset_top = 87.0
+offset_right = 949.0
+offset_bottom = 212.0

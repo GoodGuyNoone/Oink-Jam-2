@@ -8,14 +8,18 @@
 [ext_resource type="Script" uid="uid://7c6aeatss7mu" path="res://scripts/Data/snake_data.gd" id="5_85g3d"]
 [ext_resource type="PackedScene" uid="uid://dv0ahkmm42if0" path="res://scenes/Medkit/bottle.tscn" id="5_a8y0u"]
 [ext_resource type="Script" uid="uid://bshijebrw48ek" path="res://scripts/interactable_item.gd" id="5_jbj1t"]
+[ext_resource type="PackedScene" uid="uid://sd2vhjq557jh" path="res://scenes/WorldItems/ruler.tscn" id="5_yq6so"]
+[ext_resource type="PackedScene" uid="uid://buff32gs1nsp5" path="res://scenes/WorldItems/thermometer.tscn" id="6_fv21b"]
+[ext_resource type="Resource" uid="uid://bfl3dw5aq14g2" path="res://resources/world_items/ruler.tres" id="6_tel4y"]
 [ext_resource type="Resource" uid="uid://54glpbop828h" path="res://resources/world_items/book.tres" id="6_yc10j"]
 [ext_resource type="Script" uid="uid://bjwxbip14m648" path="res://scripts/Managers/snake_bite_controller.gd" id="8_jkv2x"]
 [ext_resource type="Resource" uid="uid://dohyme12rsuc4" path="res://resources/world_items/1.tres" id="8_jscy8"]
+[ext_resource type="Resource" uid="uid://dnd3lj4gtwmwd" path="res://resources/world_items/thermometer.tres" id="8_qkpxi"]
 [ext_resource type="Resource" uid="uid://bt81g7u7xv6et" path="res://resources/world_items/2.tres" id="9_pm3ni"]
 [ext_resource type="Script" uid="uid://bmfg0xx8a43pl" path="res://scripts/Managers/game_manager.gd" id="10_choun"]
 [ext_resource type="Resource" uid="uid://wfptfltk35ld" path="res://resources/world_items/3.tres" id="10_y6deb"]
 [ext_resource type="Resource" uid="uid://bi1pinqgqydli" path="res://resources/world_items/4.tres" id="11_og1vs"]
-[ext_resource type="PackedScene" uid="uid://dbo01qbg0nwcy" path="res://scenes/Book/Book.tscn" id="11_ya4ey"]
+[ext_resource type="PackedScene" uid="uid://dbo01qbg0nwcy" path="res://scenes/WorldItems/Book/Book.tscn" id="11_ya4ey"]
 [ext_resource type="Script" uid="uid://d382l3gj2mtgw" path="res://scripts/Book/book_ui_button.gd" id="13_trceg"]
 [ext_resource type="Resource" uid="uid://dpds7nyh5rn21" path="res://resources/snakes/test.tres" id="15_vxglm"]
 [ext_resource type="Script" uid="uid://cvq5ydgjrhf1t" path="res://scripts/inventory.gd" id="16_jbj1t"]
@@ -27,6 +31,9 @@
 [ext_resource type="Script" uid="uid://cn1shumrhj2g6" path="res://scripts/UI/clock_ui.gd" id="26_2wyq8"]
 [ext_resource type="Texture2D" uid="uid://c3cgb3natf6w4" path="res://assets/icons/clock.png" id="27_2f3dj"]
 [ext_resource type="Texture2D" uid="uid://ihlujto6bom4" path="res://assets/icons/clock_bg.png" id="27_yq6so"]
+[ext_resource type="PackedScene" uid="uid://c5cmxhagp5ibg" path="res://scenes/UI/inspection_ui.tscn" id="32_qkpxi"]
+[ext_resource type="Script" uid="uid://d3lv7ejo2tbcr" path="res://scripts/UI/inspection_ui.gd" id="33_5q0nq"]
+[ext_resource type="Texture2D" uid="uid://cndohs0j3mawi" path="res://assets/icons/rulerMouseIcon.jpg" id="34_dgi5k"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0wfyh"]
 albedo_texture = ExtResource("1_o5qli")
@@ -68,6 +75,22 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.107469, -0.80881727, 0)
 script = ExtResource("5_jbj1t")
 interaction_type = 2
 interaction_text = "Open"
+
+[node name="Ruler" parent="Environment" unique_id=22162680 node_paths=PackedStringArray("inventory") groups=["interactable"] instance=ExtResource("5_yq6so")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.4081779, 0.9097328, 4.284042)
+script = ExtResource("5_jbj1t")
+interaction_type = 1
+interaction_text = "Pick up"
+item_data = ExtResource("6_tel4y")
+inventory = NodePath("../../UI/Inventory")
+
+[node name="Thermometer" parent="Environment" unique_id=667066390 node_paths=PackedStringArray("inventory") groups=["interactable"] instance=ExtResource("6_fv21b")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5243778, 1.1686099, 5.909804)
+script = ExtResource("5_jbj1t")
+interaction_type = 1
+interaction_text = "Pick up"
+item_data = ExtResource("8_qkpxi")
+inventory = NodePath("../../UI/Inventory")
 
 [node name="Book" parent="Environment" unique_id=1400363279 node_paths=PackedStringArray("inventory") instance=ExtResource("11_ya4ey")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.2328815, 1.0737998, 3.267924)
@@ -116,12 +139,13 @@ script = ExtResource("4_tipki")
 snakes = Array[ExtResource("5_85g3d")]([ExtResource("15_vxglm")])
 time_to_die = 50.0
 
-[node name="GameManager" type="Node" parent="Managers" unique_id=242879686 node_paths=PackedStringArray("player", "poison_manager", "inventory", "symptom_effects_controller")]
+[node name="GameManager" type="Node" parent="Managers" unique_id=242879686 node_paths=PackedStringArray("player", "poison_manager", "inventory", "symptom_effects_controller", "inspection_ui")]
 script = ExtResource("10_choun")
 player = NodePath("../../Player")
 poison_manager = NodePath("../PoisonManager")
 inventory = NodePath("../../UI/Inventory")
 symptom_effects_controller = NodePath("../SymptomEffectsController")
+inspection_ui = NodePath("../../UI/InspectionUI")
 
 [node name="SnakeBiteController" type="Node" parent="Managers" unique_id=1469445031]
 script = ExtResource("8_jkv2x")
@@ -234,6 +258,35 @@ offset_right = 625.0
 offset_bottom = 415.0
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="UI/ClockUI" unique_id=1082439771]
+
+[node name="InspectionUI" parent="UI" unique_id=494579209 node_paths=PackedStringArray("player", "inspection_sprite", "close_button") instance=ExtResource("32_qkpxi")]
+offset_left = 753.0
+offset_top = 77.0
+offset_right = 995.0
+offset_bottom = 202.0
+script = ExtResource("33_5q0nq")
+player = NodePath("../../Player")
+inspection_sprite = NodePath("InspectionSprite")
+close_button = NodePath("CloseButton")
+ruler_cursor = ExtResource("34_dgi5k")
+
+[node name="InspectionSprite" type="TextureRect" parent="UI/InspectionUI" unique_id=1304151410]
+layout_mode = 0
+offset_left = -81.0
+offset_right = 40.0
+offset_bottom = 109.0
+expand_mode = 3
+stretch_mode = 5
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="UI/InspectionUI" unique_id=176034542]
+
+[node name="CloseButton" type="Button" parent="UI/InspectionUI" unique_id=275592954]
+layout_mode = 0
+offset_left = 53.0
+offset_top = 3.0
+offset_right = 61.0
+offset_bottom = 11.0
+text = "x"
 
 [connection signal="body_entered" from="SnakeTrigger" to="Managers/SnakeBiteController" method="_on_body_entered"]
 [connection signal="pressed" from="UI/BookUIButton/Previous" to="UI/BookUIButton" method="_on_previous_button_pressed"]
