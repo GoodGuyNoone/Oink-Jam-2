@@ -25,6 +25,9 @@
 [ext_resource type="Texture2D" uid="uid://cn1wdme3o57sf" path="res://assets/icons/1(1).png" id="22_og1vs"]
 [ext_resource type="Texture2D" uid="uid://bi20plyidpyd" path="res://assets/icons/2.png" id="23_2wyq8"]
 [ext_resource type="Texture2D" uid="uid://u6tbel3snhmj" path="res://assets/icons/3.png" id="24_vxglm"]
+[ext_resource type="Script" uid="uid://cn1shumrhj2g6" path="res://Scripts/UI/clock_ui.gd" id="26_2wyq8"]
+[ext_resource type="Texture2D" uid="uid://c3cgb3natf6w4" path="res://assets/icons/clock.png" id="27_2f3dj"]
+[ext_resource type="Texture2D" uid="uid://ihlujto6bom4" path="res://assets/icons/clock_bg.png" id="27_yq6so"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0wfyh"]
 albedo_texture = ExtResource("1_o5qli")
@@ -73,7 +76,7 @@ script = ExtResource("5_jbj1t")
 interaction_type = 1
 interaction_text = "Pick up"
 item_data = ExtResource("6_yc10j")
-inventory = NodePath("../../CanvasLayer/Inventory")
+inventory = NodePath("../../UI/Inventory")
 
 [node name="Bottle" parent="Environment" unique_id=1785250810 instance=ExtResource("5_a8y0u")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.9452686, 0.4411466, -0.28960645)
@@ -117,7 +120,7 @@ snakes = Array[ExtResource("5_85g3d")]([ExtResource("6_choun"), ExtResource("7_y
 script = ExtResource("10_choun")
 player = NodePath("../../Player")
 poison_manager = NodePath("../PoisonManager")
-inventory = NodePath("../../CanvasLayer/Inventory")
+inventory = NodePath("../../UI/Inventory")
 
 [node name="SnakeBiteController" type="Node" parent="Managers" unique_id=1469445031]
 script = ExtResource("8_jkv2x")
@@ -125,9 +128,9 @@ script = ExtResource("8_jkv2x")
 [node name="SnakeSpawn" type="Node3D" parent="." unique_id=1205766575]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.0912056, 0, -4.264014)
 
-[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1809641575]
+[node name="UI" type="CanvasLayer" parent="." unique_id=1809641575]
 
-[node name="BookUIButton" type="Control" parent="CanvasLayer" unique_id=1143446681 node_paths=PackedStringArray("player")]
+[node name="BookUIButton" type="Control" parent="UI" unique_id=1143446681 node_paths=PackedStringArray("player")]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
@@ -135,7 +138,7 @@ offset_bottom = 40.0
 script = ExtResource("13_trceg")
 player = NodePath("../../Player")
 
-[node name="Previous" type="Button" parent="CanvasLayer/BookUIButton" unique_id=2041380123]
+[node name="Previous" type="Button" parent="UI/BookUIButton" unique_id=2041380123]
 layout_mode = 0
 offset_left = 196.0
 offset_top = 384.0
@@ -144,7 +147,7 @@ offset_bottom = 415.0
 text = "<
 "
 
-[node name="Next" type="Button" parent="CanvasLayer/BookUIButton" unique_id=1351917259]
+[node name="Next" type="Button" parent="UI/BookUIButton" unique_id=1351917259]
 layout_mode = 0
 offset_left = 281.0
 offset_top = 381.0
@@ -153,7 +156,7 @@ offset_bottom = 412.0
 text = ">
 "
 
-[node name="Close" type="Button" parent="CanvasLayer/BookUIButton" unique_id=1692713776]
+[node name="Close" type="Button" parent="UI/BookUIButton" unique_id=1692713776]
 layout_mode = 0
 offset_left = 149.0
 offset_top = 322.0
@@ -162,13 +165,13 @@ offset_bottom = 353.0
 text = "x
 "
 
-[node name="InteractionLabel" type="Label" parent="CanvasLayer" unique_id=1436390109]
+[node name="InteractionLabel" type="Label" parent="UI" unique_id=1436390109]
 offset_left = 571.0
 offset_top = 458.0
 offset_right = 682.0
 offset_bottom = 515.0
 
-[node name="Inventory" type="Control" parent="CanvasLayer" unique_id=1040566888]
+[node name="Inventory" type="Control" parent="UI" unique_id=1040566888]
 layout_mode = 3
 anchors_preset = 0
 offset_left = 52.0
@@ -178,21 +181,55 @@ offset_bottom = 516.0
 script = ExtResource("16_jbj1t")
 key_icons = Array[Texture2D]([ExtResource("22_og1vs"), ExtResource("23_2wyq8"), ExtResource("24_vxglm")])
 
-[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/Inventory" unique_id=1984405335]
+[node name="HBoxContainer" type="HBoxContainer" parent="UI/Inventory" unique_id=1984405335]
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="InventorySlot1" parent="CanvasLayer/Inventory/HBoxContainer" unique_id=1278327121 instance=ExtResource("22_jscy8")]
+[node name="InventorySlot1" parent="UI/Inventory/HBoxContainer" unique_id=1278327121 instance=ExtResource("22_jscy8")]
 layout_mode = 2
 
-[node name="InventorySlot2" parent="CanvasLayer/Inventory/HBoxContainer" unique_id=18682814 instance=ExtResource("22_jscy8")]
+[node name="InventorySlot2" parent="UI/Inventory/HBoxContainer" unique_id=18682814 instance=ExtResource("22_jscy8")]
 layout_mode = 2
 
-[node name="InventorySlot3" parent="CanvasLayer/Inventory/HBoxContainer" unique_id=1926494803 instance=ExtResource("22_jscy8")]
+[node name="InventorySlot3" parent="UI/Inventory/HBoxContainer" unique_id=1926494803 instance=ExtResource("22_jscy8")]
 layout_mode = 2
+
+[node name="ClockUI" type="Control" parent="UI" unique_id=965291354 node_paths=PackedStringArray("poison_manager")]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("26_2wyq8")
+poison_manager = NodePath("../../Managers/PoisonManager")
+appear_delay = null
+
+[node name="ClockProgress" type="TextureProgressBar" parent="UI/ClockUI" unique_id=1818720043]
+clip_contents = true
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 0
+offset_left = 511.00003
+offset_top = 29.0
+offset_right = 871.0
+offset_bottom = 389.0
+scale = Vector2(0.3, 0.3)
+max_value = 1.0
+step = 0.01
+value = 1.0
+fill_mode = 5
+texture_under = ExtResource("27_yq6so")
+texture_progress = ExtResource("27_2f3dj")
+
+[node name="TimeLabel" type="Label" parent="UI/ClockUI" unique_id=850757771]
+layout_mode = 0
+offset_left = 585.0
+offset_top = 392.0
+offset_right = 625.0
+offset_bottom = 415.0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="UI/ClockUI" unique_id=1082439771]
 
 [connection signal="body_entered" from="SnakeTrigger" to="Managers/SnakeBiteController" method="_on_body_entered"]
-[connection signal="pressed" from="CanvasLayer/BookUIButton/Previous" to="CanvasLayer/BookUIButton" method="_on_previous_button_pressed"]
-[connection signal="pressed" from="CanvasLayer/BookUIButton/Next" to="CanvasLayer/BookUIButton" method="_on_next_button_pressed"]
-[connection signal="pressed" from="CanvasLayer/BookUIButton/Close" to="CanvasLayer/BookUIButton" method="_on_close_button_pressed"]
+[connection signal="pressed" from="UI/BookUIButton/Previous" to="UI/BookUIButton" method="_on_previous_button_pressed"]
+[connection signal="pressed" from="UI/BookUIButton/Next" to="UI/BookUIButton" method="_on_next_button_pressed"]
+[connection signal="pressed" from="UI/BookUIButton/Close" to="UI/BookUIButton" method="_on_close_button_pressed"]

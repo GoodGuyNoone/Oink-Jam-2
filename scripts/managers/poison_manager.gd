@@ -63,6 +63,8 @@ func select_item(item_id: String) -> void:
 	else:
 		time_left -= wrong_item_penalty_time
 
+	poison_updated.emit(time_left)
+
 	item_checked.emit(
 		item_id,
 		is_correct,

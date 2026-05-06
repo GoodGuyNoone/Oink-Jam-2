@@ -11,7 +11,7 @@ class_name Player
 @onready var book: BookUI = $CameraMount/Camera3D/BookUI
 @onready var ray_cast_3d: RayCast3D = get_node("CameraMount/Camera3D/RayCast3D")
 @onready var camera_mount: Node3D = $CameraMount
-@onready var interaction_label: Label = get_node("../CanvasLayer/InteractionLabel")
+@onready var interaction_label: Label = get_node("../UI/InteractionLabel")
 
 
 var can_look: bool = true
@@ -35,7 +35,7 @@ func _physics_process(delta: float) -> void:
 
 	_update_speed()
 	_apply_gravity(delta)
-	_handle_jump()
+	# _handle_jump()
 	_handle_movement(delta)
 	move_and_slide()
 
@@ -65,9 +65,9 @@ func _apply_gravity(delta: float) -> void:
 		velocity += get_gravity() * delta
 
 
-func _handle_jump() -> void:
-	if Input.is_action_just_pressed("jump") and is_on_floor():
-		velocity.y = jump_velocity
+# func _handle_jump() -> void:
+# 	if Input.is_action_just_pressed("jump") and is_on_floor():
+# 		velocity.y = jump_velocity
 
 
 func _handle_movement(delta: float) -> void:

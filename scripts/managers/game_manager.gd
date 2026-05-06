@@ -5,7 +5,7 @@ class_name GameManager
 @export var poison_manager: PoisonManager
 @export var inventory: Inventory
 
-@onready var book_ui_button: BookUIButton = $"../../CanvasLayer/BookUIButton"
+@onready var book_ui_button: BookUIButton = $"../../UI/BookUIButton"
 
 
 func _ready() -> void:
