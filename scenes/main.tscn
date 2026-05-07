@@ -22,7 +22,7 @@
 [ext_resource type="PackedScene" uid="uid://dbo01qbg0nwcy" path="res://scenes/WorldItems/Book/Book.tscn" id="11_ya4ey"]
 [ext_resource type="Script" uid="uid://d382l3gj2mtgw" path="res://scripts/Book/book_ui_button.gd" id="13_trceg"]
 [ext_resource type="Resource" uid="uid://dpds7nyh5rn21" path="res://resources/snakes/test.tres" id="15_vxglm"]
-[ext_resource type="PackedScene" uid="uid://s05evfetrf7d" path="res://assets/models/Car.fbx" id="16_j8jky"]
+[ext_resource type="PackedScene" uid="uid://di12l7fw3q4ev" path="res://scenes/Car.tscn" id="16_j8jky"]
 [ext_resource type="Script" uid="uid://cvq5ydgjrhf1t" path="res://scripts/inventory.gd" id="16_jbj1t"]
 [ext_resource type="Script" uid="uid://ds3e3yy2chya6" path="res://scripts/Managers/symptom_effects_controller.gd" id="18_2f3dj"]
 [ext_resource type="PackedScene" uid="uid://c8kb13vfc7awj" path="res://scenes/UI/inventory_slot.tscn" id="22_jscy8"]
@@ -122,8 +122,8 @@ script = ExtResource("5_jbj1t")
 interaction_text = "Consume"
 item_data = ExtResource("11_og1vs")
 
-[node name="Car" parent="Environment" unique_id=1475988789 instance=ExtResource("16_j8jky")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.658097, 0, 1.9561832)
+[node name="Car" parent="Environment" unique_id=1184071739 instance=ExtResource("16_j8jky")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.9706194, 0, 3.1456866)
 
 [node name="Player" parent="." unique_id=1304941938 instance=ExtResource("2_0wfyh")]
 

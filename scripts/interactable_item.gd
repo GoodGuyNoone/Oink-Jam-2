@@ -13,7 +13,7 @@ enum InteractionType {
 @export var inventory: Inventory
 @export var animation_player: AnimationPlayer
 
-@onready var poison_manager: PoisonManager = $"../../Managers/PoisonManager"
+@onready var poison_manager = get_node("/root/Main/Managers/PoisonManager")
 
 var used := false
 var opened := false
@@ -80,7 +80,9 @@ func _pickup_to_inventory() -> void:
 func _play_animation() -> void:
 	if opened:
 		animation_player.play("Close")
+		interaction_text = "Open"
 	else:
 		animation_player.play("Open")
+		interaction_text = "Close"
 
 	opened = !opened
