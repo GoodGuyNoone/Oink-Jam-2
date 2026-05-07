@@ -6,7 +6,7 @@ size = Vector3(0.2, 0.1, 0.2)
 [sub_resource type="BoxShape3D" id="BoxShape3D_ok074"]
 size = Vector3(0.2, 0.1, 0.2)
 
-[node name="Book" type="Area3D" unique_id=411615002 groups=["interactable"]]
+[node name="Book" type="StaticBody3D" unique_id=99627449 groups=["interactable"]]
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1874416033]
 mesh = SubResource("BoxMesh_3lteu")

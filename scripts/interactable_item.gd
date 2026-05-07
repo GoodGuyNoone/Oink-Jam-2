@@ -1,4 +1,4 @@
-extends Area3D
+extends StaticBody3D
 class_name InteractableItem
 
 enum InteractionType {
@@ -16,6 +16,7 @@ enum InteractionType {
 @onready var poison_manager: PoisonManager = $"../../Managers/PoisonManager"
 
 var used := false
+var opened := false
 
 
 func _ready() -> void:
@@ -77,7 +78,9 @@ func _pickup_to_inventory() -> void:
 
 
 func _play_animation() -> void:
-	used = true
+	if opened:
+		animation_player.play("Close")
+	else:
+		animation_player.play("Open")
 
-	if animation_player:
-		animation_player.play("open")
+	opened = !opened

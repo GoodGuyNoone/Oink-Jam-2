@@ -14,6 +14,7 @@
 [ext_resource type="Resource" uid="uid://dmxqmh6c4uymm" path="res://resources/book_pages/page_08.tres" id="12_4r5pv"]
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_dqkch"]
+radius = 0.27929688
 
 [node name="Player" type="CharacterBody3D" unique_id=1589132169]
 script = ExtResource("1_g2els")
