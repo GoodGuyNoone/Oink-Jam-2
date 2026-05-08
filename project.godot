@@ -14,6 +14,10 @@ config/name="Oink-Jam-2"
 run/main_scene="uid://cctkaf5tyfk1l"
 config/features=PackedStringArray("4.6", "Forward Plus")
 
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/proton_scatter/plugin.cfg")
+
 [global_group]
 
 interactable=""
