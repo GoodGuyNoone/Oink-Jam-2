@@ -12,6 +12,7 @@ enum InteractionType {
 @export var item_data: ItemData
 @export var inventory: Inventory
 @export var animation_player: AnimationPlayer
+@export var controller_node: InteractableItem
 
 @onready var poison_manager = get_node("/root/Main/Managers/PoisonManager")
 
@@ -24,6 +25,9 @@ func _ready() -> void:
 
 
 func get_interaction_text() -> String:
+	if controller_node != null and controller_node != self:
+		return controller_node.get_interaction_text()
+
 	if item_data:
 		return interaction_text + " " + item_data.display_name
 
@@ -78,6 +82,10 @@ func _pickup_to_inventory() -> void:
 
 
 func _play_animation() -> void:
+	if controller_node != null and controller_node != self:
+		controller_node.interact(null)
+		return
+
 	if opened:
 		animation_player.play("Close")
 		interaction_text = "Open"

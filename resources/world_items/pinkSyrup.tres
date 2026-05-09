@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://chwyrpd0neels"]
+
+[ext_resource type="Script" uid="uid://dtfbka8p7vikm" path="res://scripts/Data/item_data.gd" id="1_mmnbe"]
+
+[resource]
+script = ExtResource("1_mmnbe")
+item_id = "pinkSyrup"
+display_name = "pink Syrup"
+metadata/_custom_type_script = "uid://dtfbka8p7vikm"

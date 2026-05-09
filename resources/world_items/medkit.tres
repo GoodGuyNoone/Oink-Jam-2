@@ -5,6 +5,5 @@
 [resource]
 script = ExtResource("1_ddbt2")
 item_id = "medkit"
-display_name = "Medkit"
-goes_to_inventory = false
+display_name = "medkit"
 metadata/_custom_type_script = "uid://dtfbka8p7vikm"

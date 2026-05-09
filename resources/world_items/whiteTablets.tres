@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://cdgagbq6j5qvt"]
+
+[ext_resource type="Script" uid="uid://dtfbka8p7vikm" path="res://scripts/Data/item_data.gd" id="1_vg4dn"]
+
+[resource]
+script = ExtResource("1_vg4dn")
+item_id = "whiteTablets"
+display_name = "white tablets"
+metadata/_custom_type_script = "uid://dtfbka8p7vikm"

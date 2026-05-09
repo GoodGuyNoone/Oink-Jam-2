@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://cctkaf5tyfk1l"]
 
+[ext_resource type="Texture2D" uid="uid://na8n2gqkqvwq" path="res://assets/textures/Environment/Grass/Stylized_HandpaintedGrass_02_basecolor.jpg" id="1_c6pm6"]
 [ext_resource type="Texture2D" uid="uid://bd0av4cahevvj" path="res://assets/textures/texture_01.png" id="1_o5qli"]
 [ext_resource type="PackedScene" uid="uid://bumo5d8a0hhuq" path="res://scenes/player.tscn" id="2_0wfyh"]
 [ext_resource type="Texture2D" uid="uid://dcautrd3gvgt" path="res://assets/textures/qwantani_sunset_puresky_4k.hdr" id="2_sugp2"]
@@ -21,13 +22,17 @@
 [ext_resource type="Resource" uid="uid://bi1pinqgqydli" path="res://resources/world_items/4.tres" id="11_og1vs"]
 [ext_resource type="PackedScene" uid="uid://dbo01qbg0nwcy" path="res://scenes/WorldItems/Book/Book.tscn" id="11_ya4ey"]
 [ext_resource type="Script" uid="uid://d382l3gj2mtgw" path="res://scripts/Book/book_ui_button.gd" id="13_trceg"]
-[ext_resource type="Resource" uid="uid://dpds7nyh5rn21" path="res://resources/snakes/test.tres" id="15_vxglm"]
 [ext_resource type="PackedScene" uid="uid://di12l7fw3q4ev" path="res://scenes/Car.tscn" id="16_j8jky"]
 [ext_resource type="Script" uid="uid://cvq5ydgjrhf1t" path="res://scripts/inventory.gd" id="16_jbj1t"]
 [ext_resource type="Script" uid="uid://ds3e3yy2chya6" path="res://scripts/Managers/symptom_effects_controller.gd" id="18_2f3dj"]
+[ext_resource type="Texture2D" uid="uid://m2cujbpcac4h" path="res://assets/textures/Environment/Grass/Stylized_HandpaintedGrass_02_normal.jpg" id="18_fuf3a"]
+[ext_resource type="Resource" uid="uid://dciv01pvefdil" path="res://resources/snakes/BlackleafPitViper.tres" id="21_5he1u"]
+[ext_resource type="Resource" uid="uid://dc07ogf3i4b64" path="res://resources/snakes/AmberRibbonsnake.tres" id="22_5poiv"]
 [ext_resource type="PackedScene" uid="uid://c8kb13vfc7awj" path="res://scenes/UI/inventory_slot.tscn" id="22_jscy8"]
 [ext_resource type="Texture2D" uid="uid://cn1wdme3o57sf" path="res://assets/icons/1(1).png" id="22_og1vs"]
+[ext_resource type="Resource" uid="uid://cbpsdo1ki36iq" path="res://resources/snakes/StoneViper.tres" id="23_2cjbq"]
 [ext_resource type="Texture2D" uid="uid://bi20plyidpyd" path="res://assets/icons/2.png" id="23_2wyq8"]
+[ext_resource type="Resource" uid="uid://beqlk387rwe8k" path="res://resources/snakes/ClayStinger.tres" id="24_chjal"]
 [ext_resource type="Texture2D" uid="uid://u6tbel3snhmj" path="res://assets/icons/3.png" id="24_vxglm"]
 [ext_resource type="Script" uid="uid://cn1shumrhj2g6" path="res://scripts/UI/clock_ui.gd" id="26_2wyq8"]
 [ext_resource type="Texture2D" uid="uid://c3cgb3natf6w4" path="res://assets/icons/clock.png" id="27_2f3dj"]
@@ -49,8 +54,86 @@ sky_material = SubResource("PanoramaSkyMaterial_jyhfs")
 background_mode = 2
 background_energy_multiplier = 0.5
 sky = SubResource("Sky_tbgi4")
-ambient_light_source = 3
+ambient_light_source = 2
+ambient_light_color = Color(0.6590027, 0.73846817, 1, 1)
+tonemap_mode = 3
 sdfgi_enabled = true
+glow_bloom = 1.0
+volumetric_fog_enabled = true
+volumetric_fog_density = 0.015
+volumetric_fog_albedo = Color(0.7280833, 0.702393, 0.9211554, 1)
+
+[sub_resource type="Gradient" id="Gradient_j8jky"]
+offsets = PackedFloat32Array(0.2, 1)
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_kmb1v"]
+noise_type = 2
+frequency = 0.03
+cellular_jitter = 3.0
+cellular_return_type = 0
+domain_warp_enabled = true
+domain_warp_type = 1
+domain_warp_amplitude = 50.0
+domain_warp_fractal_type = 2
+domain_warp_fractal_lacunarity = 1.5
+domain_warp_fractal_gain = 1.0
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_fuf3a"]
+noise = SubResource("FastNoiseLite_kmb1v")
+color_ramp = SubResource("Gradient_j8jky")
+seamless = true
+
+[sub_resource type="Terrain3DMaterial" id="Terrain3DMaterial_pibwh"]
+_shader_parameters = {
+&"bias_distance": 512.0,
+&"blend_sharpness": 0.5,
+&"depth_blur": 0.0,
+&"enable_macro_variation": true,
+&"enable_projection": true,
+&"flat_terrain_normals": false,
+&"macro_variation1": Color(1, 1, 1, 1),
+&"macro_variation2": Color(1, 1, 1, 1),
+&"macro_variation_slope": 0.333,
+&"mipmap_bias": 1.0,
+&"noise1_angle": 0.0,
+&"noise1_offset": Vector2(0.5, 0.5),
+&"noise1_scale": 0.04,
+&"noise2_scale": 0.076,
+&"noise_texture": SubResource("NoiseTexture2D_fuf3a"),
+&"projection_threshold": 0.8
+}
+world_background = 0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_c6pm6"]
+transparency = 4
+cull_mode = 2
+vertex_color_use_as_albedo = true
+backlight_enabled = true
+backlight = Color(0.5, 0.5, 0.5, 1)
+distance_fade_mode = 1
+distance_fade_min_distance = 128.0
+distance_fade_max_distance = 96.0
+
+[sub_resource type="Terrain3DMeshAsset" id="Terrain3DMeshAsset_5he1u"]
+generated_type = 1
+height_offset = 0.5
+material_override = SubResource("StandardMaterial3D_c6pm6")
+last_lod = 0
+last_shadow_lod = 0
+lod0_range = 128.0
+
+[sub_resource type="Terrain3DTextureAsset" id="Terrain3DTextureAsset_fuf3a"]
+name = "Stylized_HandpaintedGrass_02_basecolor"
+albedo_texture = ExtResource("1_c6pm6")
+normal_texture = ExtResource("18_fuf3a")
+uv_scale = 0.5
+detiling_rotation = 0.25
+detiling_shift = 0.25
+
+[sub_resource type="Terrain3DAssets" id="Terrain3DAssets_5poiv"]
+mesh_list = Array[Terrain3DMeshAsset]([SubResource("Terrain3DMeshAsset_5he1u")])
+texture_list = Array[Terrain3DTextureAsset]([SubResource("Terrain3DTextureAsset_fuf3a")])
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_trceg"]
 size = Vector3(20, 3, 1)
@@ -58,6 +141,7 @@ size = Vector3(20, 3, 1)
 [node name="Main" type="Node3D" unique_id=596857963]
 
 [node name="Environment" type="Node3D" parent="." unique_id=80432299]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 61.379868, 0, 73.32826)
 
 [node name="Floor" type="CSGBox3D" parent="Environment" unique_id=1466692383]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
@@ -66,7 +150,9 @@ use_collision = true
 size = Vector3(20, 1, 20)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="Environment" unique_id=865124766]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0)
+transform = Transform3D(0.9738293, -0.13098897, 0.18573685, -0.03928706, 0.7078975, 0.7052218, -0.22385891, -0.69406277, 0.68422514, -89.82682, 56.107643, 40.078094)
+light_color = Color(0.79258007, 0.7989847, 0.26885304, 1)
+shadow_enabled = true
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="Environment" unique_id=1688727211]
 environment = SubResource("Environment_0wfyh")
@@ -125,10 +211,18 @@ item_data = ExtResource("11_og1vs")
 [node name="Car" parent="Environment" unique_id=1184071739 instance=ExtResource("16_j8jky")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.9706194, 0, 3.1456866)
 
-[node name="Player" parent="." unique_id=1304941938 instance=ExtResource("2_0wfyh")]
+[node name="Car2" parent="Environment" unique_id=346548748 instance=ExtResource("16_j8jky")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -106.69824, 0.0006933212, -15.082748)
+
+[node name="Terrain3D" type="Terrain3D" parent="Environment" unique_id=968117366]
+data_directory = "res://resources/terrain_data"
+material = SubResource("Terrain3DMaterial_pibwh")
+assets = SubResource("Terrain3DAssets_5poiv")
+top_level = true
+metadata/_edit_lock_ = true
 
 [node name="SnakeTrigger" type="Area3D" parent="." unique_id=181821574]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -4.016384)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 61.379868, 0, 69.311874)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="SnakeTrigger" unique_id=1217238549]
 shape = SubResource("BoxShape3D_trceg")
@@ -137,12 +231,11 @@ shape = SubResource("BoxShape3D_trceg")
 
 [node name="PoisonManager" type="Node" parent="Managers" unique_id=415290388]
 script = ExtResource("4_tipki")
-snakes = Array[ExtResource("5_85g3d")]([ExtResource("15_vxglm")])
+snakes = Array[ExtResource("5_85g3d")]([ExtResource("21_5he1u"), ExtResource("22_5poiv"), ExtResource("23_2cjbq"), ExtResource("24_chjal")])
 time_to_die = 50.0
 
-[node name="GameManager" type="Node" parent="Managers" unique_id=242879686 node_paths=PackedStringArray("player", "poison_manager", "inventory", "symptom_effects_controller", "inspection_ui")]
+[node name="GameManager" type="Node" parent="Managers" unique_id=242879686 node_paths=PackedStringArray("poison_manager", "inventory", "symptom_effects_controller", "inspection_ui")]
 script = ExtResource("10_choun")
-player = NodePath("../../Player")
 poison_manager = NodePath("../PoisonManager")
 inventory = NodePath("../../UI/Inventory")
 symptom_effects_controller = NodePath("../SymptomEffectsController")
@@ -157,17 +250,16 @@ poison_manager = NodePath("../PoisonManager")
 effect_trigger_times = Array[float]([10.0, 20.0, 30.0, 40.0])
 
 [node name="SnakeSpawn" type="Node3D" parent="." unique_id=1205766575]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.0912056, 0, -4.264014)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 59.288666, 0, 69.06425)
 
 [node name="UI" type="CanvasLayer" parent="." unique_id=1809641575]
 
-[node name="BookUIButton" type="Control" parent="UI" unique_id=1143446681 node_paths=PackedStringArray("player")]
+[node name="BookUIButton" type="Control" parent="UI" unique_id=1143446681]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 script = ExtResource("13_trceg")
-player = NodePath("../../Player")
 
 [node name="Previous" type="Button" parent="UI/BookUIButton" unique_id=2041380123]
 layout_mode = 0
@@ -233,7 +325,6 @@ offset_right = 40.0
 offset_bottom = 40.0
 script = ExtResource("26_2wyq8")
 poison_manager = NodePath("../../Managers/PoisonManager")
-appear_delay = null
 
 [node name="ClockProgress" type="TextureProgressBar" parent="UI/ClockUI" unique_id=1818720043]
 clip_contents = true
@@ -260,13 +351,12 @@ offset_bottom = 415.0
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="UI/ClockUI" unique_id=1082439771]
 
-[node name="InspectionUI" parent="UI" unique_id=494579209 node_paths=PackedStringArray("player", "inspection_sprite", "close_button") instance=ExtResource("32_qkpxi")]
+[node name="InspectionUI" parent="UI" unique_id=494579209 node_paths=PackedStringArray("inspection_sprite", "close_button") instance=ExtResource("32_qkpxi")]
 offset_left = 753.0
 offset_top = 77.0
 offset_right = 995.0
 offset_bottom = 202.0
 script = ExtResource("33_5q0nq")
-player = NodePath("../../Player")
 inspection_sprite = NodePath("InspectionSprite")
 close_button = NodePath("CloseButton")
 ruler_cursor = ExtResource("34_dgi5k")
@@ -288,6 +378,9 @@ offset_top = 3.0
 offset_right = 61.0
 offset_bottom = 11.0
 text = "x"
+
+[node name="Player" parent="." unique_id=1589132169 instance=ExtResource("2_0wfyh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 61.894627, 0.001717419, 75.21546)
 
 [connection signal="body_entered" from="SnakeTrigger" to="Managers/SnakeBiteController" method="_on_body_entered"]
 [connection signal="pressed" from="UI/BookUIButton/Previous" to="UI/BookUIButton" method="_on_previous_button_pressed"]
