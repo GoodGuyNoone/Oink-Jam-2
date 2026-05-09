@@ -7,6 +7,7 @@ enum InteractionType {
 	PLAY_ANIMATION
 }
 
+@export var outline_material: Material
 @export var interaction_type: InteractionType
 @export var interaction_text: String = "Interact"
 @export var item_data: ItemData
@@ -16,6 +17,7 @@ enum InteractionType {
 
 @onready var poison_manager = get_node("/root/Main/Managers/PoisonManager")
 
+var original_overlay_material: Material
 var used := false
 var opened := false
 
@@ -47,6 +49,19 @@ func interact(_interactor: Node) -> void:
 
 		InteractionType.PLAY_ANIMATION:
 			_play_animation()
+
+
+func set_highlighted(enabled: bool) -> void:
+	var mesh = find_child("MeshInstance3D", true, false)
+
+	if mesh == null:
+		print("Mesh is null")
+		return
+
+	if enabled:
+		mesh.material_overlay = outline_material
+	else:
+		mesh.material_overlay = null
 
 
 func _consume_item() -> void:

@@ -87,7 +87,8 @@ func _handle_movement(delta: float) -> void:
 
 
 func _update_target() -> void:
-	current_target = null
+	if current_target:
+		current_target.set_highlighted(false)
 
 	if interaction_label:
 		interaction_label.visible = false
@@ -110,6 +111,9 @@ func _update_target() -> void:
 		return
 
 	current_target = hit
+
+	if current_target.has_method("set_highlighted"):
+		current_target.set_highlighted(true)
 
 	if interaction_label:
 		interaction_label.visible = true
