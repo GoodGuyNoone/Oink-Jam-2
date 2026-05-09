@@ -52,7 +52,7 @@ func interact(_interactor: Node) -> void:
 
 
 func set_highlighted(enabled: bool) -> void:
-	var mesh = find_child("MeshInstance3D", true, false)
+	var mesh = find_child("MeshInstance3D", false, false)
 
 	if mesh == null:
 		print("Mesh is null")

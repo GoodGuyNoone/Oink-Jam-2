@@ -113,6 +113,7 @@ func _update_target() -> void:
 	current_target = hit
 
 	if current_target.has_method("set_highlighted"):
+		print("set highlight to: " + current_target.name)
 		current_target.set_highlighted(true)
 
 	if interaction_label:

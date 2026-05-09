@@ -165,6 +165,7 @@ outline_material = ExtResource("4_5poiv")
 [node name="Ruler" parent="Environment" unique_id=22162680 node_paths=PackedStringArray("inventory") groups=["interactable"] instance=ExtResource("5_yq6so")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.4081779, 0.9097328, 4.284042)
 script = ExtResource("5_jbj1t")
+outline_material = ExtResource("4_5poiv")
 interaction_type = 1
 interaction_text = "Pick up"
 item_data = ExtResource("6_tel4y")
@@ -173,6 +174,7 @@ inventory = NodePath("../../UI/Inventory")
 [node name="Thermometer" parent="Environment" unique_id=667066390 node_paths=PackedStringArray("inventory") groups=["interactable"] instance=ExtResource("6_fv21b")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5243778, 1.1686099, 5.909804)
 script = ExtResource("5_jbj1t")
+outline_material = ExtResource("4_5poiv")
 interaction_type = 1
 interaction_text = "Pick up"
 item_data = ExtResource("8_qkpxi")
@@ -181,6 +183,7 @@ inventory = NodePath("../../UI/Inventory")
 [node name="Book" parent="Environment" unique_id=1400363279 node_paths=PackedStringArray("inventory") instance=ExtResource("11_ya4ey")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.2328815, 1.0737998, 3.267924)
 script = ExtResource("5_jbj1t")
+outline_material = ExtResource("4_5poiv")
 interaction_type = 1
 interaction_text = "Pick up"
 item_data = ExtResource("6_yc10j")
