@@ -2,9 +2,11 @@
 
 [ext_resource type="Script" uid="uid://7c6aeatss7mu" path="res://scripts/Data/snake_data.gd" id="1_r6v8b"]
 [ext_resource type="Script" uid="uid://cxhyxl8lce2v6" path="res://scripts/Data/symptom_data.gd" id="2_3f23y"]
+[ext_resource type="Material" uid="uid://dp475e2yidk24" path="res://assets/materials/materials/snakes/BlackleafPitViper.tres" id="2_s8pa3"]
 
 [resource]
 script = ExtResource("1_r6v8b")
 name = "BlackleafPitViper"
+snake_texture = ExtResource("2_s8pa3")
 required_cure = Array[String](["redSyringe", "yellowTablets", "purpleSyrup"])
 metadata/_custom_type_script = "uid://7c6aeatss7mu"

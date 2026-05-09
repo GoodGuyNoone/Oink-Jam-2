@@ -11,15 +11,15 @@ escape_speed = 3.0
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 0)
 
 [node name="Skeleton3D" parent="Armature" index="0" unique_id=2049153124]
-bones/0/rotation = Quaternion(0.095279165, 0.69109243, 0.7097453, -0.09785088)
-bones/1/rotation = Quaternion(-0.7136939, -0.00015935488, -0.00015639888, 0.7004577)
-bones/2/rotation = Quaternion(7.3930835e-09, 8.012917e-10, -0.10885442, 0.9940577)
-bones/3/rotation = Quaternion(1.2132755e-09, -2.944095e-11, -0.18020745, 0.98362863)
-bones/4/rotation = Quaternion(-7.189403e-09, -1.6988987e-09, -0.21140444, 0.9773987)
-bones/5/rotation = Quaternion(6.901721e-09, 1.8075352e-09, -0.20758359, 0.9782173)
-bones/6/rotation = Quaternion(1.6523197e-09, -2.7677322e-10, -0.17017983, 0.985413)
-bones/7/rotation = Quaternion(-8.644312e-09, -7.3435025e-10, -0.10840392, 0.994107)
-bones/8/rotation = Quaternion(-1.8984612e-09, 6.74531e-11, -0.032053895, 0.9994862)
+bones/0/rotation = Quaternion(-0.11994036, 0.6872417, 0.70579064, 0.12317751)
+bones/1/rotation = Quaternion(-0.7128614, -0.03446178, -0.033822652, 0.69964063)
+bones/2/rotation = Quaternion(7.94473e-09, -4.1327258e-10, 0.0639847, 0.9979509)
+bones/3/rotation = Quaternion(9.992156e-10, -8.050871e-11, 0.14816727, 0.98896235)
+bones/4/rotation = Quaternion(-7.194632e-09, 1.4382562e-09, 0.19643736, 0.98051643)
+bones/5/rotation = Quaternion(6.988747e-09, -1.124583e-09, 0.21462956, 0.97669554)
+bones/6/rotation = Quaternion(1.6119465e-09, -3.7279066e-10, 0.19643736, 0.98051643)
+bones/7/rotation = Quaternion(-8.659941e-09, 9.2021957e-10, 0.14816731, 0.9889624)
+bones/8/rotation = Quaternion(-2.3643794e-09, -7.319194e-10, 0.079343826, 0.9968474)
 
 [node name="HeadPoint" type="Node3D" parent="." index="2" unique_id=2140209298]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.023662686, 0.061390787, 0.56154084)

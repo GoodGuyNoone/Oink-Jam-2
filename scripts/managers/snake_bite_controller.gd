@@ -43,8 +43,12 @@ func _run_bite_sequence() -> void:
 func _spawn_snake() -> void:
 	_snake = snake_scene.instantiate() as Snake
 	get_tree().current_scene.add_child(_snake)
+	
 	_snake.global_position = snake_spawn.global_position
 	_snake.target = _player
+
+	var snake_mesh := _snake.get_node("Armature/Skeleton3D/Cube") as MeshInstance3D
+	snake_mesh.material_override = poison_manager.current_snake.snake_texture
 
 
 func _look_at_bite_point() -> void:

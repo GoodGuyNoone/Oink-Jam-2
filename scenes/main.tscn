@@ -214,7 +214,7 @@ interaction_text = "Consume"
 item_data = ExtResource("11_og1vs")
 
 [node name="Car" parent="Environment" unique_id=1184071739 instance=ExtResource("16_j8jky")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.9706194, 0, 3.1456866)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.9706192, 0, 3.1456833)
 
 [node name="Car2" parent="Environment" unique_id=346548748 instance=ExtResource("16_j8jky")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -106.69824, 0.0006933212, -15.082748)

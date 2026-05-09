@@ -7,31 +7,18 @@ signal attached_to_player
 @export var attach_distance: float = 0.5
 @export var escape_speed: float = 4.0
 
-var is_escaping: bool = false
-var escape_target_position: Vector3
-
-@onready var head_point: Node3D = $HeadPoint
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 
 var target: Node3D
 var is_attached: bool = false
+var is_escaping: bool = false
+var escape_target_position: Vector3
 
 
 func _physics_process(delta: float) -> void:
 	if is_escaping:
-		var run_target := escape_target_position
-		run_target.y = global_position.y
-
-		var direction := run_target - global_position
-
-		if direction.length() < 0.1:
-			is_escaping = false
-			return
-
-		global_position += direction.normalized() * escape_speed * delta
-		_face_head_towards(run_target)
+		_escape_to_point(delta)
 		return
-
 
 	if is_attached or target == null:
 		return
@@ -47,24 +34,9 @@ func attach_to_player() -> void:
 
 	reparent(attach_point)
 	global_transform = attach_point.global_transform
+
 	is_attached = true
 	attached_to_player.emit()
-
-
-func _face_head_towards(point: Vector3) -> void:
-	var head_forward := -head_point.global_transform.basis.z
-	var desired_forward := (point - head_point.global_position).normalized()
-
-	if desired_forward.length() == 0.0:
-		return
-
-	var rotation_axis := head_forward.cross(desired_forward)
-
-	if rotation_axis.length() == 0.0:
-		return
-
-	var angle := head_forward.angle_to(desired_forward)
-	global_rotate(rotation_axis.normalized(), angle)
 
 
 func detach_and_escape_to_point(point: Vector3) -> void:
@@ -79,6 +51,7 @@ func detach_and_escape_to_point(point: Vector3) -> void:
 
 	var drop_target := global_position
 	drop_target.y = point.y
+
 	escape_target_position = point
 
 	var tween := create_tween()
@@ -86,6 +59,23 @@ func detach_and_escape_to_point(point: Vector3) -> void:
 	await tween.finished
 
 	is_escaping = true
+
+
+func _escape_to_point(delta: float) -> void:
+	var run_target := escape_target_position
+	run_target.y = global_position.y
+
+	var direction := run_target - global_position
+	direction.y = 0.0
+
+	if direction.length() < 0.1:
+		is_escaping = false
+		return
+
+	direction = direction.normalized()
+
+	global_position += direction * escape_speed * delta
+	look_at(run_target, Vector3.UP)
 
 
 func play_animation(animation_name: String) -> void:
@@ -96,6 +86,7 @@ func play_animation(animation_name: String) -> void:
 func _move_towards_target(delta: float) -> void:
 	var direction := (target.global_position - global_position).normalized()
 	global_position += direction * move_speed * delta
+	look_at(target.global_position, Vector3.UP)
 
 
 func _is_close_enough_to_attach() -> bool:
