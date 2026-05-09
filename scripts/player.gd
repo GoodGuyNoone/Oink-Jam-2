@@ -1,17 +1,18 @@
 extends CharacterBody3D
 class_name Player
 
-
 @export var walk_speed: float = 5.0
 @export var sprint_speed: float = 8.0
 @export var jump_velocity: float = 5.0
 @export var movement_lerp_speed: float = 5.0
 @export var mouse_sensitivity: float = 0.25
+@export var walk_animation_speed_threshold: float = 0.2
 
 @onready var book: BookUI = $CameraMount/Camera3D/BookUI
 @onready var ray_cast_3d: RayCast3D = get_node("CameraMount/Camera3D/RayCast3D")
 @onready var camera_mount: Node3D = $CameraMount
 @onready var interaction_label: Label = get_node("../UI/InteractionLabel")
+@onready var animation_player: AnimationPlayer = $player/AnimationPlayer
 
 
 var can_look: bool = true
@@ -22,6 +23,7 @@ var current_target: Node
 
 func _ready() -> void:
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+	_play_animation("idle")
 
 
 func _input(event: InputEvent) -> void:
@@ -39,6 +41,7 @@ func _physics_process(delta: float) -> void:
 	# _handle_jump()
 	_handle_movement(delta)
 	move_and_slide()
+	_update_movement_animation()
 
 
 func set_control_enabled(enabled: bool) -> void:
@@ -133,3 +136,34 @@ func _try_interact() -> void:
 
 	if hit and hit.has_method("interact"):
 		hit.interact()
+
+
+func _update_movement_animation() -> void:
+	if animation_player == null:
+		return
+
+	var horizontal_velocity := velocity
+	horizontal_velocity.y = 0.0
+
+	var speed := horizontal_velocity.length()
+
+	if speed < walk_animation_speed_threshold:
+		_play_animation("idle")
+	elif Input.is_action_pressed("sprint"):
+		_play_animation("running")
+	else:
+		_play_animation("walking")
+
+
+func _play_animation(animation_name: String) -> void:
+	if animation_name == "":
+		return
+
+	if animation_player.current_animation == animation_name:
+		return
+
+	if not animation_player.has_animation(animation_name):
+		push_warning("Animation not found: " + animation_name)
+		return
+
+	animation_player.play(animation_name)
