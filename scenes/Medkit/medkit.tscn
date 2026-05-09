@@ -2,13 +2,6 @@
 
 [ext_resource type="Script" uid="uid://bshijebrw48ek" path="res://scripts/interactable_item.gd" id="1_htdnc"]
 [ext_resource type="Resource" uid="uid://0eem5rgfugdd" path="res://resources/world_items/medkit.tres" id="2_dx134"]
-[ext_resource type="Texture2D" uid="uid://cllxcb3wei3r5" path="res://assets/import/case_with_textures_Box_BaseColor.png" id="3_yhp4t"]
-[ext_resource type="Texture2D" uid="uid://c3kpnmm6f335u" path="res://assets/import/case_with_textures_Box_Metallic-Box_Roughness.png" id="4_heumc"]
-[ext_resource type="Texture2D" uid="uid://bskbtks8acx5x" path="res://assets/import/case_with_textures_Box_Normal.png" id="5_uurtv"]
-[ext_resource type="Texture2D" uid="uid://cno7ht31bjqd1" path="res://assets/import/case_with_textures_Another_BaseColor-Another_Alpha.png" id="6_okyfo"]
-[ext_resource type="Texture2D" uid="uid://dksduytxcne2r" path="res://assets/import/case_with_textures_Another_Emission.png" id="7_pfbeq"]
-[ext_resource type="Texture2D" uid="uid://dugua0p2vcere" path="res://assets/import/case_with_textures_Another_Metallic-Another_Roughness.png" id="8_vtsi0"]
-[ext_resource type="Texture2D" uid="uid://bgi6ui8hlq0ap" path="res://assets/import/case_with_textures_Another_Normal.png" id="9_elgt7"]
 [ext_resource type="Material" uid="uid://br7ryun77o4fr" path="res://resources/world_items/ItemOutline.tres" id="10_2vliq"]
 [ext_resource type="Resource" uid="uid://cyusw5pe5sa7d" path="res://resources/world_items/blackSyrup.tres" id="10_heumc"]
 [ext_resource type="Resource" uid="uid://cvk7i86w1kjvr" path="res://resources/world_items/purpleSyrup.tres" id="11_g51n4"]
@@ -23,18 +16,21 @@
 [ext_resource type="Resource" uid="uid://c5nxgavapi3yn" path="res://resources/world_items/greenSyringe.tres" id="16_2j6ik"]
 [ext_resource type="Resource" uid="uid://dk1t4ks8nh2h0" path="res://resources/world_items/orangeSyringe.tres" id="17_6oja8"]
 [ext_resource type="Resource" uid="uid://bh65b7ukotnk6" path="res://resources/world_items/redSyringe.tres" id="18_13h7l"]
+[ext_resource type="Texture2D" uid="uid://cvxl4avqvj2gp" path="res://assets/models/case_with_textures (2)_Box_BaseColor.png" id="24_p2b86"]
+[ext_resource type="Texture2D" uid="uid://df3g3yr7a3m5e" path="res://assets/models/case_with_textures (2)_Box_Metallic-Box_Roughness.png" id="25_3ytim"]
+[ext_resource type="Texture2D" uid="uid://bao4vwhjyr2rp" path="res://assets/models/case_with_textures (2)_Box_Normal.png" id="26_sj8jt"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_d63vt"]
 resource_name = "Box"
 cull_mode = 2
-albedo_texture = ExtResource("3_yhp4t")
+albedo_texture = ExtResource("24_p2b86")
 metallic = 1.0
-metallic_texture = ExtResource("4_heumc")
+metallic_texture = ExtResource("25_3ytim")
 metallic_texture_channel = 2
-roughness_texture = ExtResource("4_heumc")
+roughness_texture = ExtResource("25_3ytim")
 roughness_texture_channel = 1
 normal_enabled = true
-normal_texture = ExtResource("5_uurtv")
+normal_texture = ExtResource("26_sj8jt")
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_h4lal"]
 resource_name = "case_with_textures_Cube"
@@ -89,22 +85,25 @@ blend_shape_mode = 0
 [sub_resource type="BoxShape3D" id="BoxShape3D_yhp4t"]
 size = Vector3(0.4015808, 0.30963135, 0.046295166)
 
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_aur0f"]
+load_path = "res://.godot/imported/case_with_textures_Another_Metallic-Another_Roughness.png-deb30ba1d551a55470972cf627165909.ctex"
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7qlew"]
 resource_name = "Another"
 transparency = 4
 cull_mode = 2
-albedo_texture = ExtResource("6_okyfo")
+albedo_texture = ExtResource("12_i082n")
 metallic = 1.0
-metallic_texture = ExtResource("8_vtsi0")
+metallic_texture = ExtResource("14_3heoj")
 metallic_texture_channel = 2
-roughness_texture = ExtResource("8_vtsi0")
+roughness_texture = SubResource("CompressedTexture2D_aur0f")
 roughness_texture_channel = 1
 emission_enabled = true
 emission = Color(0.4845292, 0.4845292, 0.4845292, 1)
 emission_operator = 1
-emission_texture = ExtResource("7_pfbeq")
+emission_texture = ExtResource("13_vc02r")
 normal_enabled = true
-normal_texture = ExtResource("9_elgt7")
+normal_texture = ExtResource("15_eud4h")
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_ggllj"]
 _surfaces = [{
@@ -251,9 +250,7 @@ transparency = 4
 cull_mode = 2
 albedo_texture = ExtResource("12_i082n")
 metallic = 1.0
-metallic_texture = ExtResource("14_3heoj")
 metallic_texture_channel = 2
-roughness_texture = ExtResource("14_3heoj")
 roughness_texture_channel = 1
 emission_enabled = true
 emission = Color(0.4845292, 0.4845292, 0.4845292, 1)
