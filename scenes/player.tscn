@@ -197,6 +197,4 @@ collide_with_areas = true
 [node name="SnakeBitePoint" type="Node3D" parent="." unique_id=1981808322]
 transform = Transform3D(-0.018691242, 0, -0.99982536, 0, 0.9999999, 0, 0.99982536, 0, -0.018691242, -0.7044029, 0.52622044, -0.17461288)
 
-[node name="Node3D" type="Node3D" parent="." unique_id=624158659]
-
 [editable path="player"]

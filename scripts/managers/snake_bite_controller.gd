@@ -11,6 +11,8 @@ class_name SnakeBiteController
 @export var snake_escape_duration: float = 1.5
 @export var bite_duration: float = 2.0
 @export var camera_turn_duration: float = 0.5
+@export var bite_sound: AudioStreamPlayer
+@export var bite_flash: ColorRect
 
 var _player: Player
 var _snake: Snake
@@ -56,6 +58,7 @@ func _look_at_bite_point() -> void:
 	var bite_point := _player.get_node("SnakeBitePoint") as Node3D
 	_original_camera_transform = camera.global_transform
 	_player.set_control_enabled(false)
+	_player._play_animation("idle")
 
 	var target_transform := camera.global_transform.looking_at(bite_point.global_position, Vector3.UP)
 	await _tween_camera_basis(camera.global_transform.basis, target_transform.basis)
@@ -85,7 +88,18 @@ func _tween_camera_basis(from_basis: Basis, to_basis: Basis) -> void:
 
 func _play_bite_effects() -> void:
 	print("_play_bite_effects()")
-	# TODO: bite UI flash, screen shake, bite sound.
+
+	if bite_sound:
+		bite_sound.play()
+
+	if bite_flash:
+		bite_flash.visible = true
+		bite_flash.color = Color(1.0, 0.0, 0.0, 0.0)
+
+		var tween := create_tween()
+		tween.tween_property(bite_flash, "color", Color(1.0, 0.0, 0.0, 0.45), 0.08)
+		tween.tween_property(bite_flash, "color", Color(1.0, 0.0, 0.0, 0.0), 0.35)
+
 	await get_tree().create_timer(0.5).timeout
 	print("ended")
 

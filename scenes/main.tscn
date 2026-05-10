@@ -40,6 +40,7 @@
 [ext_resource type="Texture2D" uid="uid://cndohs0j3mawi" path="res://assets/icons/rulerMouseIcon.jpg" id="34_dgi5k"]
 [ext_resource type="Script" uid="uid://k5xnfnw5m663" path="res://scripts/UI/symptom_effects_ui.gd" id="41_chjal"]
 [ext_resource type="Shader" uid="uid://dhhsydt1mdviu" path="res://assets/shaders/symptom_overlay.gdshader" id="42_cjqg0"]
+[ext_resource type="AudioStream" uid="uid://b1hxcmvfn8i4v" path="res://assets/sound/human-vocal-male-groan-painful-short-06.ogg" id="43_chjal"]
 [ext_resource type="AudioStream" uid="uid://cw0w35pbkt1yw" path="res://assets/sound/freesound_community-heavy-breath-male-63980.ogg" id="43_vchkt"]
 [ext_resource type="AudioStream" uid="uid://cv8ff8cm7x64c" path="res://assets/sound/kauasilbershlachparodes-heartbeat-sound-493999.ogg" id="44_txyw0"]
 
@@ -263,10 +264,12 @@ inventory = NodePath("../../UI/Inventory")
 symptom_effects_controller = NodePath("../SymptomEffectsController")
 inspection_ui = NodePath("../../UI/InspectionUI")
 
-[node name="SnakeBiteController" type="Node" parent="Managers" unique_id=1469445031]
+[node name="SnakeBiteController" type="Node" parent="Managers" unique_id=1469445031 node_paths=PackedStringArray("bite_sound", "bite_flash")]
 script = ExtResource("8_jkv2x")
 snake_escape_duration = 3.0
 bite_duration = 1.0
+bite_sound = NodePath("../../Sounds/BiteSound")
+bite_flash = NodePath("../../UI/Bite")
 
 [node name="SymptomEffectsController" type="Node" parent="Managers" unique_id=1531025169 node_paths=PackedStringArray("poison_manager")]
 script = ExtResource("18_2f3dj")
@@ -281,12 +284,13 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 53.099094, 0, 67.39883)
 
 [node name="UI" type="CanvasLayer" parent="." unique_id=1809641575]
 
-[node name="BookUIButton" type="Control" parent="UI" unique_id=1143446681]
+[node name="BookUIButton" type="Control" parent="UI" unique_id=1143446681 node_paths=PackedStringArray("player")]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 script = ExtResource("13_trceg")
+player = NodePath("../../Player")
 
 [node name="Previous" type="Button" parent="UI/BookUIButton" unique_id=2041380123]
 layout_mode = 0
@@ -442,8 +446,18 @@ stream = ExtResource("44_txyw0")
 [node name="Timer" type="Timer" parent="UI/SymptomEffectsUI" unique_id=1829146486]
 wait_time = 10.0
 
+[node name="Bite" type="ColorRect" parent="UI" unique_id=1448820529]
+visible = false
+offset_right = 1153.0
+offset_bottom = 651.0
+
 [node name="Player" parent="." unique_id=1589132169 instance=ExtResource("2_0wfyh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 61.894627, 0.001717419, 75.21546)
+
+[node name="Sounds" type="Node" parent="." unique_id=956839637]
+
+[node name="BiteSound" type="AudioStreamPlayer" parent="Sounds" unique_id=120457634]
+stream = ExtResource("43_chjal")
 
 [connection signal="body_entered" from="SnakeTrigger" to="Managers/SnakeBiteController" method="_on_body_entered"]
 [connection signal="pressed" from="UI/BookUIButton/Previous" to="UI/BookUIButton" method="_on_previous_button_pressed"]

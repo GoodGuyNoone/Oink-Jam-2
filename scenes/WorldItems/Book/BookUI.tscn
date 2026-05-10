@@ -4,6 +4,9 @@
 [ext_resource type="Texture2D" uid="uid://rwm72617ojtf" path="res://assets/textures/Book/Frame 1.png" id="7_ghbta"]
 [ext_resource type="Texture2D" uid="uid://dulu188u8be80" path="res://assets/textures/Book/Frame 2.png" id="8_3rghl"]
 
+[sub_resource type="QuadMesh" id="QuadMesh_3djl8"]
+size = Vector2(3, 3)
+
 [sub_resource type="QuadMesh" id="QuadMesh_cxoky"]
 size = Vector2(1, 1.4)
 
@@ -65,6 +68,7 @@ script = ExtResource("1_txwgl")
 
 [node name="BookBase" type="MeshInstance3D" parent="." unique_id=1628821818]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0)
+mesh = SubResource("QuadMesh_3djl8")
 
 [node name="LeftPage" type="MeshInstance3D" parent="." unique_id=90214542]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -0.5, 0.01, 0)
