@@ -4,7 +4,7 @@ class_name Player
 @export var walk_speed: float = 5.0
 @export var sprint_speed: float = 8.0
 @export var jump_velocity: float = 5.0
-@export var movement_lerp_speed: float = 5.0
+@export var movement_lerp_speed: float = 10
 @export var mouse_sensitivity: float = 0.25
 @export var walk_animation_speed_threshold: float = 0.2
 
@@ -116,7 +116,6 @@ func _update_target() -> void:
 	current_target = hit
 
 	if current_target.has_method("set_highlighted"):
-		print("set highlight to: " + current_target.name)
 		current_target.set_highlighted(true)
 
 	if interaction_label:

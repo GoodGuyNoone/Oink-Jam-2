@@ -8,19 +8,14 @@
 [ext_resource type="Material" uid="uid://br7ryun77o4fr" path="res://resources/world_items/ItemOutline.tres" id="4_5poiv"]
 [ext_resource type="Script" uid="uid://de0wc7vfwkfjt" path="res://scripts/Managers/poison_manager.gd" id="4_tipki"]
 [ext_resource type="Script" uid="uid://7c6aeatss7mu" path="res://scripts/Data/snake_data.gd" id="5_85g3d"]
-[ext_resource type="PackedScene" uid="uid://dv0ahkmm42if0" path="res://scenes/Medkit/bottle.tscn" id="5_a8y0u"]
 [ext_resource type="Script" uid="uid://bshijebrw48ek" path="res://scripts/interactable_item.gd" id="5_jbj1t"]
 [ext_resource type="PackedScene" uid="uid://sd2vhjq557jh" path="res://scenes/WorldItems/ruler.tscn" id="5_yq6so"]
 [ext_resource type="PackedScene" uid="uid://buff32gs1nsp5" path="res://scenes/WorldItems/thermometer.tscn" id="6_fv21b"]
 [ext_resource type="Resource" uid="uid://bfl3dw5aq14g2" path="res://resources/world_items/ruler.tres" id="6_tel4y"]
 [ext_resource type="Resource" uid="uid://54glpbop828h" path="res://resources/world_items/book.tres" id="6_yc10j"]
 [ext_resource type="Script" uid="uid://bjwxbip14m648" path="res://scripts/Managers/snake_bite_controller.gd" id="8_jkv2x"]
-[ext_resource type="Resource" uid="uid://dohyme12rsuc4" path="res://resources/world_items/1.tres" id="8_jscy8"]
 [ext_resource type="Resource" uid="uid://dnd3lj4gtwmwd" path="res://resources/world_items/thermometer.tres" id="8_qkpxi"]
-[ext_resource type="Resource" uid="uid://bt81g7u7xv6et" path="res://resources/world_items/2.tres" id="9_pm3ni"]
 [ext_resource type="Script" uid="uid://bmfg0xx8a43pl" path="res://scripts/Managers/game_manager.gd" id="10_choun"]
-[ext_resource type="Resource" uid="uid://wfptfltk35ld" path="res://resources/world_items/3.tres" id="10_y6deb"]
-[ext_resource type="Resource" uid="uid://bi1pinqgqydli" path="res://resources/world_items/4.tres" id="11_og1vs"]
 [ext_resource type="PackedScene" uid="uid://dbo01qbg0nwcy" path="res://scenes/WorldItems/Book/Book.tscn" id="11_ya4ey"]
 [ext_resource type="Script" uid="uid://d382l3gj2mtgw" path="res://scripts/Book/book_ui_button.gd" id="13_trceg"]
 [ext_resource type="PackedScene" uid="uid://di12l7fw3q4ev" path="res://scenes/Car.tscn" id="16_j8jky"]
@@ -197,30 +192,6 @@ interaction_type = 1
 interaction_text = "Pick up"
 item_data = ExtResource("6_yc10j")
 inventory = NodePath("../../UI/Inventory")
-
-[node name="Bottle" parent="Environment" unique_id=1785250810 instance=ExtResource("5_a8y0u")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.9452686, 0.4411466, -0.28960645)
-script = ExtResource("5_jbj1t")
-interaction_text = "Consume"
-item_data = ExtResource("8_jscy8")
-
-[node name="Bottle2" parent="Environment" unique_id=200990542 instance=ExtResource("5_a8y0u")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.468567, 0.4411466, -0.28960645)
-script = ExtResource("5_jbj1t")
-interaction_text = "Consume"
-item_data = ExtResource("9_pm3ni")
-
-[node name="Bottle3" parent="Environment" unique_id=312825499 instance=ExtResource("5_a8y0u")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.468567, 0.4411466, 0.24490595)
-script = ExtResource("5_jbj1t")
-interaction_text = "Consume"
-item_data = ExtResource("10_y6deb")
-
-[node name="Bottle4" parent="Environment" unique_id=2066046475 instance=ExtResource("5_a8y0u")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.9971213, 0.4411466, 0.24490595)
-script = ExtResource("5_jbj1t")
-interaction_text = "Consume"
-item_data = ExtResource("11_og1vs")
 
 [node name="Car" parent="Environment" unique_id=1184071739 instance=ExtResource("16_j8jky")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.9706192, 0, 3.1456833)

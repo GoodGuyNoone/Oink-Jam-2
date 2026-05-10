@@ -14,6 +14,8 @@ enum InteractionType {
 @export var inventory: Inventory
 @export var animation_player: AnimationPlayer
 @export var controller_node: InteractableItem
+@export var consume_sound_id: String = ""
+@export var pickup_sound_id: String = ""
 
 @onready var poison_manager = get_node("/root/Main/Managers/PoisonManager")
 
@@ -72,6 +74,9 @@ func _consume_item() -> void:
 
 	used = true
 
+	if consume_sound_id != "":
+		AudioManager.play_sfx(consume_sound_id, -2.0, 0.95, 1.08)
+
 	if poison_manager:
 		poison_manager.select_item(item_data.item_id)
 
@@ -91,8 +96,11 @@ func _pickup_to_inventory() -> void:
 		print("Inventory full")
 		return
 
-	# used = true
-	# queue_free()
+	if pickup_sound_id != "":
+		AudioManager.play_sfx(pickup_sound_id, -4.0, 0.95, 1.05)
+
+	used = true
+	queue_free()
 
 
 func _play_animation() -> void:

@@ -33,6 +33,7 @@ func next_spread() -> void:
 	if is_flipping or current_spread >= _get_total_spreads() - 1:
 		return
 
+	AudioManager.play_sfx("flipPage", -2.0, 0.95, 1.08)
 	var old_right_index := current_spread * 2 + 1
 	var next_left_index := (current_spread + 1) * 2
 	var next_right_index := next_left_index + 1
@@ -53,7 +54,8 @@ func next_spread() -> void:
 func previous_spread() -> void:
 	if is_flipping or current_spread <= 0:
 		return
-
+	
+	AudioManager.play_sfx("flipPage", -2.0, 0.95, 1.08)
 	var old_left_index := current_spread * 2
 	var prev_left_index := (current_spread - 1) * 2
 	var prev_right_index := prev_left_index + 1

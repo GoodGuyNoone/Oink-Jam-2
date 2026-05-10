@@ -16,6 +16,8 @@
 [ext_resource type="Resource" uid="uid://c5nxgavapi3yn" path="res://resources/world_items/greenSyringe.tres" id="16_2j6ik"]
 [ext_resource type="Resource" uid="uid://dk1t4ks8nh2h0" path="res://resources/world_items/orangeSyringe.tres" id="17_6oja8"]
 [ext_resource type="Resource" uid="uid://bh65b7ukotnk6" path="res://resources/world_items/redSyringe.tres" id="18_13h7l"]
+[ext_resource type="AudioStream" uid="uid://dm6oy6p74h6vy" path="res://assets/sound/closeCase.ogg" id="20_aur0f"]
+[ext_resource type="AudioStream" uid="uid://bjfb6wvokinf4" path="res://assets/sound/openCase.ogg" id="21_m2g8r"]
 [ext_resource type="Texture2D" uid="uid://cvxl4avqvj2gp" path="res://assets/models/case_with_textures (2)_Box_BaseColor.png" id="24_p2b86"]
 [ext_resource type="Texture2D" uid="uid://df3g3yr7a3m5e" path="res://assets/models/case_with_textures (2)_Box_Metallic-Box_Roughness.png" id="25_3ytim"]
 [ext_resource type="Texture2D" uid="uid://bao4vwhjyr2rp" path="res://assets/models/case_with_textures (2)_Box_Normal.png" id="26_sj8jt"]
@@ -599,6 +601,21 @@ tracks/0/path = NodePath("Armature/Skeleton3D:Top")
 tracks/0/interp = 2
 tracks/0/loop_wrap = true
 tracks/0/keys = PackedFloat32Array(0, 1, 5.854957e-08, -0.95371693, -0.300706, 1.8569554e-07, 0.2, 1, 3.5870602e-08, -0.9828836, -0.1842283, 1.9137451e-07, 0.3, 1, -1.5926664e-08, -0.996649, 0.081798114, 1.9405475e-07, 0.4, 1, -7.5477395e-08, -0.9218086, 0.38764563, 1.7948278e-07, 0.5, 1, -1.2018451e-07, -0.78676116, 0.6172576, 1.5318804e-07, 0.6, 1, -1.3767878e-07, -0.7071068, 0.7071068, 1.3767878e-07)
+tracks/1/type = "audio"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../close")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("20_aur0f")
+}],
+"times": PackedFloat32Array(0.46666667)
+}
+tracks/1/use_blend = true
 
 [sub_resource type="Animation" id="Animation_heumc"]
 resource_name = "Open"
@@ -610,6 +627,21 @@ tracks/0/path = NodePath("Armature/Skeleton3D:Top")
 tracks/0/interp = 2
 tracks/0/loop_wrap = true
 tracks/0/keys = PackedFloat32Array(0, 1, -1.3767878e-07, -0.7071068, 0.7071068, 1.3767878e-07, 0.2, 1, -1.2018448e-07, -0.78676116, 0.61725754, 1.5318805e-07, 0.3, 1, -7.547735e-08, -0.9218086, 0.38764542, 1.7948277e-07, 0.4, 1, -1.5926654e-08, -0.996649, 0.081798054, 1.9405476e-07, 0.5, 1, 3.5870627e-08, -0.9828835, -0.18422844, 1.913745e-07, 0.6, 1, 5.854957e-08, -0.95371693, -0.300706, 1.8569554e-07)
+tracks/1/type = "audio"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../open")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.16,
+"stream": ExtResource("21_m2g8r")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/1/use_blend = true
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_6wawg"]
 _data = {
@@ -645,7 +677,7 @@ bones/1/parent = -1
 bones/1/rest = Transform3D(-1, 0, -3.894144e-07, 3.894144e-07, 0, -1, 0, -1, 0, 0, 0, 0)
 bones/1/enabled = true
 bones/1/position = Vector3(0, 0, 0)
-bones/1/rotation = Quaternion(-5.854958e-08, 0.95371693, 0.30070597, -1.8569554e-07)
+bones/1/rotation = Quaternion(1.3767878e-07, 0.70710677, -0.70710677, -1.3767878e-07)
 bones/1/scale = Vector3(1, 1, 1)
 
 [node name="Case" type="MeshInstance3D" parent="case_with_textures/Armature/Skeleton3D" unique_id=996253372]
@@ -659,7 +691,7 @@ skin = SubResource("Skin_uteyr")
 skeleton = NodePath("..")
 
 [node name="BoneAttachment3D" type="BoneAttachment3D" parent="case_with_textures/Armature/Skeleton3D" unique_id=1556723375]
-transform = Transform3D(-0.9999999, 6.3948846e-14, -3.8941434e-07, -2.2335894e-07, 0.8191519, 0.5735767, 3.189895e-07, 0.5735767, -0.81915176, 0, 0, 0)
+transform = Transform3D(-1, 0, -3.8941442e-07, 3.8941442e-07, 0, -1, 0, -1, 0, 0, 0, 0)
 bone_name = "Top"
 bone_idx = 1
 
@@ -698,6 +730,7 @@ script = ExtResource("1_htdnc")
 outline_material = ExtResource("10_2vliq")
 interaction_text = "Drink"
 item_data = ExtResource("10_heumc")
+consume_sound_id = "useSyrup"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="case_with_textures/InteractableItems/BlackSyrup" unique_id=1754449159]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.15460497, 0.00483644, 0.10378794)
@@ -712,6 +745,7 @@ script = ExtResource("1_htdnc")
 outline_material = ExtResource("10_2vliq")
 interaction_text = "Drink"
 item_data = ExtResource("11_g51n4")
+consume_sound_id = "useSyrup"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="case_with_textures/InteractableItems/PurpleSyrup" unique_id=2025942918]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.15465158, 0.00483644, 0.025317559)
@@ -726,6 +760,7 @@ script = ExtResource("1_htdnc")
 outline_material = ExtResource("10_2vliq")
 interaction_text = "Drink"
 item_data = ExtResource("12_2vliq")
+consume_sound_id = "useSyrup"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="case_with_textures/InteractableItems/PinkSyrup" unique_id=1582144046]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.08251459, 0.0048365593, 0.059999317)
@@ -740,6 +775,7 @@ script = ExtResource("1_htdnc")
 outline_material = ExtResource("10_2vliq")
 interaction_text = "Consume"
 item_data = ExtResource("13_5otkt")
+consume_sound_id = "openTablets"
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="case_with_textures/InteractableItems/YellowTablets" unique_id=1679955946]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.032685764, 0.00483644, 0.07123959)
@@ -754,6 +790,7 @@ script = ExtResource("1_htdnc")
 outline_material = ExtResource("10_2vliq")
 interaction_text = "Consume"
 item_data = ExtResource("14_aur0f")
+consume_sound_id = "openTablets"
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="case_with_textures/InteractableItems/BlueTablets" unique_id=1470174248]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.013800519, 0.0048365593, 0.016849887)
@@ -768,6 +805,7 @@ script = ExtResource("1_htdnc")
 outline_material = ExtResource("10_2vliq")
 interaction_text = "Consume"
 item_data = ExtResource("15_m2g8r")
+consume_sound_id = "openTablets"
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="case_with_textures/InteractableItems/WhiteTablets" unique_id=1916809849]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.027773913, 0.00483644, 0.10994087)
@@ -782,6 +820,7 @@ script = ExtResource("1_htdnc")
 outline_material = ExtResource("10_2vliq")
 interaction_text = "Use"
 item_data = ExtResource("16_2j6ik")
+consume_sound_id = "useSyringe"
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="case_with_textures/InteractableItems/GreenSyringe" unique_id=95507717]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.08509824, 0.022694934, 0.06821444)
@@ -796,6 +835,7 @@ script = ExtResource("1_htdnc")
 outline_material = ExtResource("10_2vliq")
 interaction_text = "Use"
 item_data = ExtResource("17_6oja8")
+consume_sound_id = "useSyringe"
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="case_with_textures/InteractableItems/OrangeSyringe" unique_id=471123104]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.17248115, 0.022695053, 0.064995214)
@@ -810,6 +850,7 @@ script = ExtResource("1_htdnc")
 outline_material = ExtResource("10_2vliq")
 interaction_text = "Use"
 item_data = ExtResource("18_13h7l")
+consume_sound_id = "useSyringe"
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="case_with_textures/InteractableItems/RedSyringe" unique_id=1983727306]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.12764886, 0.022695053, 0.065817565)
@@ -822,8 +863,11 @@ shape = SubResource("ConcavePolygonShape3D_g51n4")
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1798403110]
 root_node = NodePath("../case_with_textures")
 libraries/ = SubResource("AnimationLibrary_6wawg")
-autoplay = &"Close"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=856817387]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.00013105571, 0.00058975816)
 shape = SubResource("ConcavePolygonShape3D_hob8r")
+
+[node name="open" type="AudioStreamPlayer3D" parent="." unique_id=1558249481]
+
+[node name="close" type="AudioStreamPlayer3D" parent="." unique_id=626896884]
