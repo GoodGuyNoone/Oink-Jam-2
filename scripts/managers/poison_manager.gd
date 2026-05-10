@@ -19,6 +19,7 @@ signal item_checked(
 
 var current_snake: SnakeData
 var time_left: float = 0.0
+var elapsed_time: float = 0.0
 var is_poisoned: bool = false
 
 var picked_items: Array[String] = []
@@ -30,6 +31,7 @@ func _process(delta: float) -> void:
 		return
 	
 	time_left -= delta
+	elapsed_time += delta
 	poison_updated.emit(time_left)
 
 	if time_left <= 0:
@@ -41,6 +43,7 @@ func apply_random_poison() -> void:
 		return
 
 	current_snake = snakes.pick_random()
+	elapsed_time = 0.0
 	time_left = time_to_die
 	is_poisoned = true
 
@@ -92,6 +95,7 @@ func _all_required_items_picked() -> bool:
 
 func _finish_poison(success: bool) -> void:
 	is_poisoned = false
+	elapsed_time = 0.0
 	picked_items.clear()
 	picked_correct_items.clear()
 	poison_ended.emit(success)

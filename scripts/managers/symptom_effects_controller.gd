@@ -32,8 +32,8 @@ func _on_poison_started(snake: SnakeData) -> void:
 	print("queued_effect_symptoms: ", str(queued_effect_symptoms))
 
 
-func _on_poison_updated(time_left: float) -> void:
-	var elapsed := poison_manager.time_to_die - time_left
+func _on_poison_updated(_time_left: float) -> void:
+	var elapsed: float = poison_manager.elapsed_time
 
 	for i in range(effect_trigger_times.size()):
 		if triggered_indices.has(i):

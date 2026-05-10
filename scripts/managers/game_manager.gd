@@ -13,11 +13,9 @@ class_name GameManager
 
 func _ready() -> void:
 	poison_manager.poison_started.connect(_on_poison_started)
-	poison_manager.poison_updated.connect(_on_poison_updated)
 	poison_manager.item_checked.connect(_on_item_checked)
 	poison_manager.poison_ended.connect(_on_poison_ended)
 	inventory.item_used.connect(_on_inventory_item_used)
-	symptom_effects_controller.symptom_effect_triggered.connect(_on_symptom_effect_triggered)
 
 
 func _on_poison_started(snake: SnakeData) -> void:
@@ -26,11 +24,6 @@ func _on_poison_started(snake: SnakeData) -> void:
 	print("Symptoms:", str(snake.symptoms))
 	print("Required items:", snake.required_cure)
 	print("================================")
-
-
-func _on_poison_updated(time_left: float) -> void:
-	return
-	# print("Time left:", snapped(time_left, 0.1))
 
 
 func _on_item_checked(item_id: String, is_correct: bool, picked_correct_count: int, required_count: int) -> void:
@@ -76,22 +69,3 @@ func _on_inventory_item_used(item: ItemData) -> void:
 
 		_:
 			print("No logic for:", item.item_id)
-
-func _on_symptom_effect_triggered(
-	symptom: SymptomData,
-	symptom_index: int
-) -> void:
-	print("Symptom queue index:", symptom_index)
-
-	match symptom.symptom_id:
-		"headache":
-			print("Trigger headache UI")
-
-		"pulse":
-			print("Trigger pulse sound")
-
-		"shivering":
-			print("Trigger shivering effect")
-
-		"blurred_vision":
-			print("Trigger blur effect")

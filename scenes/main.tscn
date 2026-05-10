@@ -27,13 +27,10 @@
 [ext_resource type="Script" uid="uid://cvq5ydgjrhf1t" path="res://scripts/inventory.gd" id="16_jbj1t"]
 [ext_resource type="Script" uid="uid://ds3e3yy2chya6" path="res://scripts/Managers/symptom_effects_controller.gd" id="18_2f3dj"]
 [ext_resource type="Texture2D" uid="uid://m2cujbpcac4h" path="res://assets/textures/Environment/Grass/Stylized_HandpaintedGrass_02_normal.jpg" id="18_fuf3a"]
-[ext_resource type="Resource" uid="uid://dciv01pvefdil" path="res://resources/snakes/BlackleafPitViper.tres" id="21_5he1u"]
-[ext_resource type="Resource" uid="uid://dc07ogf3i4b64" path="res://resources/snakes/AmberRibbonsnake.tres" id="22_5poiv"]
+[ext_resource type="Resource" uid="uid://dpds7nyh5rn21" path="res://resources/snakes/test.tres" id="22_2cjbq"]
 [ext_resource type="PackedScene" uid="uid://c8kb13vfc7awj" path="res://scenes/UI/inventory_slot.tscn" id="22_jscy8"]
 [ext_resource type="Texture2D" uid="uid://cn1wdme3o57sf" path="res://assets/icons/1(1).png" id="22_og1vs"]
-[ext_resource type="Resource" uid="uid://cbpsdo1ki36iq" path="res://resources/snakes/StoneViper.tres" id="23_2cjbq"]
 [ext_resource type="Texture2D" uid="uid://bi20plyidpyd" path="res://assets/icons/2.png" id="23_2wyq8"]
-[ext_resource type="Resource" uid="uid://beqlk387rwe8k" path="res://resources/snakes/ClayStinger.tres" id="24_chjal"]
 [ext_resource type="Texture2D" uid="uid://u6tbel3snhmj" path="res://assets/icons/3.png" id="24_vxglm"]
 [ext_resource type="Script" uid="uid://cn1shumrhj2g6" path="res://scripts/UI/clock_ui.gd" id="26_2wyq8"]
 [ext_resource type="Texture2D" uid="uid://c3cgb3natf6w4" path="res://assets/icons/clock.png" id="27_2f3dj"]
@@ -41,6 +38,10 @@
 [ext_resource type="PackedScene" uid="uid://c5cmxhagp5ibg" path="res://scenes/UI/inspection_ui.tscn" id="32_qkpxi"]
 [ext_resource type="Script" uid="uid://d3lv7ejo2tbcr" path="res://scripts/UI/inspection_ui.gd" id="33_5q0nq"]
 [ext_resource type="Texture2D" uid="uid://cndohs0j3mawi" path="res://assets/icons/rulerMouseIcon.jpg" id="34_dgi5k"]
+[ext_resource type="Script" uid="uid://k5xnfnw5m663" path="res://scripts/UI/symptom_effects_ui.gd" id="41_chjal"]
+[ext_resource type="Shader" uid="uid://dhhsydt1mdviu" path="res://assets/shaders/symptom_overlay.gdshader" id="42_cjqg0"]
+[ext_resource type="AudioStream" uid="uid://cw0w35pbkt1yw" path="res://assets/sound/freesound_community-heavy-breath-male-63980.ogg" id="43_vchkt"]
+[ext_resource type="AudioStream" uid="uid://cv8ff8cm7x64c" path="res://assets/sound/kauasilbershlachparodes-heartbeat-sound-493999.ogg" id="44_txyw0"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0wfyh"]
 albedo_texture = ExtResource("1_o5qli")
@@ -138,6 +139,13 @@ texture_list = Array[Terrain3DTextureAsset]([SubResource("Terrain3DTextureAsset_
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_trceg"]
 size = Vector3(20, 3, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_vchkt"]
+shader = ExtResource("42_cjqg0")
+shader_parameter/dizziness_intensity = 0.0
+shader_parameter/tremor_intensity = 0.0
+shader_parameter/heartbeat_intensity = 0.0
+shader_parameter/time = 0.0
 
 [node name="Main" type="Node3D" unique_id=596857963]
 
@@ -244,11 +252,12 @@ shape = SubResource("BoxShape3D_trceg")
 
 [node name="PoisonManager" type="Node" parent="Managers" unique_id=415290388]
 script = ExtResource("4_tipki")
-snakes = Array[ExtResource("5_85g3d")]([ExtResource("21_5he1u"), ExtResource("22_5poiv"), ExtResource("23_2cjbq"), ExtResource("24_chjal")])
+snakes = Array[ExtResource("5_85g3d")]([ExtResource("22_2cjbq")])
 time_to_die = 50.0
 
-[node name="GameManager" type="Node" parent="Managers" unique_id=242879686 node_paths=PackedStringArray("poison_manager", "inventory", "symptom_effects_controller", "inspection_ui")]
+[node name="GameManager" type="Node" parent="Managers" unique_id=242879686 node_paths=PackedStringArray("player", "poison_manager", "inventory", "symptom_effects_controller", "inspection_ui")]
 script = ExtResource("10_choun")
+player = NodePath("../../Player")
 poison_manager = NodePath("../PoisonManager")
 inventory = NodePath("../../UI/Inventory")
 symptom_effects_controller = NodePath("../SymptomEffectsController")
@@ -396,6 +405,42 @@ offset_top = 3.0
 offset_right = 61.0
 offset_bottom = 11.0
 text = "x"
+
+[node name="SymptomEffectsUI" type="Control" parent="UI" unique_id=1580959087 node_paths=PackedStringArray("symptom_controller", "poison_manager", "overlay", "tremor_audio", "breath_audio", "heartbeat_audio", "tremor_timer")]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("41_chjal")
+symptom_controller = NodePath("../../Managers/SymptomEffectsController")
+poison_manager = NodePath("../../Managers/PoisonManager")
+overlay = NodePath("SceenFXLayer/SymptomOverlay")
+tremor_audio = NodePath("Audio/TremorAudio")
+breath_audio = NodePath("Audio/BreathAudio")
+heartbeat_audio = NodePath("Audio/HeartbeatAudio")
+tremor_timer = NodePath("Timer")
+
+[node name="SceenFXLayer" type="CanvasLayer" parent="UI/SymptomEffectsUI" unique_id=569711925]
+
+[node name="SymptomOverlay" type="ColorRect" parent="UI/SymptomEffectsUI/SceenFXLayer" unique_id=30472095]
+material = SubResource("ShaderMaterial_vchkt")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Audio" type="Node" parent="UI/SymptomEffectsUI" unique_id=301177692]
+
+[node name="TremorAudio" type="AudioStreamPlayer" parent="UI/SymptomEffectsUI/Audio" unique_id=2076465950]
+
+[node name="BreathAudio" type="AudioStreamPlayer" parent="UI/SymptomEffectsUI/Audio" unique_id=206886836]
+stream = ExtResource("43_vchkt")
+
+[node name="HeartbeatAudio" type="AudioStreamPlayer" parent="UI/SymptomEffectsUI/Audio" unique_id=252833246]
+stream = ExtResource("44_txyw0")
+
+[node name="Timer" type="Timer" parent="UI/SymptomEffectsUI" unique_id=1829146486]
+wait_time = 10.0
 
 [node name="Player" parent="." unique_id=1589132169 instance=ExtResource("2_0wfyh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 61.894627, 0.001717419, 75.21546)
