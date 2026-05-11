@@ -1,6 +1,7 @@
 [gd_resource type="Resource" script_class="SnakeData" format=3 uid="uid://dciv01pvefdil"]
 
 [ext_resource type="Script" uid="uid://7c6aeatss7mu" path="res://scripts/Data/snake_data.gd" id="1_r6v8b"]
+[ext_resource type="Texture2D" uid="uid://g0d7deo52q20" path="res://assets/textures/snakes/03_swelling_Darkening_largebite.png" id="1_s8pa3"]
 [ext_resource type="Script" uid="uid://cxhyxl8lce2v6" path="res://scripts/Data/symptom_data.gd" id="2_3f23y"]
 [ext_resource type="Material" uid="uid://dp475e2yidk24" path="res://assets/materials/materials/snakes/BlackleafPitViper.tres" id="2_s8pa3"]
 
@@ -9,4 +10,5 @@ script = ExtResource("1_r6v8b")
 name = "BlackleafPitViper"
 snake_texture = ExtResource("2_s8pa3")
 required_cure = Array[String](["redSyringe", "yellowTablets", "purpleSyrup"])
+bite_sprite = ExtResource("1_s8pa3")
 metadata/_custom_type_script = "uid://7c6aeatss7mu"

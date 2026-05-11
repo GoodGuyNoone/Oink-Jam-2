@@ -1,0 +1,5 @@
+[gd_scene format=3 uid="uid://cgonkprx2j4tf"]
+
+[ext_resource type="PackedScene" uid="uid://dhhr373yvp34d" path="res://assets/models/environmentEntities/bush003.glb" id="1_6ser4"]
+
+[node name="bush003" unique_id=1028892087 instance=ExtResource("1_6ser4")]

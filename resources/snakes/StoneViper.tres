@@ -1,5 +1,6 @@
 [gd_resource type="Resource" script_class="SnakeData" format=3 uid="uid://cbpsdo1ki36iq"]
 
+[ext_resource type="Texture2D" uid="uid://cifpdyb872d6j" path="res://assets/textures/snakes/01_swelling_ redness_largebite.png" id="1_763f0"]
 [ext_resource type="Script" uid="uid://7c6aeatss7mu" path="res://scripts/Data/snake_data.gd" id="1_r4b6c"]
 [ext_resource type="Script" uid="uid://cxhyxl8lce2v6" path="res://scripts/Data/symptom_data.gd" id="2_7kffp"]
 [ext_resource type="Material" uid="uid://c8664m1syg2jt" path="res://assets/materials/materials/snakes/StoneViper.tres" id="2_wnafa"]
@@ -11,4 +12,5 @@ name = "StoneViper"
 snake_texture = ExtResource("2_wnafa")
 required_cure = Array[String](["redSyringe", "whiteTablets", "blackSyrup"])
 symptoms = Array[ExtResource("2_7kffp")]([ExtResource("3_7kffp")])
+bite_sprite = ExtResource("1_763f0")
 metadata/_custom_type_script = "uid://7c6aeatss7mu"

@@ -1,0 +1,5 @@
+[gd_scene format=3 uid="uid://cih55bd4l06b"]
+
+[ext_resource type="PackedScene" uid="uid://yxu584m6n4h0" path="res://assets/models/environmentEntities/Tree001.glb" id="1_wm415"]
+
+[node name="Tree001" unique_id=1838337214 instance=ExtResource("1_wm415")]
