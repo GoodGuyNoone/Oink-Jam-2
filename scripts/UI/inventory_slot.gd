@@ -1,8 +1,8 @@
 extends Panel
 class_name InventorySlot
 
-@onready var item_icon: TextureRect = $IconBorder/ItemIcon
-@onready var key_icon: TextureRect = $KeyIcon
+@onready var item_icon: TextureRect = $VBoxContainer/IconBorder/ItemIcon
+@onready var key_icon: TextureRect = $VBoxContainer/KeyIcon
 
 
 func set_item(item: ItemData) -> void:
@@ -14,5 +14,5 @@ func set_item(item: ItemData) -> void:
 		item_icon.visible = true
 
 
-func set_key_icon(texture: Texture2D) -> void:
+func set_key_icon(texture: CompressedTexture2D) -> void:
 	key_icon.texture = texture

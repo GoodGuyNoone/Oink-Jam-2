@@ -34,7 +34,7 @@ func _physics_process(delta: float) -> void:
 	_update_target()
 
 	if Input.is_action_just_pressed("Interact") and current_target:
-		current_target.interact(owner)
+		current_target.interact(self)
 
 	_update_speed()
 	_apply_gravity(delta)
@@ -93,6 +93,8 @@ func _update_target() -> void:
 	if current_target:
 		current_target.set_highlighted(false)
 
+	current_target = null
+	
 	if interaction_label:
 		interaction_label.visible = false
 

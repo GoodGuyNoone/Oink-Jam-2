@@ -29,7 +29,7 @@ func _on_poison_started(_snake: SnakeData) -> void:
 
 
 func _on_poison_updated(time_left: float) -> void:
-	var ratio: float = clamp(time_left / max_time, 0.0, 1.0)
+	var ratio: float = 1 - clamp(time_left / max_time, 0.0, 1.0)
 
 	clock_progress.value = ratio
 	time_label.text = str(ceil(time_left))

@@ -38,11 +38,13 @@ func _process(delta: float) -> void:
 		_finish_poison(false)
 
 
+func pick_random_snake() -> void:
+	current_snake = snakes.pick_random()
+
 func apply_random_poison() -> void:
 	if is_poisoned:
 		return
 
-	current_snake = snakes.pick_random()
 	elapsed_time = 0.0
 	time_left = time_to_die
 	is_poisoned = true

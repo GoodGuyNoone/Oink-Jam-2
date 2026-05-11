@@ -3,7 +3,7 @@ class_name Inventory
 
 const MAX_SLOTS := 3
 
-@export var key_icons: Array[Texture2D]
+@export var key_icons: Array[CompressedTexture2D]
 
 signal item_used(item: ItemData)
 

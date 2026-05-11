@@ -53,6 +53,9 @@ func interact(_interactor: Node) -> void:
 			_play_animation()
 
 
+
+
+
 func set_highlighted(enabled: bool) -> void:
 	var mesh = find_child("MeshInstance3D", false, false)
 

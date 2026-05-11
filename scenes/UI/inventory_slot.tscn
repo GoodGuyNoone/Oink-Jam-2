@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://c8kb13vfc7awj"]
 
 [ext_resource type="Script" uid="uid://dgbi7cbvb0yvh" path="res://scripts/UI/inventory_slot.gd" id="1_l3fr4"]
+[ext_resource type="Texture2D" uid="uid://dq58wuhabe871" path="res://assets/import/Book_icon.png" id="2_et8er"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_l3fr4"]
 
@@ -46,14 +47,18 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_bjo5i")
 
-[node name="IconBorder" type="Panel" parent="." unique_id=1854934666]
-custom_minimum_size = Vector2(72, 72)
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1137883588]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_right = 72.0
+offset_bottom = 111.0
+theme_override_constants/separation = 8
+
+[node name="IconBorder" type="Panel" parent="VBoxContainer" unique_id=1854934666]
+custom_minimum_size = Vector2(72, 72)
+layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_et8er")
 
-[node name="ItemIcon" type="TextureRect" parent="IconBorder" unique_id=2144050000]
+[node name="ItemIcon" type="TextureRect" parent="VBoxContainer/IconBorder" unique_id=2144050000]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -61,15 +66,12 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
+texture = ExtResource("2_et8er")
 expand_mode = 3
 stretch_mode = 5
 
-[node name="KeyIcon" type="TextureRect" parent="." unique_id=1048301448]
-custom_minimum_size = Vector2(24, 24)
-layout_mode = 0
-offset_left = 14.0
-offset_top = 80.0
-offset_right = 54.0
-offset_bottom = 120.0
+[node name="KeyIcon" type="TextureRect" parent="VBoxContainer" unique_id=1048301448]
+custom_minimum_size = Vector2(35, 35)
+layout_mode = 2
 expand_mode = 3
 stretch_mode = 5

@@ -30,7 +30,7 @@ func _on_body_entered(body: Node3D) -> void:
 
 
 func _run_bite_sequence() -> void:
-	poison_manager.apply_random_poison()
+	poison_manager.pick_random_snake()
 	_spawn_snake()
 
 	await _snake.attached_to_player
@@ -40,6 +40,7 @@ func _run_bite_sequence() -> void:
 	await _detach_snake_and_watch()
 	_remove_snake()
 	await _restore_camera()
+	poison_manager.apply_random_poison()
 
 
 func _spawn_snake() -> void:
