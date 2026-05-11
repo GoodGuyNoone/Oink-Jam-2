@@ -57,7 +57,7 @@ func _handle_mouse_look(event: InputEvent) -> void:
 	if event is InputEventMouseMotion:
 		rotate_y(deg_to_rad(-event.relative.x * mouse_sensitivity))
 		camera_mount.rotate_x(deg_to_rad(-event.relative.y * mouse_sensitivity))
-		camera_mount.rotation.x = clamp(camera_mount.rotation.x, deg_to_rad(-89), deg_to_rad(89))
+		camera_mount.rotation.x = clamp(camera_mount.rotation.x, deg_to_rad(-75), deg_to_rad(89))
 
 
 func _update_speed() -> void:
