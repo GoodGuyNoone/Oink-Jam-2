@@ -66,8 +66,10 @@ func select_item(item_id: String) -> void:
 	if is_correct:
 		picked_correct_items.append(item_id)
 		time_left += correct_item_bonus_time
+		AudioManager.play_sfx("relief", -2.0, 0.95, 1.08)
 	else:
 		time_left -= wrong_item_penalty_time
+		AudioManager.play_sfx("hurt", -2.0, 0.95, 1.08)
 
 	poison_updated.emit(time_left)
 
@@ -77,8 +79,6 @@ func select_item(item_id: String) -> void:
 		picked_correct_items.size(),
 		current_snake.required_cure.size()
 	)
-
-	poison_updated.emit(time_left)
 
 	if time_left <= 0.0:
 		_finish_poison(false)

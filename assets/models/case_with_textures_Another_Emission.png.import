@@ -2,20 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c8jvyhry78yes"
-path.s3tc="res://.godot/imported/case_with_textures (2)_Another_BaseColor-Another_Alpha.png-6e26c288de4ada1569941a06df8ae138.s3tc.ctex"
+uid="uid://bysm2enjktra4"
+path.s3tc="res://.godot/imported/case_with_textures_Another_Emission.png-14cbde683acf38351f5ae29e680106ff.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "06aff32833591723560dd656110f5d04"
+"md5": "20846bc9d03aa6b667aac8c7d91f8b63"
 }
 
 [deps]
 
-source_file="res://assets/models/case_with_textures (2)_Another_BaseColor-Another_Alpha.png"
-dest_files=["res://.godot/imported/case_with_textures (2)_Another_BaseColor-Another_Alpha.png-6e26c288de4ada1569941a06df8ae138.s3tc.ctex"]
+source_file="res://assets/models/case_with_textures_Another_Emission.png"
+dest_files=["res://.godot/imported/case_with_textures_Another_Emission.png-14cbde683acf38351f5ae29e680106ff.s3tc.ctex"]
 
 [params]
 

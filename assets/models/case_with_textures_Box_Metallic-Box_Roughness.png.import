@@ -2,20 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d1gtyvldbxdmg"
-path.s3tc="res://.godot/imported/case_with_textures (2)_Another_Metallic-Another_Roughness.png-1663fabdb2e17f4e8a3eadabcf6b1ed1.s3tc.ctex"
+uid="uid://cdyse85l1471x"
+path.s3tc="res://.godot/imported/case_with_textures_Box_Metallic-Box_Roughness.png-36429c97341e17153ae0e0262dd39962.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "b3d429b07fb55561f50e4dcca4b1e19f"
+"md5": "6b57bb93fdbcbcc3f5b01ab55041d81f"
 }
 
 [deps]
 
-source_file="res://assets/models/case_with_textures (2)_Another_Metallic-Another_Roughness.png"
-dest_files=["res://.godot/imported/case_with_textures (2)_Another_Metallic-Another_Roughness.png-1663fabdb2e17f4e8a3eadabcf6b1ed1.s3tc.ctex"]
+source_file="res://assets/models/case_with_textures_Box_Metallic-Box_Roughness.png"
+dest_files=["res://.godot/imported/case_with_textures_Box_Metallic-Box_Roughness.png-36429c97341e17153ae0e0262dd39962.s3tc.ctex"]
 
 [params]
 

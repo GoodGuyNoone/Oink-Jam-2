@@ -21,11 +21,13 @@ func _ready() -> void:
 
 
 func open_book() -> void:
+	AudioManager.play_sfx("openBook")
 	show()
 	_show_spread(current_spread)
 
 
 func close_book() -> void:
+	AudioManager.play_sfx("closeBook")
 	hide()
 
 

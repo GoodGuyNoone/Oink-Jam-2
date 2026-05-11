@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bao4vwhjyr2rp"
-path.s3tc="res://.godot/imported/case_with_textures (2)_Box_Normal.png-1739afe56b383e55d3c30d8b7b433d67.s3tc.ctex"
+uid="uid://ch1fpowv2wnaw"
+path.s3tc="res://.godot/imported/case_with_textures_Box_Normal.png-668039cdba46732caca10cfbd00f36f4.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -14,8 +14,8 @@ generator_parameters={
 
 [deps]
 
-source_file="res://assets/models/case_with_textures (2)_Box_Normal.png"
-dest_files=["res://.godot/imported/case_with_textures (2)_Box_Normal.png-1739afe56b383e55d3c30d8b7b433d67.s3tc.ctex"]
+source_file="res://assets/textures/models/case_with_textures_Box_Normal.png"
+dest_files=["res://.godot/imported/case_with_textures_Box_Normal.png-668039cdba46732caca10cfbd00f36f4.s3tc.ctex"]
 
 [params]
 
@@ -30,7 +30,7 @@ compress/channel_pack=0
 mipmaps/generate=true
 mipmaps/limit=-1
 roughness/mode=1
-roughness/src_normal="res://assets/models/case_with_textures (2)_Box_Normal.png"
+roughness/src_normal="res://assets/models/case_with_textures_Box_Normal.png"
 process/channel_remap/red=0
 process/channel_remap/green=1
 process/channel_remap/blue=2

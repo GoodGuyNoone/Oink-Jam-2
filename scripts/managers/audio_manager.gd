@@ -15,11 +15,31 @@ var sounds := {
 		preload("res://assets/sound/flipPage2.ogg"),
 		preload("res://assets/sound/flipPage3.ogg"),
 		preload("res://assets/sound/flipPage4.ogg"),
-	]
+	],
+	"relief": [
+		preload("res://assets/sound/relief-01.ogg"),
+		preload("res://assets/sound/relief-02.ogg"),
+		preload("res://assets/sound/relief-03.ogg"),
+	],
+	"hurt": [
+		preload("res://assets/sound/hurt-01.ogg"),
+		preload("res://assets/sound/hurt-02.ogg"),
+		preload("res://assets/sound/hurt-03.ogg"),
+	],
+	"openBook": [
+		preload("res://assets/sound/bookOpen.ogg"),
+	],
+	"closeBook": [
+		preload("res://assets/sound/bookClose.ogg"),
+	],
+	"thermometer": [
+		preload("res://assets/sound/thermometer-01.ogg"),
+		preload("res://assets/sound/thermometer-02.ogg"),
+	],
 }
 
 
-func play_sfx(sound_id: String, volume_db := 0.0, pitch_min := 0.96, pitch_max := 1.04, bus := "SFX") -> void:
+func play_sfx(sound_id: String, volume_db := 0.0, pitch_min := 0.96, pitch_max := 1.04, bus := "SFX") -> AudioStreamPlayer:
 	if not sounds.has(sound_id):
 		push_warning("AudioManager: missing sound id: " + sound_id)
 		return
@@ -36,3 +56,5 @@ func play_sfx(sound_id: String, volume_db := 0.0, pitch_min := 0.96, pitch_max :
 
 	player.finished.connect(player.queue_free)
 	player.play()
+
+	return player

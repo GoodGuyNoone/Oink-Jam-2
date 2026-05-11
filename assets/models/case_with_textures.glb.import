@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://ci6ivwwul3o3n"
-path="res://.godot/imported/case_with_textures (2).glb-60f2ec570116237fae66c157bdd56b45.scn"
+path="res://.godot/imported/case_with_textures.glb-60d3a1f7e3cb503a4ab188c2a23f2004.scn"
 
 [deps]
 
-source_file="res://assets/models/case_with_textures (2).glb"
-dest_files=["res://.godot/imported/case_with_textures (2).glb-60f2ec570116237fae66c157bdd56b45.scn"]
+source_file="res://assets/models/case_with_textures.glb"
+dest_files=["res://.godot/imported/case_with_textures.glb-60d3a1f7e3cb503a4ab188c2a23f2004.scn"]
 
 [params]
 

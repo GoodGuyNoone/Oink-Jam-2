@@ -73,9 +73,11 @@ func _consume_item() -> void:
 		return
 
 	used = true
+	hide()
 
 	if consume_sound_id != "":
-		AudioManager.play_sfx(consume_sound_id, -2.0, 0.95, 1.08)
+		var consume_player = AudioManager.play_sfx(consume_sound_id, -2.0, 0.95, 1.08)
+		await consume_player.finished
 
 	if poison_manager:
 		poison_manager.select_item(item_data.item_id)

@@ -57,6 +57,7 @@ func _on_inventory_item_used(item: ItemData) -> void:
 			player.book.open_book()
 			book_ui_button.open_ui()
 		"thermometer":
+			AudioManager.play_sfx("thermometer")
 			player.set_ui_mode(true)
 			inspection_ui.open(
 				poison_manager.current_snake.temperature_sprite,
