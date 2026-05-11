@@ -49,7 +49,6 @@ func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed("Interact") and current_target:
 		current_target.interact(self)
 
-	set_ui_mode(ui_mode)
 	_update_speed()
 	_apply_gravity(delta)
 	# _handle_jump()
@@ -59,6 +58,8 @@ func _physics_process(delta: float) -> void:
 
 
 func set_ui_mode(enabled: bool) -> void:
+	ui_mode = enabled
+
 	if enabled:
 		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 		crosshair.visible = false

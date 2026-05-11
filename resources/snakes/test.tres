@@ -3,17 +3,21 @@
 [ext_resource type="Script" uid="uid://7c6aeatss7mu" path="res://scripts/Data/snake_data.gd" id="1_ag5qg"]
 [ext_resource type="Texture2D" uid="uid://47l3ikb4ri2m" path="res://assets/icons/snakebite.jpg" id="1_t8o1y"]
 [ext_resource type="Script" uid="uid://cxhyxl8lce2v6" path="res://scripts/Data/symptom_data.gd" id="2_2ghjn"]
+[ext_resource type="Material" uid="uid://c8664m1syg2jt" path="res://assets/materials/materials/snakes/StoneViper.tres" id="3_t8o1y"]
 [ext_resource type="Resource" uid="uid://bnjoaxvdxwina" path="res://resources/snakes/symptoms/Dizziness.tres" id="3_tka1k"]
 [ext_resource type="Resource" uid="uid://uqmec5kmrxlx" path="res://resources/snakes/symptoms/RapidHeartbeat.tres" id="4_f3xb0"]
 [ext_resource type="Resource" uid="uid://cb82idh0qvwnj" path="res://resources/snakes/symptoms/Tremor.tres" id="5_tka1k"]
 [ext_resource type="Resource" uid="uid://b63ag8n56rdnb" path="res://resources/snakes/symptoms/DifficultyBreathing.tres" id="6_f3xb0"]
-[ext_resource type="Texture2D" uid="uid://dytj23f8q2eu6" path="res://assets/icons/teperature.jpg" id="8_7ott1"]
+
+[sub_resource type="Resource" id="Resource_t8o1y"]
+metadata/__load_path__ = "res://assets/icons/teperature.jpg"
 
 [resource]
 script = ExtResource("1_ag5qg")
 name = "AmberRibbonsnake"
+snake_texture = ExtResource("3_t8o1y")
 required_cure = Array[String](["1", "2", "3"])
 symptoms = Array[ExtResource("2_2ghjn")]([ExtResource("3_tka1k"), ExtResource("4_f3xb0"), ExtResource("5_tka1k"), ExtResource("6_f3xb0")])
 bite_sprite = ExtResource("1_t8o1y")
-temperature_sprite = ExtResource("8_7ott1")
+temperature_sprite = SubResource("Resource_t8o1y")
 metadata/_custom_type_script = "uid://7c6aeatss7mu"

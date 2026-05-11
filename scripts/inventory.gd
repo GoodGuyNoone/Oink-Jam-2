@@ -61,7 +61,6 @@ func use_slot(slot_index: int) -> void:
 	print("Used inventory item:", item.display_name)
 
 	item_used.emit(item)
-	_refresh_ui()
 
 
 func _refresh_ui() -> void:

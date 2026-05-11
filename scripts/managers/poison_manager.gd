@@ -41,6 +41,7 @@ func _process(delta: float) -> void:
 func pick_random_snake() -> void:
 	current_snake = snakes.pick_random()
 
+
 func apply_random_poison() -> void:
 	if is_poisoned:
 		return

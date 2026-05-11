@@ -291,6 +291,36 @@ offset_bottom = 353.0
 text = "x
 "
 
+[node name="InspectionUI" parent="UI" unique_id=494579209 node_paths=PackedStringArray("player", "inspection_sprite", "close_button") instance=ExtResource("32_qkpxi")]
+offset_left = 753.0
+offset_top = 77.0
+offset_right = 995.0
+offset_bottom = 202.0
+script = ExtResource("33_5q0nq")
+player = NodePath("../../Player")
+inspection_sprite = NodePath("InspectionSprite")
+close_button = NodePath("CloseButton")
+ruler_cursor = ExtResource("34_dgi5k")
+
+[node name="InspectionSprite" type="TextureRect" parent="UI/InspectionUI" unique_id=1304151410]
+layout_mode = 0
+offset_left = -81.0
+offset_right = 40.0
+offset_bottom = 109.0
+mouse_filter = 0
+expand_mode = 3
+stretch_mode = 5
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="UI/InspectionUI" unique_id=176034542]
+
+[node name="CloseButton" type="Button" parent="UI/InspectionUI" unique_id=275592954]
+layout_mode = 0
+offset_left = 106.0
+offset_top = 22.0
+offset_right = 123.0
+offset_bottom = 53.0
+text = "x"
+
 [node name="InteractionLabel" type="Label" parent="UI" unique_id=1436390109]
 offset_left = 571.0
 offset_top = 458.0
@@ -333,10 +363,10 @@ poison_manager = NodePath("../../Managers/PoisonManager")
 clip_contents = true
 custom_minimum_size = Vector2(64, 64)
 layout_mode = 0
-offset_left = 511.00003
-offset_top = 29.0
-offset_right = 871.0
-offset_bottom = 389.0
+offset_left = 250.0
+offset_top = 27.0
+offset_right = 762.0
+offset_bottom = 539.0
 scale = Vector2(0.3, 0.3)
 max_value = 1.0
 step = 0.01
@@ -352,34 +382,6 @@ offset_right = 625.0
 offset_bottom = 415.0
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="UI/ClockUI" unique_id=1082439771]
-
-[node name="InspectionUI" parent="UI" unique_id=494579209 node_paths=PackedStringArray("inspection_sprite", "close_button") instance=ExtResource("32_qkpxi")]
-offset_left = 753.0
-offset_top = 77.0
-offset_right = 995.0
-offset_bottom = 202.0
-script = ExtResource("33_5q0nq")
-inspection_sprite = NodePath("InspectionSprite")
-close_button = NodePath("CloseButton")
-ruler_cursor = ExtResource("34_dgi5k")
-
-[node name="InspectionSprite" type="TextureRect" parent="UI/InspectionUI" unique_id=1304151410]
-layout_mode = 0
-offset_left = -81.0
-offset_right = 40.0
-offset_bottom = 109.0
-expand_mode = 3
-stretch_mode = 5
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="UI/InspectionUI" unique_id=176034542]
-
-[node name="CloseButton" type="Button" parent="UI/InspectionUI" unique_id=275592954]
-layout_mode = 0
-offset_left = 53.0
-offset_top = 3.0
-offset_right = 61.0
-offset_bottom = 11.0
-text = "x"
 
 [node name="SymptomEffectsUI" type="Control" parent="UI" unique_id=1580959087 node_paths=PackedStringArray("symptom_controller", "poison_manager", "overlay", "tremor_audio", "breath_audio", "heartbeat_audio", "tremor_timer")]
 layout_mode = 3
@@ -421,6 +423,7 @@ wait_time = 10.0
 visible = false
 offset_right = 1153.0
 offset_bottom = 651.0
+mouse_filter = 2
 
 [node name="Crosshair" type="Control" parent="UI" unique_id=2009637942]
 layout_mode = 3
