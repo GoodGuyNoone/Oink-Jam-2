@@ -13,6 +13,10 @@ class_name Player
 @onready var camera_mount: Node3D = $CameraMount
 @onready var interaction_label: Label = get_node("../UI/InteractionLabel")
 @onready var animation_player: AnimationPlayer = $player/AnimationPlayer
+@onready var crosshair := $"../UI/Crosshair"
+
+var cursor_open := preload("res://assets/icons/hand_open.png")
+var cursor_click := preload("res://assets/icons/hand_closed.png")
 
 
 var can_look: bool = true
@@ -20,14 +24,23 @@ var can_move: bool = true
 var _current_speed: float = walk_speed
 var _move_direction: Vector3 = Vector3.ZERO
 var current_target: Node
+var ui_mode: bool = false
+
 
 func _ready() -> void:
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+	Input.set_custom_mouse_cursor(cursor_open, Input.CURSOR_ARROW, Vector2(8, 8))
 	_play_animation("idle")
 
 
 func _input(event: InputEvent) -> void:
 	_handle_mouse_look(event)
+
+	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:
+		if event.pressed:
+			Input.set_custom_mouse_cursor(cursor_click, Input.CURSOR_ARROW, Vector2(8, 8))
+		else:
+			Input.set_custom_mouse_cursor(cursor_open, Input.CURSOR_ARROW, Vector2(8, 8))
 
 
 func _physics_process(delta: float) -> void:
@@ -36,12 +49,22 @@ func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed("Interact") and current_target:
 		current_target.interact(self)
 
+	set_ui_mode(ui_mode)
 	_update_speed()
 	_apply_gravity(delta)
 	# _handle_jump()
 	_handle_movement(delta)
 	move_and_slide()
 	_update_movement_animation()
+
+
+func set_ui_mode(enabled: bool) -> void:
+	if enabled:
+		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+		crosshair.visible = false
+	else:
+		Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+		crosshair.visible = true
 
 
 func set_control_enabled(enabled: bool) -> void:

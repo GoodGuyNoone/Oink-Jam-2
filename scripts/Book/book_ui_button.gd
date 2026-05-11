@@ -9,6 +9,7 @@ func _ready() -> void:
 
 
 func open_ui() -> void:
+	player.ui_mode = true
 	show()
 	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 	player.can_look = false
@@ -18,6 +19,7 @@ func close_ui() -> void:
 	hide()
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	player.can_look = true
+	player.ui_mode = false
 
 
 func _on_next_button_pressed() -> void:

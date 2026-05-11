@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cppq53oqt4eug"
-path="res://.godot/imported/book.jpg-585918a0b51e39413d9fd87d10a508a5.ctex"
+uid="uid://bcup2yeqqxmmy"
+path="res://.godot/imported/hand_closed.png-7a782148a5c677023a31dfc9c9bce888.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/icons/book.jpg"
-dest_files=["res://.godot/imported/book.jpg-585918a0b51e39413d9fd87d10a508a5.ctex"]
+source_file="res://assets/icons/hand_closed.png"
+dest_files=["res://.godot/imported/hand_closed.png-7a782148a5c677023a31dfc9c9bce888.ctex"]
 
 [params]
 

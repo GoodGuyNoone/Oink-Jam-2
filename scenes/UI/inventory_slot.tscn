@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://c8kb13vfc7awj"]
 
 [ext_resource type="Script" uid="uid://dgbi7cbvb0yvh" path="res://scripts/UI/inventory_slot.gd" id="1_l3fr4"]
-[ext_resource type="Texture2D" uid="uid://dq58wuhabe871" path="res://assets/import/Book_icon.png" id="2_et8er"]
+[ext_resource type="Texture2D" uid="uid://dq58wuhabe871" path="res://assets/icons/Book_icon.png" id="2_et8er"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_l3fr4"]
 

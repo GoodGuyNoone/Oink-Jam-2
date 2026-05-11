@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dytj23f8q2eu6"
-path="res://.godot/imported/teperature.jpg-e7395dbae923966c0dd7179ea04f023c.ctex"
+uid="uid://by7iuho4jqbaa"
+path="res://.godot/imported/Thermometer_icon.png-a4f25689ad88e74027a497bb7162b055.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/icons/teperature.jpg"
-dest_files=["res://.godot/imported/teperature.jpg-e7395dbae923966c0dd7179ea04f023c.ctex"]
+source_file="res://assets/icons/Thermometer_icon.png"
+dest_files=["res://.godot/imported/Thermometer_icon.png-a4f25689ad88e74027a497bb7162b055.ctex"]
 
 [params]
 

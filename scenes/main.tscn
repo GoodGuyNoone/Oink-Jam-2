@@ -33,6 +33,7 @@
 [ext_resource type="PackedScene" uid="uid://c5cmxhagp5ibg" path="res://scenes/UI/inspection_ui.tscn" id="32_qkpxi"]
 [ext_resource type="Script" uid="uid://d3lv7ejo2tbcr" path="res://scripts/UI/inspection_ui.gd" id="33_5q0nq"]
 [ext_resource type="Texture2D" uid="uid://cndohs0j3mawi" path="res://assets/icons/rulerMouseIcon.jpg" id="34_dgi5k"]
+[ext_resource type="Texture2D" uid="uid://thrula3pkdgp" path="res://assets/icons/dot_small.png" id="37_c6pm6"]
 [ext_resource type="Script" uid="uid://k5xnfnw5m663" path="res://scripts/UI/symptom_effects_ui.gd" id="41_chjal"]
 [ext_resource type="Shader" uid="uid://dhhsydt1mdviu" path="res://assets/shaders/symptom_overlay.gdshader" id="42_cjqg0"]
 [ext_resource type="AudioStream" uid="uid://b1hxcmvfn8i4v" path="res://assets/sound/human-vocal-male-groan-painful-short-06.ogg" id="43_chjal"]
@@ -167,7 +168,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.210846, 0.9472064, 2.658818
 outline_material = ExtResource("4_5poiv")
 
 [node name="Ruler" parent="Environment" unique_id=22162680 node_paths=PackedStringArray("inventory") groups=["interactable"] instance=ExtResource("5_yq6so")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.4081779, 0.9097328, 4.284042)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.6424103, 1.1714826, 4.645424)
 script = ExtResource("5_jbj1t")
 outline_material = ExtResource("4_5poiv")
 interaction_type = 1
@@ -420,6 +421,29 @@ wait_time = 10.0
 visible = false
 offset_right = 1153.0
 offset_bottom = 651.0
+
+[node name="Crosshair" type="Control" parent="UI" unique_id=2009637942]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="UI/Crosshair" unique_id=189846283]
+layout_mode = 0
+offset_left = -16.0
+offset_top = -16.0
+offset_right = 24.0
+offset_bottom = 24.0
+texture = ExtResource("37_c6pm6")
+stretch_mode = 2
 
 [node name="Player" parent="." unique_id=1589132169 instance=ExtResource("2_0wfyh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 61.894627, 0.001717419, 75.21546)

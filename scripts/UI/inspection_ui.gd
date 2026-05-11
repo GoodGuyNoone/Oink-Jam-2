@@ -20,6 +20,7 @@ func _ready() -> void:
 
 
 func open(texture: Texture2D, use_ruler: bool = false) -> void:
+	player.ui_mode = true
 	is_open = true
 	is_ruler_mode = use_ruler
 
@@ -46,6 +47,7 @@ func close() -> void:
 		player.set_physics_process(true)
 		player.can_look = true
 		player.can_move = true
+		player.ui_mode = false
 
 
 func _on_sprite_mouse_entered() -> void:

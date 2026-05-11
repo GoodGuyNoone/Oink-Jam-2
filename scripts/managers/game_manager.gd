@@ -53,13 +53,14 @@ func _on_inventory_item_used(item: ItemData) -> void:
 
 	match item.item_id:
 		"book":
-				player.book.open_book()
-				book_ui_button.open_ui()
+			player.book.open_book()
+			book_ui_button.open_ui()
 		"thermometer":
 			inspection_ui.open(
 				poison_manager.current_snake.temperature_sprite,
 				false
 			)
+			
 
 		"ruler":
 			inspection_ui.open(

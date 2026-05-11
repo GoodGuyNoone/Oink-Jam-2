@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cn1wdme3o57sf"
-path="res://.godot/imported/1(1).png-04db30c672b35a14aa0145c23bb420da.ctex"
+uid="uid://bt0reilnmmpu"
+path="res://.godot/imported/ruler_icon.png-c2b4588a43363be5c04d53424dea79ff.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/icons/1(1).png"
-dest_files=["res://.godot/imported/1(1).png-04db30c672b35a14aa0145c23bb420da.ctex"]
+source_file="res://assets/icons/ruler_icon.png"
+dest_files=["res://.godot/imported/ruler_icon.png-c2b4588a43363be5c04d53424dea79ff.ctex"]
 
 [params]
 
