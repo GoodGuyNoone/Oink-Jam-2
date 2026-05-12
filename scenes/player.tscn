@@ -33,7 +33,7 @@ script = ExtResource("1_g2els")
 [node name="player" parent="." unique_id=1524522503 instance=ExtResource("13_jej6c")]
 transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 0, 0, 0)
 
-[node name="Skeleton3D" parent="player/Armature" parent_id_path=PackedInt32Array(1524522503, 1086215835) index="0" unique_id=313735414]
+[node name="Skeleton3D" parent="player/Armature" parent_id_path=PackedInt32Array(1524522503, 973866690) index="0" unique_id=285497380]
 bones/0/position = Vector3(-0.005486472, 0.94854856, 0.005145327)
 bones/0/rotation = Quaternion(-0.033584945, -0.046094734, -0.027879275, 0.99798304)
 bones/1/rotation = Quaternion(0.008218342, 0.016287116, 0.026182318, 0.9994908)
@@ -171,10 +171,10 @@ bones/166/rotation = Quaternion(-0.7071069, -6.2561725e-09, -5.8445826e-09, 0.70
 bones/167/position = Vector3(-0.23183003, 0.82448304, 0.042044356)
 bones/167/rotation = Quaternion(0.83250535, -0.004073315, 0.5539339, -0.008697716)
 
-[node name="Character_Mesh" parent="player/Armature/Skeleton3D" index="0" unique_id=278678008]
+[node name="Character_Mesh" parent="player/Armature/Skeleton3D" index="0" unique_id=936494516]
 surface_material_override/0 = SubResource("ShaderMaterial_jej6c")
 
-[node name="AnimationPlayer" parent="player" index="2" unique_id=617700517]
+[node name="AnimationPlayer" parent="player" index="2" unique_id=1427997397]
 playback_default_blend_time = 0.5
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1631972517]
@@ -189,10 +189,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.014485598, -0.4196253)
 
 [node name="BookUI" parent="CameraMount/Camera3D" unique_id=74873095 instance=ExtResource("3_qhqgy")]
 transform = Transform3D(0.3, 0, 0, 0, -1.3113417e-08, -0.3, 0, 0.3, -1.3113417e-08, 0, -0.004222989, -0.30489567)
+visible = false
 pages = Array[ExtResource("4_dqkch")]([ExtResource("5_3v2ag"), ExtResource("6_jej6c"), ExtResource("7_f1ej7"), ExtResource("8_oprun"), ExtResource("9_a8ls1"), ExtResource("9_a8ls1"), ExtResource("10_qfm1y"), ExtResource("11_fulsm"), ExtResource("12_4r5pv")])
 
 [node name="RayCast3D" type="RayCast3D" parent="CameraMount/Camera3D" unique_id=1640726248]
-target_position = Vector3(0, 0, -1.5)
+target_position = Vector3(0, 0, -2.5)
 collide_with_areas = true
 
 [node name="SnakeBitePoint" type="Node3D" parent="." unique_id=1981808322]

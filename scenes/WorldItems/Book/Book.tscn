@@ -1,8 +1,9 @@
 [gd_scene format=4 uid="uid://dbo01qbg0nwcy"]
 
-[ext_resource type="Texture2D" uid="uid://buaekqt1cbrfp" path="res://assets/import/Tools_Material_BaseColor.png" id="1_y38ik"]
-[ext_resource type="Texture2D" uid="uid://bk1kh8vrqywxw" path="res://assets/import/Tools_Material_Roughness.png" id="2_ffq8r"]
-[ext_resource type="Texture2D" uid="uid://gpkraikcjjon" path="res://assets/import/Tools_Material_Normal.png" id="3_ldpn8"]
+[ext_resource type="Texture2D" uid="uid://buaekqt1cbrfp" path="res://assets/textures/models/Tools_Material_BaseColor.png" id="1_y38ik"]
+[ext_resource type="Texture2D" uid="uid://bk1kh8vrqywxw" path="res://assets/textures/models/Tools_Material_Roughness.png" id="2_ffq8r"]
+[ext_resource type="Texture2D" uid="uid://gpkraikcjjon" path="res://assets/textures/models/Tools_Material_Normal.png" id="3_ldpn8"]
+[ext_resource type="Material" uid="uid://ci1nltpdull87" path="res://assets/materials/tools/tools.res" id="4_ffq8r"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_y0yt0"]
 resource_name = "Material"
@@ -56,6 +57,8 @@ size = Vector3(0.14219402, 0.015871357, 0.20423806)
 
 [node name="Book" type="MeshInstance3D" parent="." unique_id=1939293308]
 mesh = SubResource("ArrayMesh_c5awd")
+surface_material_override/0 = ExtResource("4_ffq8r")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1839063826]
+transform = Transform3D(1.1, 0, 0, 0, 1.1, 0, 0, 0, 1.1, 0, 0.0106369555, 0)
 shape = SubResource("BoxShape3D_2wdgg")

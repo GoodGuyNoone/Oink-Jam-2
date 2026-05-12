@@ -1,0 +1,11 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://2ybb40cr6r4j"]
+
+[ext_resource type="Texture2D" uid="uid://yx6r35b4bmnt" path="res://assets/materials/snakes/Material.003_BaseColor.png" id="1_tovb0"]
+[ext_resource type="Texture2D" uid="uid://ced4ey7uoarjw" path="res://assets/materials/snakes/Material.003_Normal.png" id="2_kmnxx"]
+[ext_resource type="Texture2D" uid="uid://f5ldw8p6k27g" path="res://assets/materials/snakes/Material.003_Roughness.png" id="3_jv5t1"]
+
+[resource]
+albedo_texture = ExtResource("1_tovb0")
+roughness_texture = ExtResource("3_jv5t1")
+normal_enabled = true
+normal_texture = ExtResource("2_kmnxx")

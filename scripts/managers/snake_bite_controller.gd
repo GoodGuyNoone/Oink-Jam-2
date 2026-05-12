@@ -4,7 +4,7 @@ class_name SnakeBiteController
 @onready var snake_spawn: Node3D = get_node("../../SnakeTrigger")
 @onready var snake_run_point: Node3D = get_node("../../SnakeRunPoint")
 @onready var poison_manager: Node = $"../PoisonManager"
-@onready var camera: Camera3D = get_node("../../Player/CameraMount/Camera3D")
+@onready var camera: Camera3D = get_node("../../Environment/Player/CameraMount/Camera3D")
 @onready var snake_scene: PackedScene = preload("res://scenes/snake.tscn")
 @onready var snake_instance: Node3D
 

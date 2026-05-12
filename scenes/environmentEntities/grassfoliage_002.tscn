@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://dcmffhgjn7q43"]
+
+[ext_resource type="PackedScene" uid="uid://cth2pdf8m1gw0" path="res://assets/models/environmentEntities/grassfoliage002.glb" id="1_p00cd"]
+[ext_resource type="Material" uid="uid://djfrfi4tsy2l3" path="res://assets/materials/environmentEntities/grassfoliage.tres" id="2_5gdlc"]
+
+[node name="grassfoliage002" unique_id=5088783 instance=ExtResource("1_p00cd")]
+
+[node name="Grass_Common_Tall" parent="." index="0" unique_id=1696001016]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+surface_material_override/0 = ExtResource("2_5gdlc")

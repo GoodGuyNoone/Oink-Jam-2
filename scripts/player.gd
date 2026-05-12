@@ -7,13 +7,14 @@ class_name Player
 @export var movement_lerp_speed: float = 10
 @export var mouse_sensitivity: float = 0.25
 @export var walk_animation_speed_threshold: float = 0.2
+@export var interaction_label: Label
+@export var crosshair: Control
 
 @onready var book: BookUI = $CameraMount/Camera3D/BookUI
 @onready var ray_cast_3d: RayCast3D = get_node("CameraMount/Camera3D/RayCast3D")
 @onready var camera_mount: Node3D = $CameraMount
-@onready var interaction_label: Label = get_node("../UI/InteractionLabel")
 @onready var animation_player: AnimationPlayer = $player/AnimationPlayer
-@onready var crosshair := $"../UI/Crosshair"
+
 
 var cursor_open := preload("res://assets/icons/hand_open.png")
 var cursor_click := preload("res://assets/icons/hand_closed.png")

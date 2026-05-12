@@ -1,0 +1,50 @@
+[remap]
+
+importer="scene"
+importer_version=1
+type="PackedScene"
+uid="uid://dgqlacj82ngyk"
+path="res://.godot/imported/rock002.glb-2b3b11f2b6df1c773b7e4145a0da2596.scn"
+
+[deps]
+
+source_file="res://assets/models/environmentEntities/rock002.glb"
+dest_files=["res://.godot/imported/rock002.glb-2b3b11f2b6df1c773b7e4145a0da2596.scn"]
+
+[params]
+
+nodes/root_type=""
+nodes/root_name=""
+nodes/root_script=null
+nodes/apply_root_scale=true
+nodes/root_scale=1.0
+nodes/import_as_skeleton_bones=false
+nodes/use_name_suffixes=true
+nodes/use_node_type_suffixes=true
+meshes/ensure_tangents=true
+meshes/generate_lods=true
+meshes/create_shadow_meshes=true
+meshes/light_baking=1
+meshes/lightmap_texel_size=0.2
+meshes/force_disable_compression=false
+skins/use_named_skins=true
+animation/import=true
+animation/fps=30
+animation/trimming=false
+animation/remove_immutable_tracks=true
+animation/import_rest_as_RESET=false
+import_script/path=""
+materials/extract=0
+materials/extract_format=0
+materials/extract_path=""
+_subresources={
+"materials": {
+"Rocks.002": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://assets/materials/environmentEntities/rock/Rocks.res",
+"use_external/path": "uid://brbaq0l1og1sn"
+}
+}
+}
+gltf/naming_version=2
+gltf/embedded_image_handling=0

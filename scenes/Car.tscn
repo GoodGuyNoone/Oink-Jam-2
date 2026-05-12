@@ -388,6 +388,7 @@ skeleton = NodePath("..")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=624438431]
 libraries/ = SubResource("AnimationLibrary_a63m5")
+autoplay = &"Open"
 
 [node name="CollisionShape3D6" type="CollisionShape3D" parent="." unique_id=385508360]
 shape = SubResource("ConcavePolygonShape3D_ho1w2")

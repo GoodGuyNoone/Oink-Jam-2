@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://cxv2pgxepnjef"]
+
+[ext_resource type="PackedScene" uid="uid://d0ls4h4jld2x4" path="res://assets/models/environmentEntities/flower001.glb" id="1_fqa12"]
+[ext_resource type="Material" uid="uid://dmxqi6s5s3ksh" path="res://assets/materials/environmentEntities/leaves.res" id="2_kx22d"]
+
+[node name="flower001" unique_id=278661363 instance=ExtResource("1_fqa12")]
+
+[node name="Plant_7_Big" parent="." index="0" unique_id=393858193]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+surface_material_override/0 = ExtResource("2_kx22d")

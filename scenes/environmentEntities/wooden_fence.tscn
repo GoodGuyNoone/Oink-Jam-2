@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://3rf3i7k4h0jc"]
+
+[ext_resource type="PackedScene" uid="uid://3tge1pr1eol" path="res://assets/models/sgobbocampingfencespline.glb" id="1_kbsru"]
+
+[sub_resource type="Gradient" id="Gradient_w1hno"]
+offsets = PackedFloat32Array(0.007518797, 0.99248123, 1)
+colors = PackedColorArray(0.9007137, 0.37884748, 1.92523e-07, 1, 0.29913834, 0.10475678, 0, 1, 0.45641184, 0.17535737, 1.4439226e-07, 1)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_kda12"]
+noise_type = 4
+seed = 7
+frequency = 0.0456
+fractal_type = 2
+fractal_lacunarity = -1.26
+fractal_gain = -0.73
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_nhak6"]
+generate_mipmaps = false
+noise = SubResource("FastNoiseLite_kda12")
+color_ramp = SubResource("Gradient_w1hno")
+seamless = true
+seamless_blend_skirt = 0.763
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_i70mt"]
+albedo_color = Color(0.38981918, 0.24020761, 0.016776262, 1)
+albedo_texture = SubResource("NoiseTexture2D_nhak6")
+
+[node name="Sketchfab_Scene" unique_id=1443153847 instance=ExtResource("1_kbsru")]
+
+[node name="FenceForSpline_Railing_0" parent="Sketchfab_model/BuildingSet_FenceForSpline_v4_3_0_fbx/RootNode/FenceForSpline" parent_id_path=PackedInt32Array(2124958140) index="0" unique_id=486111318]
+surface_material_override/0 = SubResource("StandardMaterial3D_i70mt")

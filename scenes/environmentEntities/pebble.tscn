@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://vivi6o4qihyw"]
+
+[ext_resource type="PackedScene" uid="uid://mm3q2t65o35e" path="res://assets/models/environmentEntities/pebble001.glb" id="1_42c6x"]
+[ext_resource type="Material" uid="uid://cr5hjc6uv2y0v" path="res://assets/materials/environmentEntities/pebble.tres" id="2_ypj8w"]
+
+[node name="pebble001" unique_id=857822532 instance=ExtResource("1_42c6x")]
+
+[node name="Pebble_Round_2" parent="." index="0" unique_id=1161489030]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+material_override = ExtResource("2_ypj8w")

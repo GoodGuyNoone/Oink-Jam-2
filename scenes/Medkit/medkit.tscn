@@ -678,7 +678,7 @@ bones/1/parent = -1
 bones/1/rest = Transform3D(-1, 0, -3.894144e-07, 3.894144e-07, 0, -1, 0, -1, 0, 0, 0, 0)
 bones/1/enabled = true
 bones/1/position = Vector3(0, 0, 0)
-bones/1/rotation = Quaternion(-5.854958e-08, 0.95371693, 0.30070597, -1.8569554e-07)
+bones/1/rotation = Quaternion(1.3767878e-07, 0.70710677, -0.70710677, -1.3767878e-07)
 bones/1/scale = Vector3(1, 1, 1)
 
 [node name="Case" type="MeshInstance3D" parent="case_with_textures/Armature/Skeleton3D" unique_id=996253372]
@@ -692,7 +692,7 @@ skin = SubResource("Skin_uteyr")
 skeleton = NodePath("..")
 
 [node name="BoneAttachment3D" type="BoneAttachment3D" parent="case_with_textures/Armature/Skeleton3D" unique_id=1556723375]
-transform = Transform3D(-0.9999999, 6.3948846e-14, -3.8941434e-07, -2.2335894e-07, 0.8191519, 0.5735767, 3.189895e-07, 0.5735767, -0.81915176, 0, 0, 0)
+transform = Transform3D(-1, 0, -3.8941442e-07, 3.8941442e-07, 0, -1, 0, -1, 0, 0, 0, 0)
 bone_name = "Top"
 bone_idx = 1
 

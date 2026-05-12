@@ -1,10 +1,11 @@
 [gd_resource type="Resource" script_class="SnakeData" format=3 uid="uid://beqlk387rwe8k"]
 
 [ext_resource type="Script" uid="uid://7c6aeatss7mu" path="res://scripts/Data/snake_data.gd" id="1_8neu2"]
-[ext_resource type="Texture2D" uid="uid://mlgydkd8qacs" path="res://assets/textures/snakes/04_Darkening_smallbite_BaseColor.png" id="1_aho0n"]
-[ext_resource type="Material" uid="uid://cjwpilx2ig6pj" path="res://assets/materials/materials/snakes/ClayStinger.tres" id="2_lrun7"]
+[ext_resource type="Texture2D" uid="uid://cyffi8lv0bj0h" path="res://assets/textures/snakes/04_Darkening_smallbite_BaseColor.png" id="1_aho0n"]
+[ext_resource type="Material" uid="uid://cjwpilx2ig6pj" path="res://assets/materials/snakes/ClayStinger.tres" id="2_lrun7"]
 [ext_resource type="Script" uid="uid://cxhyxl8lce2v6" path="res://scripts/Data/symptom_data.gd" id="2_uwfmm"]
 [ext_resource type="Resource" uid="uid://cb82idh0qvwnj" path="res://resources/snakes/symptoms/Tremor.tres" id="3_uwfmm"]
+[ext_resource type="Texture2D" uid="uid://be0dal2jixvbr" path="res://assets/textures/snakes/temperature_39.png" id="6_bw31o"]
 
 [resource]
 script = ExtResource("1_8neu2")
@@ -13,4 +14,5 @@ snake_texture = ExtResource("2_lrun7")
 required_cure = Array[String](["greenSyringe", "blueTablets", "purpleSyrup"])
 symptoms = Array[ExtResource("2_uwfmm")]([ExtResource("3_uwfmm")])
 bite_sprite = ExtResource("1_aho0n")
+temperature_sprite = ExtResource("6_bw31o")
 metadata/_custom_type_script = "uid://7c6aeatss7mu"

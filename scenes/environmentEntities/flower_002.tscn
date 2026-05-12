@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://cjjudgfywtseg"]
+
+[ext_resource type="PackedScene" uid="uid://h0bu8uw8agaa" path="res://assets/models/environmentEntities/flower002.glb" id="1_ygf33"]
+[ext_resource type="Material" uid="uid://dmxqi6s5s3ksh" path="res://assets/materials/environmentEntities/leaves.res" id="2_7ei1p"]
+
+[node name="flower002" unique_id=442735755 instance=ExtResource("1_ygf33")]
+
+[node name="Clover_2" parent="." index="0" unique_id=1111426487]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+surface_material_override/0 = ExtResource("2_7ei1p")

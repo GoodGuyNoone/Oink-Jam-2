@@ -1,9 +1,36 @@
 [gd_scene format=3 uid="uid://3lyn0ebt6tkh"]
 
-[ext_resource type="PackedScene" uid="uid://c1mwibco4jd7l" path="res://assets/models/environmentEntities/Tree003.glb" id="1_82m1n"]
-[ext_resource type="Material" uid="uid://cohkajukv1be4" path="res://assets/materials/materials/environmentEntities/environmentEntities.res" id="2_frdqn"]
+[ext_resource type="PackedScene" uid="uid://cenmc841tidux" path="res://assets/models/environmentEntities/Tree003.glb" id="1_82m1n"]
+[ext_resource type="Material" uid="uid://cohkajukv1be4" path="res://assets/materials/environmentEntities/environmentEntities.res" id="2_frdqn"]
+[ext_resource type="Shader" uid="uid://ddv7bssn3uw2e" path="res://assets/materials/shader/wind_shader_simple_vertical.gdshader" id="2_y44wn"]
+[ext_resource type="Texture2D" uid="uid://bsq6l6osnx5om" path="res://assets/textures/Environment/environmentEntities/bush001_Material.001_BaseColor-Material.png" id="3_6j0ic"]
+[ext_resource type="Texture2D" uid="uid://1oue6miq4noe" path="res://assets/textures/Environment/environmentEntities/bush001_Material.png" id="4_xpvul"]
 
-[node name="Tree003" unique_id=240299985 instance=ExtResource("1_82m1n")]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_6j0ic"]
+render_priority = 0
+shader = ExtResource("2_y44wn")
+shader_parameter/albedo_texture = ExtResource("3_6j0ic")
+shader_parameter/normal_texture = ExtResource("4_xpvul")
+shader_parameter/roughness_texture = ExtResource("4_xpvul")
+shader_parameter/alpha_cutoff = 0.35
+shader_parameter/wind_strength = 0.18
+shader_parameter/wind_speed = 2.0
+shader_parameter/wind_scale = 1.5
+shader_parameter/edge_power = 1.8
+shader_parameter/vertical_sway = 0.25
+shader_parameter/side_sway = 0.08
+shader_parameter/invert_edge_mask = false
+shader_parameter/use_uv_y_for_edge = false
+shader_parameter/wind_direction = Vector3(1, 0, 0.3)
+shader_parameter/normal_strength = 1.0
+shader_parameter/roughness_value = 0.8
+shader_parameter/use_normal_texture = true
+shader_parameter/use_roughness_texture = false
 
-[node name="Circle_001" parent="." index="0" unique_id=2144425190]
+[node name="Tree003" unique_id=650882749 instance=ExtResource("1_82m1n")]
+
+[node name="Circle_001" parent="." index="0" unique_id=108793791]
+surface_material_override/0 = SubResource("ShaderMaterial_6j0ic")
+
+[node name="Circle_002" parent="." index="1" unique_id=1858433461]
 surface_material_override/0 = ExtResource("2_frdqn")

@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://clg6s7qg8qv38"]
+
+[ext_resource type="PackedScene" uid="uid://c207dfl5lr1fo" path="res://assets/models/environmentEntities/rock003.glb" id="1_c0bvf"]
+[ext_resource type="Material" uid="uid://brbaq0l1og1sn" path="res://assets/materials/environmentEntities/rock/Rocks.res" id="2_o4d6k"]
+
+[node name="rock003" unique_id=1075859780 instance=ExtResource("1_c0bvf")]
+
+[node name="Rock_Medium_2" parent="." index="0" unique_id=259372971]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+surface_material_override/0 = ExtResource("2_o4d6k")

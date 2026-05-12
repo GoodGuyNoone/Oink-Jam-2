@@ -1,8 +1,9 @@
 [gd_scene format=4 uid="uid://buff32gs1nsp5"]
 
-[ext_resource type="Texture2D" uid="uid://buaekqt1cbrfp" path="res://assets/import/Tools_Material_BaseColor.png" id="1_s14s7"]
-[ext_resource type="Texture2D" uid="uid://bk1kh8vrqywxw" path="res://assets/import/Tools_Material_Roughness.png" id="2_flu12"]
-[ext_resource type="Texture2D" uid="uid://gpkraikcjjon" path="res://assets/import/Tools_Material_Normal.png" id="3_wlopd"]
+[ext_resource type="Texture2D" uid="uid://buaekqt1cbrfp" path="res://assets/textures/models/Tools_Material_BaseColor.png" id="1_s14s7"]
+[ext_resource type="Texture2D" uid="uid://bk1kh8vrqywxw" path="res://assets/textures/models/Tools_Material_Roughness.png" id="2_flu12"]
+[ext_resource type="Texture2D" uid="uid://gpkraikcjjon" path="res://assets/textures/models/Tools_Material_Normal.png" id="3_wlopd"]
+[ext_resource type="Material" uid="uid://ci1nltpdull87" path="res://assets/materials/tools/tools.res" id="4_flu12"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_y0yt0"]
 resource_name = "Material"
@@ -50,13 +51,14 @@ blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_1b0i0")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_alnth"]
-size = Vector3(0.06559665, 0.028523775, 0.09754919)
+size = Vector3(0.07198289, 0.03916423, 0.15402597)
 
 [node name="Thermometer" type="StaticBody3D" unique_id=2104825388]
 
 [node name="Thermometer" type="MeshInstance3D" parent="." unique_id=2015680364]
 mesh = SubResource("ArrayMesh_3wa85")
+surface_material_override/0 = ExtResource("4_flu12")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1671567056]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.008907931, 0.013875189, 0.0067874305)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.012101052, 0.019195417, -0.0023544598)
 shape = SubResource("BoxShape3D_alnth")

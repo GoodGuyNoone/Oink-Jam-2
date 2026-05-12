@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://20q8qtbpcdie"]
+
+[ext_resource type="PackedScene" uid="uid://cl5qf45fom5ms" path="res://assets/models/environmentEntities/fence.glb" id="1_abpcn"]
+
+[node name="fence" unique_id=516231714 instance=ExtResource("1_abpcn")]
+
+[node name="PipeFence1_1m_Pipefence1a_0" parent="." index="0" unique_id=1075376122]
+transform = Transform3D(1, 0, 0, 0, -3.5762787e-07, 0.99999994, 0, -0.99999994, -3.5762787e-07, -1.4781134, 0, 0)
+
+[node name="PipeFence1_2m_Pipefence1a_0" parent="." index="1" unique_id=1278607876]
+transform = Transform3D(1, 0, 0, 0, -3.5762787e-07, 0.99999994, 0, -0.99999994, -3.5762787e-07, 0, 0, 0)

@@ -3,7 +3,7 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://yxu584m6n4h0"
+uid="uid://b32f6pnyy7w24"
 path="res://.godot/imported/Tree001.glb-c7594248ba63a750e89f6abafc42f3ef.scn"
 
 [deps]
@@ -36,15 +36,7 @@ animation/import_rest_as_RESET=false
 import_script/path=""
 materials/extract=0
 materials/extract_format=0
-materials/extract_path=""
-_subresources={
-"materials": {
-"Material": {
-"use_external/enabled": false,
-"use_external/fallback_path": "res://assets/materials/materials/environmentEntities/environmentEntities.res",
-"use_external/path": "uid://cohkajukv1be4"
-}
-}
-}
+materials/extract_path="res://assets/materials/environmentEntities"
+_subresources={}
 gltf/naming_version=2
 gltf/embedded_image_handling=0
