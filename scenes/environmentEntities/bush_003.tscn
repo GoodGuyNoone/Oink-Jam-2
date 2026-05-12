@@ -1,5 +1,9 @@
 [gd_scene format=3 uid="uid://cgonkprx2j4tf"]
 
 [ext_resource type="PackedScene" uid="uid://dhhr373yvp34d" path="res://assets/models/environmentEntities/bush003.glb" id="1_6ser4"]
+[ext_resource type="Material" uid="uid://cohkajukv1be4" path="res://assets/materials/materials/environmentEntities/environmentEntities.res" id="2_soxw1"]
 
 [node name="bush003" unique_id=1028892087 instance=ExtResource("1_6ser4")]
+
+[node name="Plane_068" parent="." index="0" unique_id=1425782858]
+surface_material_override/0 = ExtResource("2_soxw1")

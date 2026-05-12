@@ -1,5 +1,9 @@
 [gd_scene format=3 uid="uid://3lyn0ebt6tkh"]
 
 [ext_resource type="PackedScene" uid="uid://c1mwibco4jd7l" path="res://assets/models/environmentEntities/Tree003.glb" id="1_82m1n"]
+[ext_resource type="Material" uid="uid://cohkajukv1be4" path="res://assets/materials/materials/environmentEntities/environmentEntities.res" id="2_frdqn"]
 
 [node name="Tree003" unique_id=240299985 instance=ExtResource("1_82m1n")]
+
+[node name="Circle_001" parent="." index="0" unique_id=2144425190]
+surface_material_override/0 = ExtResource("2_frdqn")
