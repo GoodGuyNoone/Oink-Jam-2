@@ -35,7 +35,9 @@
 [ext_resource type="Texture2D" uid="uid://edjgi7jn0b3n" path="res://assets/models/bonfire_0.png" id="27_5ihsc"]
 [ext_resource type="Texture2D" uid="uid://dqvlaul4f5s8u" path="res://assets/models/bonfire_1.png" id="28_2sixm"]
 [ext_resource type="Texture2D" uid="uid://bsq6l6osnx5om" path="res://assets/textures/Environment/environmentEntities/bush001_Material.001_BaseColor-Material.png" id="28_cd6m4"]
+[ext_resource type="Texture2D" uid="uid://1oue6miq4noe" path="res://assets/textures/Environment/environmentEntities/bush001_Material.png" id="29_8utcv"]
 [ext_resource type="Texture2D" uid="uid://e4fywc84s8ws" path="res://assets/models/bonfire_2.png" id="29_fx1jf"]
+[ext_resource type="Texture2D" uid="uid://iv00bq3pg15a" path="res://assets/textures/Environment/environmentEntities/bush001_Material_2.png" id="30_32q4m"]
 
 [sub_resource type="Gradient" id="Gradient_j8jky"]
 offsets = PackedFloat32Array(0.2, 1)
@@ -150,6 +152,10 @@ shader_parameter/wind_speed = 1.0
 shader_parameter/wind_scale = 0.5
 shader_parameter/stem_stiffness = 1.0
 shader_parameter/flower_sway = 1.2
+shader_parameter/normal_strength = 1.0
+shader_parameter/roughness_value = 0.8
+shader_parameter/use_normal_texture = true
+shader_parameter/use_roughness_texture = false
 
 [sub_resource type="Terrain3DMeshAsset" id="Terrain3DMeshAsset_11xjt"]
 name = "flower_002"
@@ -170,6 +176,10 @@ shader_parameter/wind_speed = 1.0
 shader_parameter/wind_scale = 1.2
 shader_parameter/stem_stiffness = 1.0
 shader_parameter/flower_sway = 1.2
+shader_parameter/normal_strength = 1.0
+shader_parameter/roughness_value = 0.8
+shader_parameter/use_normal_texture = true
+shader_parameter/use_roughness_texture = false
 
 [sub_resource type="Terrain3DMeshAsset" id="Terrain3DMeshAsset_pr5xe"]
 name = "flower_001"
@@ -421,34 +431,52 @@ stack = Array[ExtResource("12_3rsaa")]([SubResource("Resource_df303"), SubResour
 render_priority = 0
 shader = ExtResource("3_pr5xe")
 shader_parameter/albedo_texture = ExtResource("28_cd6m4")
+shader_parameter/normal_texture = ExtResource("29_8utcv")
+shader_parameter/roughness_texture = ExtResource("30_32q4m")
 shader_parameter/albedo_tint = Color(1, 1, 1, 1)
 shader_parameter/wind_strength = 0.1
 shader_parameter/wind_speed = 1.0
 shader_parameter/wind_scale = 1.2
 shader_parameter/stem_stiffness = 1.0
 shader_parameter/flower_sway = 0.5
+shader_parameter/normal_strength = 1.0
+shader_parameter/roughness_value = 0.8
+shader_parameter/use_normal_texture = true
+shader_parameter/use_roughness_texture = false
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_sgisc"]
 render_priority = 0
 shader = ExtResource("3_pr5xe")
 shader_parameter/albedo_texture = ExtResource("28_cd6m4")
+shader_parameter/normal_texture = ExtResource("29_8utcv")
+shader_parameter/roughness_texture = ExtResource("30_32q4m")
 shader_parameter/albedo_tint = Color(1, 1, 1, 1)
 shader_parameter/wind_strength = 0.1
 shader_parameter/wind_speed = 1.0
 shader_parameter/wind_scale = 1.2
 shader_parameter/stem_stiffness = 1.0
 shader_parameter/flower_sway = 0.8
+shader_parameter/normal_strength = 1.0
+shader_parameter/roughness_value = 0.8
+shader_parameter/use_normal_texture = true
+shader_parameter/use_roughness_texture = false
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_norgw"]
 render_priority = 0
 shader = ExtResource("3_pr5xe")
 shader_parameter/albedo_texture = ExtResource("28_cd6m4")
+shader_parameter/normal_texture = ExtResource("29_8utcv")
+shader_parameter/roughness_texture = ExtResource("30_32q4m")
 shader_parameter/albedo_tint = Color(1, 1, 1, 1)
 shader_parameter/wind_strength = 0.1
 shader_parameter/wind_speed = 1.0
 shader_parameter/wind_scale = 1.2
 shader_parameter/stem_stiffness = 1.0
 shader_parameter/flower_sway = 0.8
+shader_parameter/normal_strength = 1.0
+shader_parameter/roughness_value = 0.8
+shader_parameter/use_normal_texture = true
+shader_parameter/use_roughness_texture = false
 
 [sub_resource type="Resource" id="Resource_tw4cb"]
 script = ExtResource("20_ke4t7")
@@ -539,6 +567,7 @@ metadata/_edit_lock_ = true
 [node name="Palm" type="Node3D" parent="." unique_id=1872581040]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.7805214, -3.8146973e-06, 42.150284)
 script = ExtResource("10_ncvx8")
+render_mode = 1
 modifier_stack = SubResource("Resource_c7ldm")
 Performance/use_chunks = true
 Performance/chunk_dimensions = Vector3(15, 15, 15)
@@ -627,6 +656,7 @@ shape = SubResource("Resource_m6fqw")
 
 [node name="rocks" type="Node3D" parent="." unique_id=1022853561]
 script = ExtResource("10_ncvx8")
+render_mode = 1
 modifier_stack = SubResource("Resource_lnuqa")
 Performance/use_chunks = true
 Performance/chunk_dimensions = Vector3(15, 15, 15)

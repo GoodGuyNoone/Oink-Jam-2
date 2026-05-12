@@ -5,13 +5,14 @@
 [ext_resource type="Shader" uid="uid://ddv7bssn3uw2e" path="res://assets/materials/shader/wind_shader_simple_vertical.gdshader" id="2_s2buq"]
 [ext_resource type="Texture2D" uid="uid://bsq6l6osnx5om" path="res://assets/textures/Environment/environmentEntities/bush001_Material.001_BaseColor-Material.png" id="3_4d4ij"]
 [ext_resource type="Texture2D" uid="uid://1oue6miq4noe" path="res://assets/textures/Environment/environmentEntities/bush001_Material.png" id="4_4d4ij"]
+[ext_resource type="Texture2D" uid="uid://iv00bq3pg15a" path="res://assets/textures/Environment/environmentEntities/bush001_Material_2.png" id="5_4k75i"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_4k75i"]
 render_priority = 0
 shader = ExtResource("2_s2buq")
 shader_parameter/albedo_texture = ExtResource("3_4d4ij")
 shader_parameter/normal_texture = ExtResource("4_4d4ij")
-shader_parameter/roughness_texture = ExtResource("4_4d4ij")
+shader_parameter/roughness_texture = ExtResource("5_4k75i")
 shader_parameter/alpha_cutoff = 0.35
 shader_parameter/wind_strength = 0.18
 shader_parameter/wind_speed = 2.0
@@ -27,6 +28,10 @@ shader_parameter/roughness_value = 0.8
 shader_parameter/use_normal_texture = true
 shader_parameter/use_roughness_texture = false
 
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_4k75i"]
+height = 3.916504
+radius = 0.49658203
+
 [node name="Tree001" unique_id=639956757 instance=ExtResource("1_wm415")]
 
 [node name="Cube" parent="." index="0" unique_id=751234791]
@@ -34,3 +39,9 @@ surface_material_override/0 = SubResource("ShaderMaterial_4k75i")
 
 [node name="Cube_002" parent="." index="1" unique_id=1160438101]
 surface_material_override/0 = ExtResource("2_41cgk")
+
+[node name="Area3D" type="StaticBody3D" parent="." index="2" unique_id=482815982]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" index="0" unique_id=1001120134]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.0582519, 0)
+shape = SubResource("CylinderShape3D_4k75i")

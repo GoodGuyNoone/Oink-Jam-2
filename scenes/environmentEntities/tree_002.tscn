@@ -4,11 +4,15 @@
 [ext_resource type="Material" uid="uid://cohkajukv1be4" path="res://assets/materials/environmentEntities/environmentEntities.res" id="2_4pbhs"]
 [ext_resource type="Shader" uid="uid://ddv7bssn3uw2e" path="res://assets/materials/shader/wind_shader_simple_vertical.gdshader" id="2_8ag8e"]
 [ext_resource type="Texture2D" uid="uid://bsq6l6osnx5om" path="res://assets/textures/Environment/environmentEntities/bush001_Material.001_BaseColor-Material.png" id="3_tfru3"]
+[ext_resource type="Texture2D" uid="uid://1oue6miq4noe" path="res://assets/textures/Environment/environmentEntities/bush001_Material.png" id="4_32hjr"]
+[ext_resource type="Texture2D" uid="uid://iv00bq3pg15a" path="res://assets/textures/Environment/environmentEntities/bush001_Material_2.png" id="5_b8aw2"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_tfru3"]
 render_priority = 0
 shader = ExtResource("2_8ag8e")
 shader_parameter/albedo_texture = ExtResource("3_tfru3")
+shader_parameter/normal_texture = ExtResource("4_32hjr")
+shader_parameter/roughness_texture = ExtResource("5_b8aw2")
 shader_parameter/alpha_cutoff = 0.35
 shader_parameter/wind_strength = 0.1
 shader_parameter/wind_speed = 2.0
@@ -24,6 +28,10 @@ shader_parameter/roughness_value = 0.8
 shader_parameter/use_normal_texture = true
 shader_parameter/use_roughness_texture = false
 
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_32hjr"]
+height = 2.8535156
+radius = 0.39892578
+
 [node name="Tree002" unique_id=1036730777 instance=ExtResource("1_3v2qv")]
 
 [node name="Cube_001" parent="." index="0" unique_id=902619392]
@@ -32,3 +40,9 @@ surface_material_override/0 = ExtResource("2_4pbhs")
 
 [node name="Cube_003" parent="." index="1" unique_id=794406156]
 surface_material_override/0 = ExtResource("2_4pbhs")
+
+[node name="Area3D" type="StaticBody3D" parent="." index="2" unique_id=1596443889]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" index="0" unique_id=1623780026]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4267578, 0)
+shape = SubResource("CylinderShape3D_32hjr")

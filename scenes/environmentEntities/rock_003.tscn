@@ -3,8 +3,18 @@
 [ext_resource type="PackedScene" uid="uid://c207dfl5lr1fo" path="res://assets/models/environmentEntities/rock003.glb" id="1_c0bvf"]
 [ext_resource type="Material" uid="uid://brbaq0l1og1sn" path="res://assets/materials/environmentEntities/rock/Rocks.res" id="2_o4d6k"]
 
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_c0bvf"]
+height = 1.925293
+radius = 1.5800781
+
 [node name="rock003" unique_id=1075859780 instance=ExtResource("1_c0bvf")]
 
-[node name="Rock_Medium_2" parent="." index="0" unique_id=259372971]
+[node name="Rock_Medium_2" parent="." index="0" unique_id=343424690]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 surface_material_override/0 = ExtResource("2_o4d6k")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="1" unique_id=1211992999]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0" unique_id=1599711528]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.15210962, 0.93735355, -0.07605475)
+shape = SubResource("CylinderShape3D_c0bvf")
