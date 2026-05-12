@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dwxr3uydehivl"
-path="res://.godot/imported/04_Darkening_smallbite_BaseColor.png-a768b3e505fa591c3cb28dbb92c6c3ca.ctex"
+uid="uid://cf7c0lsq13m58"
+path="res://.godot/imported/cross_small.png-306e52cb3d8592b3c060e184954120a6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/textures/snakes/04_Darkening_smallbite_BaseColor.png"
-dest_files=["res://.godot/imported/04_Darkening_smallbite_BaseColor.png-a768b3e505fa591c3cb28dbb92c6c3ca.ctex"]
+source_file="res://assets/icons/cross_small.png"
+dest_files=["res://.godot/imported/cross_small.png-306e52cb3d8592b3c060e184954120a6.ctex"]
 
 [params]
 

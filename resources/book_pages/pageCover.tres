@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="BookPageData" format=3 uid="uid://b7rgj2mcgiwkd"]
+
+[ext_resource type="Script" uid="uid://cqdom8ap5egeo" path="res://scripts/Book/book_page_data.gd" id="1_ep0b8"]
+[ext_resource type="Texture2D" uid="uid://dgwra8j4lxnub" path="res://assets/import/book_cover.png" id="2_f0jo8"]
+
+[resource]
+script = ExtResource("1_ep0b8")
+texture = ExtResource("2_f0jo8")

@@ -5,7 +5,6 @@ class_name PoisonClockUI
 @export var appear_delay: float = 1.0
 
 @onready var clock_progress: TextureProgressBar = $ClockProgress
-@onready var time_label: Label = $TimeLabel
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 
 var max_time := 1.0
@@ -32,7 +31,6 @@ func _on_poison_updated(time_left: float) -> void:
 	var ratio: float = 1 - clamp(time_left / max_time, 0.0, 1.0)
 
 	clock_progress.value = ratio
-	time_label.text = str(ceil(time_left))
 
 
 func _on_poison_ended(success: bool) -> void:

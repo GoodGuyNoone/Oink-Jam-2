@@ -29,9 +29,12 @@
 [ext_resource type="Texture2D" uid="uid://bpdlf6yd1imh1" path="res://assets/icons/number-3.png" id="25_5he1u"]
 [ext_resource type="Script" uid="uid://cn1shumrhj2g6" path="res://scripts/UI/clock_ui.gd" id="26_2wyq8"]
 [ext_resource type="Texture2D" uid="uid://c3cgb3natf6w4" path="res://assets/icons/clock.png" id="27_2f3dj"]
-[ext_resource type="Texture2D" uid="uid://dicvvflpe78af" path="res://assets/textures/snakes/01_swelling_ redness_largebite.png" id="29_chjal"]
+[ext_resource type="Texture2D" uid="uid://cbtxy6avmtpa3" path="res://assets/icons/navigation_w.png" id="27_vc5cj"]
+[ext_resource type="Texture2D" uid="uid://bm1ff06334v6a" path="res://assets/icons/navigation_e.png" id="28_nvyfr"]
+[ext_resource type="Texture2D" uid="uid://dherag82lusrj" path="res://assets/textures/snakes/01_swelling_ redness_largebite.png" id="29_chjal"]
 [ext_resource type="Resource" uid="uid://cbpsdo1ki36iq" path="res://resources/snakes/StoneViper.tres" id="29_o7ddy"]
 [ext_resource type="Texture2D" uid="uid://dahgp4jmmk80s" path="res://assets/icons/clockProgress.png" id="29_pibwh"]
+[ext_resource type="Texture2D" uid="uid://6neuxn8bvvqt" path="res://assets/icons/cross_large.png" id="29_ty1g6"]
 [ext_resource type="Resource" uid="uid://beqlk387rwe8k" path="res://resources/snakes/ClayStinger.tres" id="30_0loja"]
 [ext_resource type="Resource" uid="uid://dc07ogf3i4b64" path="res://resources/snakes/AmberRibbonsnake.tres" id="31_ids8r"]
 [ext_resource type="Resource" uid="uid://dciv01pvefdil" path="res://resources/snakes/BlackleafPitViper.tres" id="32_dnhof"]
@@ -116,6 +119,8 @@ shader_parameter/heartbeat_intensity = 0.0
 shader_parameter/time = 0.0
 
 [node name="Main" type="Node3D" unique_id=596857963]
+metadata/_edit_vertical_guides_ = [100.0, 1819.0, 1422.0]
+metadata/_edit_horizontal_guides_ = [979.0, 101.0, 291.0]
 
 [node name="Environment" type="Node3D" parent="." unique_id=80432299]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 61.379868, 0, 73.32826)
@@ -254,38 +259,50 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.130962, 3.393488, 37.3738
 
 [node name="BookUIButton" type="Control" parent="UI" unique_id=1143446681 node_paths=PackedStringArray("player")]
 layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+anchors_preset = 13
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 script = ExtResource("13_trceg")
 player = NodePath("../../Environment/Player")
 
-[node name="Previous" type="Button" parent="UI/BookUIButton" unique_id=2041380123]
-layout_mode = 0
-offset_left = 196.0
-offset_top = 384.0
-offset_right = 214.0
-offset_bottom = 415.0
-text = "<
-"
-
-[node name="Next" type="Button" parent="UI/BookUIButton" unique_id=1351917259]
-layout_mode = 0
-offset_left = 281.0
-offset_top = 381.0
-offset_right = 299.0
-offset_bottom = 412.0
-text = ">
-"
-
 [node name="Close" type="Button" parent="UI/BookUIButton" unique_id=1692713776]
 layout_mode = 0
-offset_left = 149.0
-offset_top = 322.0
-offset_right = 166.0
-offset_bottom = 353.0
-text = "x
+offset_left = 449.0
+offset_top = 95.0
+offset_right = 489.0
+offset_bottom = 135.0
+icon = ExtResource("29_ty1g6")
+flat = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="UI/BookUIButton" unique_id=735749076]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -492.0
+offset_top = -137.0
+offset_right = 492.0
+offset_bottom = -97.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 900
+
+[node name="Previous" type="Button" parent="UI/BookUIButton/HBoxContainer" unique_id=2041380123]
+layout_mode = 2
+text = "
 "
+icon = ExtResource("27_vc5cj")
+flat = true
+
+[node name="Next" type="Button" parent="UI/BookUIButton/HBoxContainer" unique_id=1351917259]
+layout_mode = 2
+icon = ExtResource("28_nvyfr")
+flat = true
 
 [node name="InspectionUI" parent="UI" unique_id=494579209 node_paths=PackedStringArray("player", "inspection_sprite", "close_button") instance=ExtResource("32_qkpxi")]
 anchors_preset = 8
@@ -302,50 +319,54 @@ grow_vertical = 2
 script = ExtResource("33_5q0nq")
 player = NodePath("../../Environment/Player")
 inspection_sprite = NodePath("InspectionSprite")
-close_button = NodePath("CloseButton")
+close_button = NodePath("Close")
 ruler_cursor = ExtResource("38_bu4jf")
 
-[node name="CloseButton" type="Button" parent="UI/InspectionUI" unique_id=275592954]
-layout_mode = 0
-offset_left = 147.0
-offset_top = -250.0
-offset_right = 164.0
-offset_bottom = -219.0
-size_flags_horizontal = 8
-size_flags_vertical = 0
-text = "x"
-
 [node name="InspectionSprite" type="TextureRect" parent="UI/InspectionUI" unique_id=1304151410]
-layout_mode = 0
-offset_left = -198.0
-offset_top = -250.0
-offset_right = 302.0
-offset_bottom = 250.0
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -348.584
+offset_top = -200.0
+offset_right = 348.584
+offset_bottom = 200.0
+grow_horizontal = 2
+grow_vertical = 2
 mouse_filter = 0
 texture = ExtResource("29_chjal")
 expand_mode = 3
 stretch_mode = 5
 
+[node name="Close" type="Button" parent="UI/InspectionUI" unique_id=1770329977]
+layout_mode = 0
+offset_left = 365.0
+offset_top = -207.0
+offset_right = 405.0
+offset_bottom = -167.0
+icon = ExtResource("29_ty1g6")
+flat = true
+
 [node name="InteractionLabel" type="Label" parent="UI" unique_id=1436390109]
-offset_left = 571.0
-offset_top = 458.0
-offset_right = 682.0
-offset_bottom = 515.0
+offset_left = 856.0
+offset_top = 847.0
+offset_right = 967.0
+offset_bottom = 904.0
 
 [node name="Inventory" type="Control" parent="UI" unique_id=1040566888]
 layout_mode = 3
 anchors_preset = 0
-offset_left = 52.0
-offset_top = 476.0
-offset_right = 92.0
-offset_bottom = 516.0
 script = ExtResource("16_jbj1t")
 key_icons = Array[CompressedTexture2D]([ExtResource("23_pibwh"), ExtResource("24_c6pm6"), ExtResource("25_5he1u")])
 
 [node name="HBoxContainer" type="HBoxContainer" parent="UI/Inventory" unique_id=1984405335]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = 101.0
+offset_top = 905.0
+offset_right = 325.0
+offset_bottom = 977.0
 
 [node name="InventorySlot1" parent="UI/Inventory/HBoxContainer" unique_id=1278327121 instance=ExtResource("22_jscy8")]
 layout_mode = 2
@@ -368,25 +389,16 @@ poison_manager = NodePath("../../Managers/PoisonManager")
 clip_contents = true
 custom_minimum_size = Vector2(64, 64)
 layout_mode = 0
-offset_left = 250.0
-offset_top = 27.0
-offset_right = 762.0
-offset_bottom = 539.0
+offset_left = 1665.0
+offset_top = 102.0
+offset_right = 2177.0
+offset_bottom = 614.0
 scale = Vector2(0.3, 0.3)
 max_value = 1.0
 step = 0.01
 fill_mode = 4
 texture_under = ExtResource("27_2f3dj")
 texture_progress = ExtResource("29_pibwh")
-
-[node name="TimeLabel" type="Label" parent="UI/ClockUI" unique_id=850757771]
-layout_mode = 0
-offset_left = 585.0
-offset_top = 392.0
-offset_right = 625.0
-offset_bottom = 415.0
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="UI/ClockUI" unique_id=1082439771]
 
 [node name="SymptomEffectsUI" type="Control" parent="UI" unique_id=1580959087 node_paths=PackedStringArray("symptom_controller", "poison_manager", "overlay", "tremor_audio", "breath_audio", "heartbeat_audio", "tremor_timer")]
 layout_mode = 3
@@ -426,8 +438,11 @@ wait_time = 10.0
 
 [node name="Bite" type="ColorRect" parent="UI" unique_id=1448820529]
 visible = false
-offset_right = 1153.0
-offset_bottom = 651.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 mouse_filter = 2
 
 [node name="Crosshair" type="Control" parent="UI" unique_id=2009637942]
@@ -459,6 +474,6 @@ stretch_mode = 2
 stream = ExtResource("43_chjal")
 
 [connection signal="body_entered" from="SnakeTrigger" to="Managers/SnakeBiteController" method="_on_body_entered"]
-[connection signal="pressed" from="UI/BookUIButton/Previous" to="UI/BookUIButton" method="_on_previous_button_pressed"]
-[connection signal="pressed" from="UI/BookUIButton/Next" to="UI/BookUIButton" method="_on_next_button_pressed"]
 [connection signal="pressed" from="UI/BookUIButton/Close" to="UI/BookUIButton" method="_on_close_button_pressed"]
+[connection signal="pressed" from="UI/BookUIButton/HBoxContainer/Previous" to="UI/BookUIButton" method="_on_previous_button_pressed"]
+[connection signal="pressed" from="UI/BookUIButton/HBoxContainer/Next" to="UI/BookUIButton" method="_on_next_button_pressed"]

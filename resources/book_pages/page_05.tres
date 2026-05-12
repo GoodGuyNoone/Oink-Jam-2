@@ -1,9 +1,8 @@
 [gd_resource type="Resource" script_class="BookPageData" format=3 uid="uid://b1xqpme87x0fo"]
 
 [ext_resource type="Script" uid="uid://cqdom8ap5egeo" path="res://scripts/Book/book_page_data.gd" id="1_8e73o"]
-[ext_resource type="Texture2D" uid="uid://dpx0iyor3lpw7" path="res://assets/textures/Book/Frame 5.png" id="2_8e73o"]
+[ext_resource type="Texture2D" uid="uid://d0rjwbtej3qix" path="res://assets/import/page05.png" id="2_8e73o"]
 
 [resource]
 script = ExtResource("1_8e73o")
 texture = ExtResource("2_8e73o")
-metadata/_custom_type_script = "uid://ctuh82kf3xt6q"

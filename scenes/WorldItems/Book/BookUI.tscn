@@ -1,11 +1,17 @@
 [gd_scene format=3 uid="uid://eq587p74uyyo"]
 
 [ext_resource type="Script" uid="uid://cu1n3ltwqum6v" path="res://scripts/Book/book_ui.gd" id="1_txwgl"]
+[ext_resource type="Texture2D" uid="uid://dgwra8j4lxnub" path="res://assets/import/book_cover.png" id="2_5i38x"]
 [ext_resource type="Texture2D" uid="uid://rwm72617ojtf" path="res://assets/textures/Book/Frame 1.png" id="7_ghbta"]
 [ext_resource type="Texture2D" uid="uid://dulu188u8be80" path="res://assets/textures/Book/Frame 2.png" id="8_3rghl"]
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sscvm"]
+transparency = 4
+albedo_texture = ExtResource("2_5i38x")
+
 [sub_resource type="QuadMesh" id="QuadMesh_3djl8"]
-size = Vector2(3, 3)
+material = SubResource("StandardMaterial3D_sscvm")
+size = Vector2(1.05, 1.05)
 
 [sub_resource type="QuadMesh" id="QuadMesh_cxoky"]
 size = Vector2(1, 1.4)
@@ -65,7 +71,7 @@ process_mode = 3
 script = ExtResource("1_txwgl")
 
 [node name="BookBase" type="MeshInstance3D" parent="." unique_id=1628821818]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0)
+transform = Transform3D(2.0730538, 0, 0, 0, -6.3736884e-08, 1, 0, -1.45813, -4.371139e-08, 0, 0, 0)
 mesh = SubResource("QuadMesh_3djl8")
 
 [node name="LeftPage" type="MeshInstance3D" parent="." unique_id=90214542]
