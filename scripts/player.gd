@@ -14,6 +14,7 @@ class_name Player
 @onready var ray_cast_3d: RayCast3D = get_node("CameraMount/Camera3D/RayCast3D")
 @onready var camera_mount: Node3D = $CameraMount
 @onready var animation_player: AnimationPlayer = $player/AnimationPlayer
+@onready var camera = $CameraMount/Camera3D
 
 
 var cursor_open := preload("res://assets/icons/hand_open.png")

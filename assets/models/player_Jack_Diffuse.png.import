@@ -3,10 +3,9 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dvp4t7gsvc2jq"
-path.s3tc="res://.godot/imported/player_Jack_Diffuse.png-b55f3985e646cea017cc37d2f127f6dd.s3tc.ctex"
+path="res://.godot/imported/player_Jack_Diffuse.png-b55f3985e646cea017cc37d2f127f6dd.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
-"vram_texture": true
+"vram_texture": false
 }
 generator_parameters={
 "md5": "a2651fc69f7263383424e246c0c84f61"
@@ -15,11 +14,11 @@ generator_parameters={
 [deps]
 
 source_file="res://assets/models/player_Jack_Diffuse.png"
-dest_files=["res://.godot/imported/player_Jack_Diffuse.png-b55f3985e646cea017cc37d2f127f6dd.s3tc.ctex"]
+dest_files=["res://.godot/imported/player_Jack_Diffuse.png-b55f3985e646cea017cc37d2f127f6dd.ctex"]
 
 [params]
 
-compress/mode=2
+compress/mode=3
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/uastc_level=0

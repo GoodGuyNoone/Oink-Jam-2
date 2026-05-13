@@ -6,6 +6,7 @@ class_name GameManager
 @export var inventory: Inventory
 @export var symptom_effects_controller: SymptomEffectsController
 @export var inspection_ui: InspectionUI
+@export var end_sequence_controller: EndSequenceController
 
 @onready var book_ui_button: BookUIButton = $"../../UI/BookUIButton"
 @onready var inspection_sprite: TextureRect = $"../../UI/InspectionUI/InspectionSprite"
@@ -38,14 +39,10 @@ func _on_item_checked(item_id: String, is_correct: bool, picked_correct_count: i
 
 
 func _on_poison_ended(success: bool) -> void:
-	print("\n=== RESULT ===")
-
 	if success:
-		print("CURED ✅")
+		end_sequence_controller.play_success_sequence()
 	else:
-		print("DEAD 💀")
-
-	print("=============\n")
+		end_sequence_controller.play_death_sequence()
 
 
 func _on_inventory_item_used(item: ItemData) -> void:
