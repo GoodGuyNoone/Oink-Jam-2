@@ -48,7 +48,9 @@
 [ext_resource type="AudioStream" uid="uid://b1hxcmvfn8i4v" path="res://assets/sound/human-vocal-male-groan-painful-short-06.ogg" id="43_chjal"]
 [ext_resource type="AudioStream" uid="uid://cw0w35pbkt1yw" path="res://assets/sound/freesound_community-heavy-breath-male-63980.ogg" id="43_vchkt"]
 [ext_resource type="AudioStream" uid="uid://cv8ff8cm7x64c" path="res://assets/sound/kauasilbershlachparodes-heartbeat-sound-493999.ogg" id="44_txyw0"]
+[ext_resource type="Script" uid="uid://5dn74137aacg" path="res://scripts/UI/monologue_ui.gd" id="49_bjg73"]
 [ext_resource type="FontFile" uid="uid://cswe24d1aqfk0" path="res://assets/font/Chango/Chango-Regular.ttf" id="49_j2jfr"]
+[ext_resource type="PackedScene" uid="uid://csoupdmbu5v1d" path="res://scenes/environmentEntities/post002.scn" id="50_bjg73"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_cjqg0"]
 panorama = ExtResource("1_chjal")
@@ -155,6 +157,13 @@ shader_parameter/time = 0.0
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_o7ddy"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_j2jfr"]
+bg_color = Color(0.14767182, 0.14767179, 0.14767179, 0.69411767)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
 [node name="Main" type="Node3D" unique_id=596857963]
 metadata/_edit_vertical_guides_ = [959.0]
 
@@ -253,6 +262,8 @@ shape = SubResource("BoxShape3D_trceg")
 script = ExtResource("4_tipki")
 snakes = Array[ExtResource("5_85g3d")]([ExtResource("29_o7ddy"), ExtResource("30_0loja"), ExtResource("31_ids8r"), ExtResource("32_dnhof")])
 time_to_die = 300.0
+correct_item_bonus_time = 20.0
+wrong_item_penalty_time = 60.0
 
 [node name="GameManager" type="Node" parent="Managers" unique_id=242879686 node_paths=PackedStringArray("player", "poison_manager", "inventory", "symptom_effects_controller", "inspection_ui", "end_sequence_controller")]
 script = ExtResource("10_choun")
@@ -263,17 +274,18 @@ symptom_effects_controller = NodePath("../SymptomEffectsController")
 inspection_ui = NodePath("../../UI/InspectionUI")
 end_sequence_controller = NodePath("../EndSequenceController")
 
-[node name="SnakeBiteController" type="Node" parent="Managers" unique_id=1469445031 node_paths=PackedStringArray("bite_sound", "bite_flash")]
+[node name="SnakeBiteController" type="Node" parent="Managers" unique_id=1469445031 node_paths=PackedStringArray("bite_sound", "bite_flash", "monologue_ui")]
 script = ExtResource("8_jkv2x")
 snake_escape_duration = 3.0
 bite_duration = 0.5
 bite_sound = NodePath("../../Sounds/BiteSound")
 bite_flash = NodePath("../../UI/Bite")
+monologue_ui = NodePath("../../UI/MonologueUI")
 
 [node name="SymptomEffectsController" type="Node" parent="Managers" unique_id=1531025169 node_paths=PackedStringArray("poison_manager")]
 script = ExtResource("18_2f3dj")
 poison_manager = NodePath("../PoisonManager")
-effect_trigger_times = Array[float]([10.0, 20.0, 30.0, 40.0])
+effect_trigger_times = Array[float]([30.0, 40.0, 50.0, 60.0])
 
 [node name="EndSequenceController" type="Node" parent="Managers" unique_id=1614686351 node_paths=PackedStringArray("player", "black_fade")]
 script = ExtResource("25_nvyfr")
@@ -284,7 +296,7 @@ spiral_radius = 1.0
 spiral_height = 3.0
 spiral_back_distance = 10.0
 
-[node name="MainMenuController" type="Node" parent="Managers" unique_id=1173312354 node_paths=PackedStringArray("player", "menu_camera", "main_menu", "menu_panel", "options_panel", "credits_panel", "fade_black", "terrain", "inventory")]
+[node name="MainMenuController" type="Node" parent="Managers" unique_id=1173312354 node_paths=PackedStringArray("player", "menu_camera", "main_menu", "menu_panel", "options_panel", "credits_panel", "fade_black", "terrain", "inventory", "monologue_ui")]
 script = ExtResource("27_j2jfr")
 player = NodePath("../../Environment/Player")
 menu_camera = NodePath("../../MenuCamera")
@@ -295,6 +307,7 @@ credits_panel = NodePath("../../UI/MainMenu/CreditPanel")
 fade_black = NodePath("../../UI/MainMenu/FadeBlack")
 terrain = NodePath("../../Environment/Terrain3D")
 inventory = NodePath("../../UI/Inventory")
+monologue_ui = NodePath("../../UI/MonologueUI")
 intro_duration = 5.0
 
 [node name="SnakeSpawn" type="Node3D" parent="." unique_id=1205766575]
@@ -416,6 +429,7 @@ uppercase = true
 
 [node name="Inventory" type="Control" parent="UI" unique_id=1040566888]
 layout_mode = 3
+anchors_preset = 13
 anchor_left = 0.5
 anchor_right = 0.5
 anchor_bottom = 1.0
@@ -685,6 +699,70 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 color = Color(0, 0, 0, 0)
+
+[node name="MonologueUI" type="Control" parent="UI" unique_id=1742488310 node_paths=PackedStringArray("text_label", "continue_label")]
+visible = false
+custom_minimum_size = Vector2(600, 140)
+layout_mode = 3
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -320.0
+offset_top = -310.0
+offset_right = 280.0
+offset_bottom = -169.99945
+grow_horizontal = 2
+grow_vertical = 0
+script = ExtResource("49_bjg73")
+text_label = NodePath("Panel/TextLabel")
+continue_label = NodePath("Panel/Continue")
+
+[node name="Panel" type="Panel" parent="UI/MonologueUI" unique_id=626555234]
+custom_minimum_size = Vector2(600, 140)
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -300.0
+offset_top = -140.0
+offset_right = 300.0
+grow_horizontal = 2
+grow_vertical = 0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_j2jfr")
+
+[node name="TextLabel" type="Label" parent="UI/MonologueUI/Panel" unique_id=845165361]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Damn it... I remember I have a medkit in the car, but I don't have much time."
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+uppercase = true
+
+[node name="Continue" type="Label" parent="UI/MonologueUI/Panel" unique_id=2038298413]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -100.0
+offset_top = -30.0
+grow_horizontal = 0
+grow_vertical = 0
+text = "Continue >>"
+
+[node name="sign02" parent="UI/MonologueUI" unique_id=891839412 instance=ExtResource("50_bjg73")]
+transform = Transform3D(0.8953571, -0.09297883, 0.43553483, 0.08361144, 0.9956681, 0.040671702, -0.43742973, 0, 0.89925253, -37.8878, 0.7500125, 48.98715)
 
 [node name="Sounds" type="Node" parent="." unique_id=956839637]
 

@@ -13,6 +13,7 @@ class_name SnakeBiteController
 @export var camera_turn_duration: float = 0.5
 @export var bite_sound: AudioStreamPlayer
 @export var bite_flash: ColorRect
+@export var monologue_ui: MonologueUI
 
 var _player: Player
 var _snake: Snake
@@ -39,7 +40,16 @@ func _run_bite_sequence() -> void:
 	await _wait_for_bite_phase()
 	await _detach_snake_and_watch()
 	_remove_snake()
+	_player.set_ui_mode(true)
+	monologue_ui.show_monologue(
+		"Damn it... I remember I have a medkit in the car, but I don't have much time."
+	)
+	await monologue_ui.wait_until_finished()
 	await _restore_camera()
+
+	_player.set_ui_mode(false)
+	_player.set_control_enabled(true)
+
 	poison_manager.apply_random_poison()
 
 
@@ -67,11 +77,9 @@ func _look_at_bite_point() -> void:
 
 
 func _restore_camera() -> void:
-	print("_restore_camera()")
-
 	await _tween_camera_basis(camera.global_transform.basis, _original_camera_transform.basis)
 	_player.set_control_enabled(true)
-	print("ended()")
+
 
 
 

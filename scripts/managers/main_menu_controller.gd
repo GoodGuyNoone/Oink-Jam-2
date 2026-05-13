@@ -11,6 +11,7 @@ class_name MainMenuController
 @export var fade_black: ColorRect
 @export var terrain: Terrain3D
 @export var inventory: Inventory
+@export var monologue_ui: MonologueUI
 
 @export var intro_duration: float = 3.0
 @export var fade_duration: float = 0.6
@@ -70,7 +71,12 @@ func _start_game() -> void:
 
 	main_menu.visible = false
 
-	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+	player.set_ui_mode(true)
+
+	monologue_ui.show_monologue("What a nice hike. Let's head home.")
+	await monologue_ui.wait_until_finished()
+
+	player.set_ui_mode(false)
 	inventory.show()
 	player.set_control_enabled(true)
 
