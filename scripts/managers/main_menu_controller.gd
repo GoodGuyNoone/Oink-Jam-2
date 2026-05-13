@@ -10,6 +10,7 @@ class_name MainMenuController
 @export var credits_panel: Control
 @export var fade_black: ColorRect
 @export var terrain: Terrain3D
+@export var inventory: Inventory
 
 @export var intro_duration: float = 3.0
 @export var fade_duration: float = 0.6
@@ -20,8 +21,11 @@ var starting_game := false
 
 
 func _ready() -> void:
+	AudioManager.play_music("ambient")
 	player.set_ui_mode(true)
 	player.set_control_enabled(false)
+	inventory.hide()
+
 
 	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 
@@ -46,6 +50,7 @@ func _on_start_button_pressed() -> void:
 	if starting_game:
 		return
 
+	AudioManager.play_sfx("startClicked")
 	starting_game = true
 	await _start_game()
 	player.set_ui_mode(false)
@@ -66,6 +71,7 @@ func _start_game() -> void:
 	main_menu.visible = false
 
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+	inventory.show()
 	player.set_control_enabled(true)
 
 
@@ -104,11 +110,13 @@ func _disable_menu_buttons() -> void:
 
 
 func _on_options_button_pressed() -> void:
+	_on_other_pressed()
 	menu_panel.visible = false
 	options_panel.visible = true
 
 
 func _on_credits_button_pressed() -> void:
+	_on_other_pressed()
 	menu_panel.visible = false
 	credits_panel.visible = true
 
@@ -120,6 +128,7 @@ func _on_back_button_pressed() -> void:
 
 
 func _on_exit_button_pressed() -> void:
+	_on_other_pressed()
 	get_tree().quit()
 
 
@@ -135,3 +144,11 @@ func _fade_from_black() -> void:
 		Color(0, 0, 0, 0),
 		2.0
 	)
+
+
+func _on_mouse_entered() -> void:
+	AudioManager.play_sfx("mouseEntered", -4)
+
+
+func _on_other_pressed() -> void:
+	AudioManager.play_sfx("otherClicked")

@@ -26,16 +26,20 @@ func play_death_sequence() -> void:
 func _play_end_sequence(success: bool) -> void:
 	if sequence_running:
 		return
-
+	
 	sequence_running = true
 
+	
 	if player:
 		player.set_control_enabled(false)
+		player.lock_animation = true
 
 	if success:
 		player._play_animation("success")
+		AudioManager.play_sfx("success")
 	else:
 		player._play_animation("death")
+		AudioManager.play_sfx("death", -10)
 
 	_fade_to_black()
 	await  _spiral_camera_away()

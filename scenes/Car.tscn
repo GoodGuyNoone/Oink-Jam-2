@@ -388,7 +388,6 @@ skeleton = NodePath("..")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=624438431]
 libraries/ = SubResource("AnimationLibrary_a63m5")
-autoplay = &"Open"
 
 [node name="CollisionShape3D6" type="CollisionShape3D" parent="." unique_id=385508360]
 shape = SubResource("ConcavePolygonShape3D_ho1w2")
@@ -400,11 +399,13 @@ shape = SubResource("BoxShape3D_2yo20")
 [node name="openTrunk" type="AudioStreamPlayer3D" parent="." unique_id=1188270183]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.0829914, 0.99953103, 0)
 volume_db = 2.0
+max_distance = 10.0
 
 [node name="closeTrunk" type="AudioStreamPlayer3D" parent="." unique_id=1521201919]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.0829914, 0.99953103, 0)
 volume_db = 2.0
 max_db = 2.0
+max_distance = 10.0
 
 [node name="CollisionShape3D4" type="CollisionShape3D" parent="." unique_id=1809289623]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5915077, 0.63461196, -0.8548933)

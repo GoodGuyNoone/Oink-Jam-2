@@ -27,6 +27,7 @@ var _current_speed: float = walk_speed
 var _move_direction: Vector3 = Vector3.ZERO
 var current_target: Node
 var ui_mode: bool = false
+var lock_animation := false
 
 
 func _ready() -> void:
@@ -175,6 +176,9 @@ func _try_interact() -> void:
 
 func _update_movement_animation() -> void:
 	if animation_player == null:
+		return
+
+	if lock_animation:
 		return
 
 	if not can_move:

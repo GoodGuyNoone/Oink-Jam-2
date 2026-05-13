@@ -36,7 +36,55 @@ var sounds := {
 		preload("res://assets/sound/thermometer-01.ogg"),
 		preload("res://assets/sound/thermometer-02.ogg"),
 	],
+	"mouseEntered": [
+		preload("res://assets/sound/Modern10.ogg"),
+	],
+	"startClicked": [
+		preload("res://assets/sound/Modern9.ogg"),
+	],
+	"otherClicked": [
+		preload("res://assets/sound/Modern7.ogg"),
+	],
+	"success": [
+		preload("res://assets/sound/success.ogg"),
+	],
+	"death": [
+		preload("res://assets/sound/death.ogg"),
+	],
+	"snakeBite": [
+		preload("res://assets/sound/snakeBite.ogg"),
+	],
+	"snakeRunAway": [
+		preload("res://assets/sound/snakeRunAway.ogg"),
+	],
 }
+
+var music := {
+	"ambient": preload("res://assets/sound/ambient.ogg"),
+}
+
+var music_player: AudioStreamPlayer
+
+
+func _ready() -> void:
+	music_player = AudioStreamPlayer.new()
+	add_child(music_player)
+
+	music_player.bus = "Music"
+	music_player.volume_db = -14.0
+
+
+func play_music(music_id: String, volume_db := -14.0) -> void:
+	if not music.has(music_id):
+		push_warning("AudioManager: missing music id: " + music_id)
+		return
+
+	if music_player.playing and music_player.stream == music[music_id]:
+		return
+
+	music_player.stream = music[music_id]
+	music_player.volume_db = volume_db
+	music_player.play()
 
 
 func play_sfx(sound_id: String, volume_db := 0.0, pitch_min := 0.96, pitch_max := 1.04, bus := "SFX") -> AudioStreamPlayer:
@@ -58,3 +106,5 @@ func play_sfx(sound_id: String, volume_db := 0.0, pitch_min := 0.96, pitch_max :
 	player.play()
 
 	return player
+
+

@@ -88,8 +88,7 @@ func _tween_camera_basis(from_basis: Basis, to_basis: Basis) -> void:
 
 
 func _play_bite_effects() -> void:
-	print("_play_bite_effects()")
-
+	AudioManager.play_sfx("snakeBite", -10)
 	if bite_sound:
 		bite_sound.play()
 
@@ -102,25 +101,20 @@ func _play_bite_effects() -> void:
 		tween.tween_property(bite_flash, "color", Color(1.0, 0.0, 0.0, 0.0), 0.35)
 
 	await get_tree().create_timer(0.5).timeout
-	print("ended")
+
 
 
 func _wait_for_bite_phase() -> void:
-	print("_wait_for_bite_phase()")
 	_snake.play_animation("ArmatureAction")
 	await get_tree().create_timer(bite_duration).timeout
-	print("ended")
 
 
 func _remove_snake() -> void:
-	print("_remove_snake()")
 	_snake.queue_free()
-	print("ended()")
 
 
 func _detach_snake_and_watch() -> void:
-	print("_detach_snake_and_watch()")
-
+	AudioManager.play_sfx("snakeRunAway", -10)
 	_snake.play_animation("ArmatureAction_001")
 	await _snake.detach_and_escape_to_point(snake_run_point.global_position)
 
@@ -131,5 +125,3 @@ func _detach_snake_and_watch() -> void:
 
 		await get_tree().process_frame
 		elapsed += get_process_delta_time()
-
-	print("ended")
