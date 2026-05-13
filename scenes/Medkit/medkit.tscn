@@ -729,7 +729,7 @@ mesh = SubResource("ArrayMesh_3mrc5")
 [node name="BlackSyrup" type="StaticBody3D" parent="case_with_textures/InteractableItems" unique_id=211889760]
 script = ExtResource("1_htdnc")
 outline_material = ExtResource("10_2vliq")
-interaction_text = "Drink"
+interaction_text = ""
 item_data = ExtResource("10_heumc")
 consume_sound_id = "useSyrup"
 
@@ -744,7 +744,7 @@ mesh = SubResource("ArrayMesh_8abep")
 [node name="PurpleSyrup" type="StaticBody3D" parent="case_with_textures/InteractableItems" unique_id=2081082050]
 script = ExtResource("1_htdnc")
 outline_material = ExtResource("10_2vliq")
-interaction_text = "Drink"
+interaction_text = ""
 item_data = ExtResource("11_g51n4")
 consume_sound_id = "useSyrup"
 
@@ -759,7 +759,7 @@ mesh = SubResource("ArrayMesh_ejjee")
 [node name="PinkSyrup" type="StaticBody3D" parent="case_with_textures/InteractableItems" unique_id=1084008260]
 script = ExtResource("1_htdnc")
 outline_material = ExtResource("10_2vliq")
-interaction_text = "Drink"
+interaction_text = ""
 item_data = ExtResource("12_2vliq")
 consume_sound_id = "useSyrup"
 
@@ -774,7 +774,7 @@ mesh = SubResource("ArrayMesh_u5kqj")
 [node name="YellowTablets" type="StaticBody3D" parent="case_with_textures/InteractableItems" unique_id=917639519]
 script = ExtResource("1_htdnc")
 outline_material = ExtResource("10_2vliq")
-interaction_text = "Consume"
+interaction_text = ""
 item_data = ExtResource("13_5otkt")
 consume_sound_id = "openTablets"
 
@@ -789,7 +789,7 @@ shape = SubResource("ConcavePolygonShape3D_okyfo")
 [node name="BlueTablets" type="StaticBody3D" parent="case_with_textures/InteractableItems" unique_id=1350543519]
 script = ExtResource("1_htdnc")
 outline_material = ExtResource("10_2vliq")
-interaction_text = "Consume"
+interaction_text = ""
 item_data = ExtResource("14_aur0f")
 consume_sound_id = "openTablets"
 
@@ -804,7 +804,7 @@ shape = SubResource("ConcavePolygonShape3D_pfbeq")
 [node name="WhiteTablets" type="StaticBody3D" parent="case_with_textures/InteractableItems" unique_id=1394408372]
 script = ExtResource("1_htdnc")
 outline_material = ExtResource("10_2vliq")
-interaction_text = "Consume"
+interaction_text = ""
 item_data = ExtResource("15_m2g8r")
 consume_sound_id = "openTablets"
 
@@ -819,7 +819,7 @@ shape = SubResource("ConcavePolygonShape3D_vtsi0")
 [node name="GreenSyringe" type="StaticBody3D" parent="case_with_textures/InteractableItems" unique_id=1933416041]
 script = ExtResource("1_htdnc")
 outline_material = ExtResource("10_2vliq")
-interaction_text = "Use"
+interaction_text = ""
 item_data = ExtResource("16_2j6ik")
 consume_sound_id = "useSyringe"
 
@@ -834,7 +834,7 @@ shape = SubResource("ConcavePolygonShape3D_elgt7")
 [node name="OrangeSyringe" type="StaticBody3D" parent="case_with_textures/InteractableItems" unique_id=1982505284]
 script = ExtResource("1_htdnc")
 outline_material = ExtResource("10_2vliq")
-interaction_text = "Use"
+interaction_text = ""
 item_data = ExtResource("17_6oja8")
 consume_sound_id = "useSyringe"
 
@@ -849,7 +849,7 @@ shape = SubResource("ConcavePolygonShape3D_lv53v")
 [node name="RedSyringe" type="StaticBody3D" parent="case_with_textures/InteractableItems" unique_id=1301830605]
 script = ExtResource("1_htdnc")
 outline_material = ExtResource("10_2vliq")
-interaction_text = "Use"
+interaction_text = ""
 item_data = ExtResource("18_13h7l")
 consume_sound_id = "useSyringe"
 

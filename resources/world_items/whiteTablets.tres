@@ -5,5 +5,5 @@
 [resource]
 script = ExtResource("1_vg4dn")
 item_id = "whiteTablets"
-display_name = "white tablets"
+display_name = "White tablets"
 metadata/_custom_type_script = "uid://dtfbka8p7vikm"

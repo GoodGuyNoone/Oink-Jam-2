@@ -5,5 +5,5 @@
 [resource]
 script = ExtResource("1_q7oal")
 item_id = "blackSyrup"
-display_name = "black Syrup"
+display_name = "Black Syrup"
 metadata/_custom_type_script = "uid://dtfbka8p7vikm"

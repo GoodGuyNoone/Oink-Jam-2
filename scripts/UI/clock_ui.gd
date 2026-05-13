@@ -5,7 +5,6 @@ class_name PoisonClockUI
 @export var appear_delay: float = 1.0
 
 @onready var clock_progress: TextureProgressBar = $ClockProgress
-@onready var animation_player: AnimationPlayer = $AnimationPlayer
 
 var max_time := 1.0
 
@@ -24,7 +23,6 @@ func _on_poison_started(_snake: SnakeData) -> void:
 	await get_tree().create_timer(appear_delay).timeout
 
 	visible = true
-	# animation_player.play("appear")
 
 
 func _on_poison_updated(time_left: float) -> void:

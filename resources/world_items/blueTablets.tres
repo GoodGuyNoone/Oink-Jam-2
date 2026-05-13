@@ -5,5 +5,5 @@
 [resource]
 script = ExtResource("1_ftfum")
 item_id = "blueTablets"
-display_name = "blue tablets"
+display_name = "Blue tablets"
 metadata/_custom_type_script = "uid://dtfbka8p7vikm"

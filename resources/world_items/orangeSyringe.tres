@@ -5,5 +5,5 @@
 [resource]
 script = ExtResource("1_3a6jn")
 item_id = "orangeSyringe"
-display_name = "orange syringe"
+display_name = "Orange syringe"
 metadata/_custom_type_script = "uid://dtfbka8p7vikm"
