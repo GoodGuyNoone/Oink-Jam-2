@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="SnakeData" format=3 uid="uid://dciv01pvefdil"]
 
 [ext_resource type="Script" uid="uid://7c6aeatss7mu" path="res://scripts/Data/snake_data.gd" id="1_r6v8b"]
-[ext_resource type="Texture2D" uid="uid://csv4kketsaiyk" path="res://assets/textures/snakes/03_swelling_Darkening_largebite.png" id="1_s8pa3"]
+[ext_resource type="Texture2D" uid="uid://c0alfpva6jyx8" path="res://assets/textures/snakes/03_swelling_Darkening_largebite.png" id="1_s8pa3"]
 [ext_resource type="Script" uid="uid://cxhyxl8lce2v6" path="res://scripts/Data/symptom_data.gd" id="2_3f23y"]
 [ext_resource type="Material" uid="uid://dp475e2yidk24" path="res://assets/materials/snakes/BlackleafPitViper.tres" id="2_s8pa3"]
 [ext_resource type="Texture2D" uid="uid://be0dal2jixvbr" path="res://assets/textures/snakes/temperature_39.png" id="5_6rmlt"]

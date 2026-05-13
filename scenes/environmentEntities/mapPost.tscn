@@ -1,7 +1,8 @@
 [gd_scene format=3 uid="uid://d1cgja5hkfq2"]
 
-[ext_resource type="PackedScene" uid="uid://bgh8ybrca8ue2" path="res://assets/models/environmentEntities/wooden_sign_with_roof.glb" id="1_syhtu"]
+[ext_resource type="PackedScene" uid="uid://w210n4fg62em" path="res://assets/models/environmentEntities/Board.glb" id="1_8j6f8"]
 [ext_resource type="Texture2D" uid="uid://bab26ayq3uwp6" path="res://assets/icons/mariposa-grove-map-960w.jpg" id="2_64y4b"]
+[ext_resource type="Material" uid="uid://c6hjxovx6l1oi" path="res://assets/materials/environmentEntities/Wood.res" id="2_mtf73"]
 [ext_resource type="Texture2D" uid="uid://b4ei3qv0jdyfy" path="res://assets/icons/9WtY3N.png" id="3_8j6f8"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8j6f8"]
@@ -18,12 +19,15 @@ albedo_texture = ExtResource("3_8j6f8")
 [sub_resource type="QuadMesh" id="QuadMesh_ktbhy"]
 material = SubResource("StandardMaterial3D_mtf73")
 
-[node name="Sketchfab_Scene" unique_id=759711411 instance=ExtResource("1_syhtu")]
+[node name="Board2" unique_id=2037138899 instance=ExtResource("1_8j6f8")]
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Sketchfab_model/root/GLTF_SceneRootNode/G-Sign Name_001_0" parent_id_path=PackedInt32Array(1300251781) index="1" unique_id=2143163971]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.0606275, 0.5073876, 0.011289537)
+[node name="Board" parent="." index="0" unique_id=1125972267]
+surface_material_override/0 = ExtResource("2_mtf73")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." index="1" unique_id=680367591]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3098289, 0.1719662)
 mesh = SubResource("QuadMesh_mtf73")
 
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="Sketchfab_model/root/GLTF_SceneRootNode/G-Sign Name_001_0" parent_id_path=PackedInt32Array(1300251781) index="2" unique_id=88229871]
-transform = Transform3D(0.36126935, -0.06744455, 0, 0.1401344, 0.17387344, 0, 0, 0, 1, 0.4364257, 0.81015056, 0.011289537)
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="." index="2" unique_id=797064184]
+transform = Transform3D(0.36126935, -0.06744455, 0, 0.1401344, 0.17387344, 0, 0, 0, 1, -0.5385028, 1.510008, 0.1719662)
 mesh = SubResource("QuadMesh_ktbhy")

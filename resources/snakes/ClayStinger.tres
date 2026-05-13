@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="SnakeData" format=3 uid="uid://beqlk387rwe8k"]
 
 [ext_resource type="Script" uid="uid://7c6aeatss7mu" path="res://scripts/Data/snake_data.gd" id="1_8neu2"]
-[ext_resource type="Texture2D" uid="uid://cyffi8lv0bj0h" path="res://assets/textures/snakes/04_Darkening_smallbite_BaseColor.png" id="1_aho0n"]
+[ext_resource type="Texture2D" uid="uid://dwxr3uydehivl" path="res://assets/textures/snakes/04_Darkening_smallbite_BaseColor.png" id="1_aho0n"]
 [ext_resource type="Material" uid="uid://cjwpilx2ig6pj" path="res://assets/materials/snakes/ClayStinger.tres" id="2_lrun7"]
 [ext_resource type="Script" uid="uid://cxhyxl8lce2v6" path="res://scripts/Data/symptom_data.gd" id="2_uwfmm"]
 [ext_resource type="Resource" uid="uid://cb82idh0qvwnj" path="res://resources/snakes/symptoms/Tremor.tres" id="3_uwfmm"]

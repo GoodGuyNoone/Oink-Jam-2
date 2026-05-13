@@ -27,28 +27,6 @@ shader_parameter/dither_scale = 1.0
 height = 1.5224609
 radius = 0.3125
 
-[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_d2wvv"]
-emission_shape = 3
-emission_box_extents = Vector3(8, 3, 8)
-direction = Vector3(1, 0.2, 0.3)
-spread = 120.0
-initial_velocity_min = 0.049999997
-initial_velocity_max = 0.19999999
-gravity = Vector3(0, 0.02, 0)
-damping_min = 0.1
-damping_max = 0.5
-scale_min = 0.01
-scale_max = 0.04
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ty1g6"]
-transparency = 1
-shading_mode = 0
-albedo_color = Color(0.7607843, 0.88235295, 0.05882353, 0.34509805)
-billboard_mode = 1
-
-[sub_resource type="QuadMesh" id="QuadMesh_3v2ag"]
-material = SubResource("StandardMaterial3D_ty1g6")
-
 [node name="Player" type="CharacterBody3D" unique_id=1589132169]
 script = ExtResource("1_g2els")
 
@@ -220,16 +198,5 @@ collide_with_areas = true
 
 [node name="SnakeBitePoint" type="Node3D" parent="." unique_id=1981808322]
 transform = Transform3D(-0.018691242, 0, -0.99982536, 0, 0.9999999, 0, 0.99982536, 0, -0.018691242, -0.7044029, 0.52622044, -0.17461288)
-
-[node name="FloatinParticles" type="GPUParticles3D" parent="." unique_id=1392238272]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 99.68056, -0.66939354, 16.82336)
-emitting = false
-amount = 120
-lifetime = 10.0
-one_shot = true
-preprocess = 10.0
-visibility_aabb = AABB(-1, -1, -1, 2, 2, 2)
-process_material = SubResource("ParticleProcessMaterial_d2wvv")
-draw_pass_1 = SubResource("QuadMesh_3v2ag")
 
 [editable path="player"]

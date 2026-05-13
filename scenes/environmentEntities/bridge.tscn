@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://c2wc3tpo5c8ya"]
+
+[ext_resource type="PackedScene" uid="uid://cm6f06xtlq4ry" path="res://assets/models/environmentEntities/Bridge.glb" id="1_ldgtt"]
+[ext_resource type="Material" uid="uid://c8ikecgntdpg7" path="res://assets/materials/environmentEntities/Rope.res" id="2_ovjf8"]
+[ext_resource type="Material" uid="uid://c6hjxovx6l1oi" path="res://assets/materials/environmentEntities/Wood.res" id="3_jx6h7"]
+
+[node name="Bridge2" unique_id=1742211839 instance=ExtResource("1_ldgtt")]
+
+[node name="Rope" parent="." index="0" unique_id=659245217]
+surface_material_override/0 = ExtResource("2_ovjf8")
+
+[node name="Bridge" parent="." index="1" unique_id=1769438755]
+surface_material_override/0 = ExtResource("3_jx6h7")

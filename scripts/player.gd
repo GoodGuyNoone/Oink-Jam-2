@@ -72,8 +72,13 @@ func set_ui_mode(enabled: bool) -> void:
 
 func set_control_enabled(enabled: bool) -> void:
 	can_look = enabled
-	set_physics_process(enabled)
-	set_process(enabled)
+	can_move = enabled
+
+	if not enabled:
+		velocity.x = 0.0
+		velocity.z = 0.0
+		_move_direction = Vector3.ZERO
+		_play_animation("idle")
 
 
 func _handle_mouse_look(event: InputEvent) -> void:
@@ -102,7 +107,10 @@ func _apply_gravity(delta: float) -> void:
 
 func _handle_movement(delta: float) -> void:
 	if not can_move:
+		velocity.x = 0.0
+		velocity.z = 0.0
 		return
+
 	var input_dir := Input.get_vector("left", "right", "forward", "back")
 	var target_direction := (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
 	_move_direction = lerp(_move_direction, target_direction, movement_lerp_speed * delta)
@@ -167,6 +175,10 @@ func _try_interact() -> void:
 
 func _update_movement_animation() -> void:
 	if animation_player == null:
+		return
+
+	if not can_move:
+		_play_animation("idle")
 		return
 
 	var horizontal_velocity := velocity

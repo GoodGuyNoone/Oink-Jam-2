@@ -48,6 +48,8 @@ func _on_poison_ended(success: bool) -> void:
 func _on_inventory_item_used(item: ItemData) -> void:
 	print("Inventory item triggered:", item.item_id)
 
+	close_all_item_views()
+
 	match item.item_id:
 		"book":
 			player.set_ui_mode(true)
@@ -69,3 +71,14 @@ func _on_inventory_item_used(item: ItemData) -> void:
 
 		_:
 			print("No logic for:", item.item_id)
+
+
+func close_all_item_views() -> void:
+	if player.book:
+		player.book.hide()
+
+	if book_ui_button:
+		book_ui_button.close_ui()
+
+	if inspection_ui:
+		inspection_ui.close()

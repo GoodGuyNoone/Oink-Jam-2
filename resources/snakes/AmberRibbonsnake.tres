@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="SnakeData" format=3 uid="uid://dc07ogf3i4b64"]
 
-[ext_resource type="Texture2D" uid="uid://c1j3w68iyntcu" path="res://assets/textures/snakes/02_ redness_smallbite.png" id="1_3rcvf"]
+[ext_resource type="Texture2D" uid="uid://2swkclm7hx5p" path="res://assets/textures/snakes/02_ redness_smallbite.png" id="1_3rcvf"]
 [ext_resource type="Script" uid="uid://7c6aeatss7mu" path="res://scripts/Data/snake_data.gd" id="1_i7wsr"]
 [ext_resource type="Script" uid="uid://cxhyxl8lce2v6" path="res://scripts/Data/symptom_data.gd" id="2_j3sic"]
 [ext_resource type="Material" uid="uid://2ybb40cr6r4j" path="res://assets/materials/snakes/AmberRibbonsnake.tres" id="2_ru60f"]

@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" uid="uid://cu1n3ltwqum6v" path="res://scripts/Book/book_ui.gd" id="1_txwgl"]
 [ext_resource type="Texture2D" uid="uid://dgwra8j4lxnub" path="res://assets/import/book_cover.png" id="2_5i38x"]
-[ext_resource type="Texture2D" uid="uid://rwm72617ojtf" path="res://assets/textures/Book/Frame 1.png" id="7_ghbta"]
-[ext_resource type="Texture2D" uid="uid://dulu188u8be80" path="res://assets/textures/Book/Frame 2.png" id="8_3rghl"]
+[ext_resource type="Texture2D" uid="uid://bk4ysk4kyt75o" path="res://assets/textures/Book/page01.png" id="7_ghbta"]
+[ext_resource type="Texture2D" uid="uid://dgeyvklyqnfj5" path="res://assets/textures/Book/page02.png" id="8_3rghl"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sscvm"]
 transparency = 4
@@ -85,7 +85,7 @@ mesh = SubResource("QuadMesh_cxoky")
 surface_material_override/0 = SubResource("StandardMaterial3D_ufjcn")
 
 [node name="FlipPagePivot" type="Node3D" parent="." unique_id=119824087]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.02, 0)
+transform = Transform3D(-1, 8.742278e-08, 0, -8.742278e-08, -1, 0, 0, 0, 1, 0, 0.02, 0)
 
 [node name="FlipPageFront" type="MeshInstance3D" parent="FlipPagePivot" unique_id=1513740274]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0.5, 0.01, 0)

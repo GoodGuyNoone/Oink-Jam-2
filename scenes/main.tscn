@@ -1,7 +1,6 @@
 [gd_scene format=4 uid="uid://cctkaf5tyfk1l"]
 
 [ext_resource type="Texture2D" uid="uid://cvrxtii32y00c" path="res://assets/textures/kloofendal_43d_clear_puresky_1k.hdr" id="1_chjal"]
-[ext_resource type="Texture2D" uid="uid://bd0av4cahevvj" path="res://assets/textures/texture_01.png" id="1_o5qli"]
 [ext_resource type="PackedScene" uid="uid://bumo5d8a0hhuq" path="res://scenes/player.tscn" id="2_0wfyh"]
 [ext_resource type="PackedScene" uid="uid://b8cla6as6i3ke" path="res://scenes/Medkit/medkit.tscn" id="3_trceg"]
 [ext_resource type="Material" uid="uid://br7ryun77o4fr" path="res://resources/world_items/ItemOutline.tres" id="4_5poiv"]
@@ -30,6 +29,7 @@
 [ext_resource type="Script" uid="uid://bdf01al51qwut" path="res://scripts/Managers/end_sequence_controller.gd" id="25_nvyfr"]
 [ext_resource type="Script" uid="uid://cn1shumrhj2g6" path="res://scripts/UI/clock_ui.gd" id="26_2wyq8"]
 [ext_resource type="Texture2D" uid="uid://c3cgb3natf6w4" path="res://assets/icons/clock.png" id="27_2f3dj"]
+[ext_resource type="Script" uid="uid://4xo6fc5m8k2g" path="res://scripts/Managers/main_menu_controller.gd" id="27_j2jfr"]
 [ext_resource type="Texture2D" uid="uid://cbtxy6avmtpa3" path="res://assets/icons/navigation_w.png" id="27_vc5cj"]
 [ext_resource type="Texture2D" uid="uid://bm1ff06334v6a" path="res://assets/icons/navigation_e.png" id="28_nvyfr"]
 [ext_resource type="Texture2D" uid="uid://dherag82lusrj" path="res://assets/textures/snakes/01_swelling_ redness_largebite.png" id="29_chjal"]
@@ -66,9 +66,6 @@ fog_density = 0.5243
 fog_height_density = 0.03
 fog_depth_begin = 25.0
 fog_depth_end = 90.0
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0wfyh"]
-albedo_texture = ExtResource("1_o5qli")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_v5rp8"]
 resource_name = "BackPack_tex"
@@ -154,20 +151,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 61.379868, 0, 73.32826)
 [node name="WorldEnvironment" type="WorldEnvironment" parent="Environment" unique_id=525356106]
 environment = SubResource("Environment_txyw0")
 
-[node name="Floor" type="CSGBox3D" parent="Environment" unique_id=1466692383]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
-material_override = SubResource("StandardMaterial3D_0wfyh")
-use_collision = true
-size = Vector3(20, 1, 20)
-
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="Environment" unique_id=865124766]
 transform = Transform3D(-0.50000006, -0.7094065, 0.49673173, 0, 0.57357645, 0.81915206, -0.8660254, 0.4095761, -0.28678825, -145.61032, 38.5065, -40.056435)
 light_color = Color(0.99999946, 0.8360123, 0.52748644, 1)
 light_energy = 2.5
 shadow_enabled = true
-
-[node name="Car" parent="Environment" unique_id=1184071739 instance=ExtResource("16_j8jky")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.9706192, 0, 3.1456833)
 
 [node name="Car2" parent="Environment" unique_id=346548748 instance=ExtResource("16_j8jky")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -106.69824, 0.0006933212, -15.082748)
@@ -220,17 +208,10 @@ transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, 0, 0, 0)
 mesh = SubResource("ArrayMesh_v7atb")
 
 [node name="Terrain3D" parent="Environment" unique_id=830004836 instance=ExtResource("13_pibwh")]
-
-[node name="CSGBox3D" type="CSGBox3D" parent="Environment" unique_id=1307343322]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.80511475, -5.1825256)
-size = Vector3(1, 2.6102295, 6.071289)
-
-[node name="CSGBox3D2" type="CSGBox3D" parent="Environment" unique_id=1546534390]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.374016, 0.80511475, -5.1825256)
-size = Vector3(1, 2.6102295, 6.071289)
+collision_mode = 1
 
 [node name="Player" parent="Environment" unique_id=1589132169 node_paths=PackedStringArray("interaction_label", "crosshair") instance=ExtResource("2_0wfyh")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -99.68056, 0.66939354, -16.750607)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -73.966576, 3.767775, -64.70341)
 interaction_label = NodePath("../../UI/InteractionLabel")
 crosshair = NodePath("../../UI/Crosshair")
 
@@ -288,6 +269,18 @@ spiral_duration = 20.0
 spiral_radius = 15.0
 spiral_height = 3.0
 spiral_back_distance = 10.0
+
+[node name="MainMenuController" type="Node" parent="Managers" unique_id=1173312354 node_paths=PackedStringArray("player", "menu_camera", "main_menu", "menu_panel", "options_panel", "credits_panel", "fade_black", "terrain")]
+script = ExtResource("27_j2jfr")
+player = NodePath("../../Environment/Player")
+menu_camera = NodePath("../../MenuCamera")
+main_menu = NodePath("../../UI/MainMenu")
+menu_panel = NodePath("../../UI/MainMenu/Panel")
+options_panel = NodePath("../../UI/MainMenu/OptionsPanel")
+credits_panel = NodePath("../../UI/MainMenu/CreditPanel")
+fade_black = NodePath("../../UI/MainMenu/FadeBlack")
+terrain = NodePath("../../Environment/Terrain3D")
+intro_duration = 5.0
 
 [node name="SnakeSpawn" type="Node3D" parent="." unique_id=1205766575]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.91198, 3.393488, 37.373894)
@@ -531,12 +524,99 @@ grow_vertical = 2
 mouse_filter = 2
 color = Color(0, 0, 0, 0)
 
+[node name="MainMenu" type="Control" parent="UI" unique_id=2111624270]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+
+[node name="Panel" type="Panel" parent="UI/MainMenu" unique_id=417072289]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 60.0
+offset_top = 26.0
+offset_right = 100.0
+offset_bottom = 66.0
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/MainMenu/Panel" unique_id=169708713]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Start" type="Button" parent="UI/MainMenu/Panel/VBoxContainer" unique_id=1993680509]
+layout_mode = 2
+text = "Start"
+
+[node name="Options" type="Button" parent="UI/MainMenu/Panel/VBoxContainer" unique_id=395732949]
+layout_mode = 2
+text = "Options"
+
+[node name="Credits" type="Button" parent="UI/MainMenu/Panel/VBoxContainer" unique_id=1610364396]
+layout_mode = 2
+text = "Credits"
+
+[node name="Exit" type="Button" parent="UI/MainMenu/Panel/VBoxContainer" unique_id=492358046]
+layout_mode = 2
+text = "Exit
+"
+
+[node name="OptionsPanel" type="Panel" parent="UI/MainMenu" unique_id=624227045]
+visible = false
+layout_mode = 0
+offset_left = 60.0
+offset_top = 350.0
+offset_right = 100.0
+offset_bottom = 390.0
+
+[node name="Back" type="Button" parent="UI/MainMenu/OptionsPanel" unique_id=1487493447]
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 8.0
+
+[node name="CreditPanel" type="Panel" parent="UI/MainMenu" unique_id=925261871]
+visible = false
+layout_mode = 0
+offset_left = 60.0
+offset_top = 350.0
+offset_right = 100.0
+offset_bottom = 390.0
+
+[node name="Back" type="Button" parent="UI/MainMenu/CreditPanel" unique_id=1031357047]
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 8.0
+
+[node name="FadeBlack" type="ColorRect" parent="UI/MainMenu" unique_id=581402297]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 0)
+
 [node name="Sounds" type="Node" parent="." unique_id=956839637]
 
 [node name="BiteSound" type="AudioStreamPlayer" parent="Sounds" unique_id=120457634]
 stream = ExtResource("43_chjal")
 
+[node name="MenuCamera" type="Camera3D" parent="." unique_id=1483972559]
+transform = Transform3D(0.99757755, 0.009927055, 0.06885143, 0, 0.9897653, -0.14270514, -0.0695634, 0.14235945, 0.9873676, -17.87733, 15.191156, 3.8401601)
+
 [connection signal="body_entered" from="SnakeTrigger" to="Managers/SnakeBiteController" method="_on_body_entered"]
 [connection signal="pressed" from="UI/BookUIButton/Close" to="UI/BookUIButton" method="_on_close_button_pressed"]
 [connection signal="pressed" from="UI/BookUIButton/HBoxContainer/Previous" to="UI/BookUIButton" method="_on_previous_button_pressed"]
 [connection signal="pressed" from="UI/BookUIButton/HBoxContainer/Next" to="UI/BookUIButton" method="_on_next_button_pressed"]
+[connection signal="pressed" from="UI/MainMenu/Panel/VBoxContainer/Start" to="Managers/MainMenuController" method="_on_start_button_pressed"]
+[connection signal="pressed" from="UI/MainMenu/Panel/VBoxContainer/Options" to="Managers/MainMenuController" method="_on_options_button_pressed"]
+[connection signal="pressed" from="UI/MainMenu/Panel/VBoxContainer/Credits" to="Managers/MainMenuController" method="_on_credits_button_pressed"]
+[connection signal="pressed" from="UI/MainMenu/Panel/VBoxContainer/Exit" to="Managers/MainMenuController" method="_on_exit_button_pressed"]
+[connection signal="pressed" from="UI/MainMenu/OptionsPanel/Back" to="Managers/MainMenuController" method="_on_back_button_pressed"]
+[connection signal="pressed" from="UI/MainMenu/CreditPanel/Back" to="Managers/MainMenuController" method="_on_back_button_pressed"]

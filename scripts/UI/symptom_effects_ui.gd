@@ -144,7 +144,6 @@ func _on_poison_ended(_success: bool) -> void:
 
 
 func _reset_all_effects() -> void:
-	print("effects reset")
 	active_dizziness = false
 	active_tremor = false
 	active_breathing = false
