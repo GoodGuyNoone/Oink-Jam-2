@@ -65,7 +65,6 @@ func _spawn_snake() -> void:
 
 
 func _look_at_bite_point() -> void:
-	print("_look_at_bite_point()")
 	var bite_point := _player.get_node("SnakeBitePoint") as Node3D
 	_original_camera_transform = camera.global_transform
 	_player.set_control_enabled(false)
@@ -73,14 +72,11 @@ func _look_at_bite_point() -> void:
 
 	var target_transform := camera.global_transform.looking_at(bite_point.global_position, Vector3.UP)
 	await _tween_camera_basis(camera.global_transform.basis, target_transform.basis)
-	print("ended")
 
 
 func _restore_camera() -> void:
 	await _tween_camera_basis(camera.global_transform.basis, _original_camera_transform.basis)
 	_player.set_control_enabled(true)
-
-
 
 
 func _tween_camera_basis(from_basis: Basis, to_basis: Basis) -> void:
@@ -97,8 +93,6 @@ func _tween_camera_basis(from_basis: Basis, to_basis: Basis) -> void:
 
 func _play_bite_effects() -> void:
 	AudioManager.play_sfx("snakeBite", -10)
-	if bite_sound:
-		bite_sound.play()
 
 	if bite_flash:
 		bite_flash.visible = true
@@ -109,7 +103,6 @@ func _play_bite_effects() -> void:
 		tween.tween_property(bite_flash, "color", Color(1.0, 0.0, 0.0, 0.0), 0.35)
 
 	await get_tree().create_timer(0.5).timeout
-
 
 
 func _wait_for_bite_phase() -> void:

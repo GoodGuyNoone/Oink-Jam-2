@@ -1154,7 +1154,7 @@ monologue_ui = NodePath("../../UI/MonologueUI")
 [node name="SymptomEffectsController" type="Node" parent="Managers" unique_id=1531025169 node_paths=PackedStringArray("poison_manager")]
 script = ExtResource("18_2f3dj")
 poison_manager = NodePath("../PoisonManager")
-effect_trigger_times = Array[float]([30.0, 40.0, 50.0, 60.0])
+effect_trigger_times = Array[float]([15.0, 20.0, 50.0, 60.0])
 
 [node name="EndSequenceController" type="Node" parent="Managers" unique_id=1614686351 node_paths=PackedStringArray("player", "black_fade", "end_screen_ui")]
 script = ExtResource("25_nvyfr")

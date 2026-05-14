@@ -60,6 +60,9 @@ var sounds := {
 	"heartbeat": [
 		preload("res://assets/sound/kauasilbershlachparodes-heartbeat-sound-493999.ogg"),
 	],
+	"heavyBreathing": [
+		preload("res://assets/sound/freesound_community-heavy-breath-male-63980.ogg"),
+	],
 }
 
 var music := {

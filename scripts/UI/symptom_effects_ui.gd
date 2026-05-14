@@ -67,7 +67,7 @@ func _apply_visual_effect(effect_id: String) -> void:
 func _apply_sound_effect(effect_id: String) -> void:
 	print("applying: " + effect_id)
 	match effect_id:
-		"breathing_loop":
+		"difficultyBreathing":
 			start_breathing_audio()
 
 		"heartbeat":
@@ -99,14 +99,12 @@ func start_heartbeat_visual() -> void:
 
 func start_breathing_audio() -> void:
 	active_breathing = true
-
-	if breath_audio and not breath_audio.playing:
-		breath_audio.play()
+	AudioManager.play_sfx("heavyBreathing", -10)
 
 
 func start_heartbeat_audio() -> void:
 	active_heartbeat = true
-	AudioManager.play_sfx("heartbeat")
+	AudioManager.play_sfx("heartbeat", -10)
 
 
 func start_tremor_audio() -> void:
