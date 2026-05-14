@@ -3,20 +3,19 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dv1ntgcbo6blt"
-path.s3tc="res://.godot/imported/T_GroundDirt_03_basecolor.jpg-5beec77c944fc2d497d83e9ec5a96b50.s3tc.ctex"
+path="res://.godot/imported/T_GroundDirt_03_basecolor.jpg-5beec77c944fc2d497d83e9ec5a96b50.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
-"vram_texture": true
+"vram_texture": false
 }
 
 [deps]
 
 source_file="res://assets/textures/Environment/terrain/GroundDirt_03/T_GroundDirt_03_basecolor.jpg"
-dest_files=["res://.godot/imported/T_GroundDirt_03_basecolor.jpg-5beec77c944fc2d497d83e9ec5a96b50.s3tc.ctex"]
+dest_files=["res://.godot/imported/T_GroundDirt_03_basecolor.jpg-5beec77c944fc2d497d83e9ec5a96b50.ctex"]
 
 [params]
 
-compress/mode=2
+compress/mode=3
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/uastc_level=0

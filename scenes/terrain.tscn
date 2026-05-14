@@ -62,7 +62,7 @@ noise = SubResource("FastNoiseLite_kmb1v")
 color_ramp = SubResource("Gradient_j8jky")
 seamless = true
 
-[sub_resource type="Shader" id="Shader_owmfx"]
+[sub_resource type="Shader" id="Shader_sgisc"]
 code = "shader_type spatial;
 render_mode blend_mix,depth_draw_opaque,cull_back,diffuse_burley,specular_schlick_ggx,skip_vertex_transform;
 
@@ -128,7 +128,7 @@ uniform float blend_sharpness : hint_range(0, 1) = 0.87;
 uniform float auto_slope : hint_range(0, 10) = 1.0;
 uniform float auto_height_reduction : hint_range(0, 1) = 0.1;
 uniform int auto_base_texture : hint_range(0, 31) = 0;
-uniform int auto_overlay_texture : hint_range(0, 31) = 1;
+uniform int auto_overlay_texture : hint_range(0, 31) = 0;
 
 uniform int dual_scale_texture : hint_range(0,31) = 0;
 uniform float dual_scale_reduction : hint_range(0.001,1) = 0.3;
@@ -669,40 +669,33 @@ _shader_parameters = {
 &"auto_height_reduction": null,
 &"auto_overlay_texture": null,
 &"auto_slope": null,
-&"bias_distance": 512.0,
 &"blend_sharpness": 0.0,
-&"depth_blur": 0.0,
 &"dual_scale_far": null,
 &"dual_scale_near": null,
 &"dual_scale_reduction": null,
 &"dual_scale_texture": null,
-&"enable_macro_variation": true,
-&"enable_projection": true,
-&"flat_terrain_normals": false,
 &"height_blending": null,
 &"macro_variation1": Color(1, 1, 1, 1),
 &"macro_variation2": Color(1, 1, 1, 1),
-&"macro_variation_slope": 0.333,
-&"mipmap_bias": 1.0,
 &"noise1_angle": 0.0,
 &"noise1_offset": Vector2(0.5, 0.5),
 &"noise1_scale": 0.04,
 &"noise2_scale": 0.5550000263625,
 &"noise3_scale": null,
 &"noise_texture": SubResource("NoiseTexture2D_fuf3a"),
-&"projection_threshold": 0.8,
 &"tri_scale_reduction": null,
 &"vertex_normals_distance": null,
-&"world_noise_height": 64.0,
-&"world_noise_lod_distance": 7500.0,
-&"world_noise_max_octaves": 4,
-&"world_noise_min_octaves": 2,
-&"world_noise_offset": Vector3(0, 0, 0),
-&"world_noise_region_blend": 0.33,
-&"world_noise_scale": 5.0
+&"world_noise_height": null,
+&"world_noise_lod_distance": null,
+&"world_noise_max_octaves": null,
+&"world_noise_min_octaves": null,
+&"world_noise_offset": null,
+&"world_noise_region_blend": null,
+&"world_noise_scale": null
 }
 world_background = 0
-shader_override = SubResource("Shader_owmfx")
+shader_override_enabled = true
+shader_override = SubResource("Shader_sgisc")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cd6m4"]
 transparency = 4
@@ -844,7 +837,7 @@ lod0_range = 128.0
 
 [sub_resource type="Terrain3DTextureAsset" id="Terrain3DTextureAsset_fuf3a"]
 name = "grass"
-albedo_color = Color(0.6345357, 1, 0.6392856, 1)
+albedo_color = Color(0.63529414, 1, 0.6392157, 1)
 albedo_texture = ExtResource("7_owmfx")
 normal_texture = ExtResource("8_sxypo")
 uv_scale = 0.265
@@ -2578,6 +2571,7 @@ transform = Transform3D(0.98616725, 0, -0.16575333, 0, 1, 0, 0.16575333, 0, 0.98
 
 [node name="Mountain" type="Node3D" parent="." unique_id=130925664]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.621151, 2.911068, 121.12146)
+visible = false
 
 [node name="Alpine Mountain and Sea" type="MeshInstance3D" parent="Mountain" unique_id=1601872453]
 mesh = SubResource("ArrayMesh_biyfa")
@@ -2767,5 +2761,5 @@ transform = Transform3D(-1.4627879, 0, -0.33204183, 0, 1.5, 0, 0.33204183, 0, -1
 [node name="StaticBody3D5" type="StaticBody3D" parent="." unique_id=1093685552]
 top_level = true
 
-[node name="StaticBody3D6" type="StaticBody3D" parent="." unique_id=1099211995]
+[node name="StaticBody3D6" type="StaticBody3D" parent="." unique_id=1288079889]
 top_level = true

@@ -218,7 +218,7 @@ uniform float blend_sharpness : hint_range(0, 1) = 0.87;
 uniform float auto_slope : hint_range(0, 10) = 1.0;
 uniform float auto_height_reduction : hint_range(0, 1) = 0.1;
 uniform int auto_base_texture : hint_range(0, 31) = 0;
-uniform int auto_overlay_texture : hint_range(0, 31) = 1;
+uniform int auto_overlay_texture : hint_range(0, 31) = 0;
 
 uniform int dual_scale_texture : hint_range(0,31) = 0;
 uniform float dual_scale_reduction : hint_range(0.001,1) = 0.3;
@@ -759,28 +759,20 @@ _shader_parameters = {
 &"auto_height_reduction": null,
 &"auto_overlay_texture": null,
 &"auto_slope": null,
-&"bias_distance": 512.0,
 &"blend_sharpness": 0.0,
-&"depth_blur": 0.0,
 &"dual_scale_far": null,
 &"dual_scale_near": null,
 &"dual_scale_reduction": null,
 &"dual_scale_texture": null,
-&"enable_macro_variation": true,
-&"enable_projection": true,
-&"flat_terrain_normals": false,
 &"height_blending": null,
 &"macro_variation1": Color(1, 1, 1, 1),
 &"macro_variation2": Color(1, 1, 1, 1),
-&"macro_variation_slope": 0.333,
-&"mipmap_bias": 1.0,
 &"noise1_angle": 0.0,
 &"noise1_offset": Vector2(0.5, 0.5),
 &"noise1_scale": 0.04,
 &"noise2_scale": 0.5550000263625,
 &"noise3_scale": null,
 &"noise_texture": SubResource("NoiseTexture2D_fuf3a"),
-&"projection_threshold": 0.8,
 &"tri_scale_reduction": null,
 &"vertex_normals_distance": null,
 &"world_noise_height": 64.0,
@@ -792,6 +784,7 @@ _shader_parameters = {
 &"world_noise_scale": 5.0
 }
 world_background = 0
+shader_override_enabled = true
 shader_override = SubResource("Shader_owmfx")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cd6m4"]
@@ -934,7 +927,7 @@ lod0_range = 128.0
 
 [sub_resource type="Terrain3DTextureAsset" id="Terrain3DTextureAsset_fuf3a"]
 name = "grass"
-albedo_color = Color(0.6345357, 1, 0.6392856, 1)
+albedo_color = Color(0.63529414, 1, 0.6392157, 1)
 albedo_texture = ExtResource("21_gr8w0")
 normal_texture = ExtResource("22_673bd")
 uv_scale = 0.265
@@ -1173,19 +1166,20 @@ spiral_height = 3.0
 spiral_back_distance = 10.0
 end_screen_ui = NodePath("../../UI/EndScreen/EndScreen")
 
-[node name="MainMenuController" type="Node" parent="Managers" unique_id=1173312354 node_paths=PackedStringArray("player", "menu_camera", "main_menu", "menu_panel", "options_panel", "credits_panel", "fade_black", "terrain", "inventory", "monologue_ui", "warning_screen")]
+[node name="MainMenuController" type="Node" parent="Managers" unique_id=1173312354 node_paths=PackedStringArray("player", "menu_camera", "main_menu", "menu_panel", "options_panel", "credits_panel", "fade_black", "terrain", "inventory", "monologue_ui", "warning_screen", "credits_scroll")]
 script = ExtResource("27_j2jfr")
 player = NodePath("../../Environment/Player")
 menu_camera = NodePath("../../MenuCamera")
 main_menu = NodePath("../../UI/MainMenu")
-menu_panel = NodePath("../../UI/MainMenu/Panel")
-options_panel = NodePath("../../UI/MainMenu/OptionsPanel")
-credits_panel = NodePath("../../UI/MainMenu/CreditPanel")
+menu_panel = NodePath("../../UI/MainMenu/MarginBox/Panel")
+options_panel = NodePath("../../UI/MainMenu/MarginBox/Options")
+credits_panel = NodePath("../../UI/MainMenu/MarginBox/Credits")
 fade_black = NodePath("../../UI/MainMenu/FadeBlack")
 terrain = NodePath("../../Environment/Terrain3D")
 inventory = NodePath("../../UI/Inventory")
 monologue_ui = NodePath("../../UI/MonologueUI")
 warning_screen = NodePath("../../UI/WarningScreen/WarningScreen")
+credits_scroll = NodePath("../../UI/MainMenu/MarginBox/Credits/HBoxContainer2/ScrollContainer")
 intro_duration = 5.0
 
 [node name="SnakeSpawn" type="Node3D" parent="." unique_id=1205766575]
@@ -1516,7 +1510,6 @@ texture = ExtResource("37_c6pm6")
 stretch_mode = 2
 
 [node name="MainMenu" type="Control" parent="UI" unique_id=2111624270]
-visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -1525,7 +1518,17 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 1
 
-[node name="Panel" type="Panel" parent="UI/MainMenu" unique_id=417072289]
+[node name="FadeBlack" type="ColorRect" parent="UI/MainMenu" unique_id=581402297]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 0)
+
+[node name="MarginBox" type="Panel" parent="UI/MainMenu" unique_id=732626888]
 layout_mode = 1
 anchors_preset = -1
 anchor_right = 1.0
@@ -1536,60 +1539,15 @@ offset_bottom = -100.0
 grow_vertical = 0
 theme_override_styles/panel = SubResource("StyleBoxEmpty_bjg73")
 
-[node name="HBoxContainer" type="HBoxContainer" parent="UI/MainMenu/Panel" unique_id=111790863]
+[node name="Panel" type="Panel" parent="UI/MainMenu/MarginBox" unique_id=417072289]
 layout_mode = 1
-anchors_preset = 2
-anchor_top = 1.0
+anchors_preset = -1
+anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = -192.0
-offset_right = 362.0
 grow_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxEmpty_bjg73")
 
-[node name="MainMenuButtons" type="VBoxContainer" parent="UI/MainMenu/Panel/HBoxContainer" unique_id=169708713]
-layout_mode = 2
-
-[node name="Start" type="Button" parent="UI/MainMenu/Panel/HBoxContainer/MainMenuButtons" unique_id=1993680509]
-layout_mode = 2
-theme_override_colors/font_outline_color = Color(0.70502996, 0.32314384, 0.2209588, 1)
-theme_override_constants/outline_size = 11
-theme_override_fonts/font = ExtResource("49_j2jfr")
-theme_override_font_sizes/font_size = 30
-text = "START"
-flat = true
-alignment = 0
-
-[node name="Options" type="Button" parent="UI/MainMenu/Panel/HBoxContainer/MainMenuButtons" unique_id=395732949]
-layout_mode = 2
-theme_override_colors/font_outline_color = Color(0.70502996, 0.32314384, 0.2209588, 1)
-theme_override_constants/outline_size = 11
-theme_override_fonts/font = ExtResource("49_j2jfr")
-theme_override_font_sizes/font_size = 30
-text = "OPTIONS"
-flat = true
-alignment = 0
-
-[node name="Credits" type="Button" parent="UI/MainMenu/Panel/HBoxContainer/MainMenuButtons" unique_id=1610364396]
-layout_mode = 2
-theme_override_colors/font_outline_color = Color(0.70502996, 0.32314384, 0.2209588, 1)
-theme_override_constants/outline_size = 11
-theme_override_fonts/font = ExtResource("49_j2jfr")
-theme_override_font_sizes/font_size = 30
-text = "CREDITS"
-flat = true
-alignment = 0
-
-[node name="Exit" type="Button" parent="UI/MainMenu/Panel/HBoxContainer/MainMenuButtons" unique_id=492358046]
-layout_mode = 2
-theme_override_colors/font_outline_color = Color(0.70502996, 0.32314384, 0.2209588, 1)
-theme_override_constants/outline_size = 11
-theme_override_fonts/font = ExtResource("49_j2jfr")
-theme_override_font_sizes/font_size = 30
-text = "EXIT
-"
-flat = true
-alignment = 0
-
-[node name="Controls" type="VBoxContainer" parent="UI/MainMenu/Panel" unique_id=2131982596]
+[node name="Controls" type="VBoxContainer" parent="UI/MainMenu/MarginBox/Panel" unique_id=2131982596]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 1.0
@@ -1599,7 +1557,7 @@ anchor_bottom = 1.0
 grow_horizontal = 0
 grow_vertical = 0
 
-[node name="Label" type="Label" parent="UI/MainMenu/Panel/Controls" unique_id=336756814]
+[node name="Label" type="Label" parent="UI/MainMenu/MarginBox/Panel/Controls" unique_id=336756814]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("49_j2jfr")
 theme_override_font_sizes/font_size = 20
@@ -1609,7 +1567,7 @@ e - interact"
 horizontal_alignment = 2
 uppercase = true
 
-[node name="TextureRect" type="TextureRect" parent="UI/MainMenu/Panel" unique_id=1486329052]
+[node name="TextureRect" type="TextureRect" parent="UI/MainMenu/MarginBox/Panel" unique_id=1486329052]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.5
@@ -1622,31 +1580,149 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("67_mlv25")
 
-[node name="OptionsPanel" type="Panel" parent="UI/MainMenu" unique_id=624227045]
-layout_mode = 0
-offset_left = 60.0
-offset_top = 350.0
-offset_right = 100.0
-offset_bottom = 390.0
+[node name="MainMenuButtons" type="VBoxContainer" parent="UI/MainMenu/MarginBox/Panel" unique_id=169708713]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -199.0
+offset_right = 348.0
+grow_vertical = 0
+theme_override_constants/separation = -22
+
+[node name="Start" type="Button" parent="UI/MainMenu/MarginBox/Panel/MainMenuButtons" unique_id=1993680509]
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0.30588236, 0.3764706, 0.1882353, 1)
+theme_override_constants/outline_size = 11
+theme_override_fonts/font = ExtResource("49_j2jfr")
+theme_override_font_sizes/font_size = 60
+text = "START"
+flat = true
+alignment = 0
+
+[node name="Credits" type="Button" parent="UI/MainMenu/MarginBox/Panel/MainMenuButtons" unique_id=1610364396]
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0.30588236, 0.3764706, 0.1882353, 1)
+theme_override_constants/outline_size = 11
+theme_override_fonts/font = ExtResource("49_j2jfr")
+theme_override_font_sizes/font_size = 60
+text = "CREDITS"
+flat = true
+alignment = 0
+
+[node name="Exit" type="Button" parent="UI/MainMenu/MarginBox/Panel/MainMenuButtons" unique_id=492358046]
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0.30588236, 0.3764706, 0.1882353, 1)
+theme_override_constants/outline_size = 11
+theme_override_fonts/font = ExtResource("49_j2jfr")
+theme_override_font_sizes/font_size = 60
+text = "EXIT
+"
+flat = true
+alignment = 0
+
+[node name="Credits" type="Panel" parent="UI/MainMenu/MarginBox" unique_id=624227045]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxEmpty_bu4jf")
 
-[node name="Back" type="Button" parent="UI/MainMenu/OptionsPanel" unique_id=1487493447]
-layout_mode = 0
-offset_left = 5.0
-offset_top = 156.0
-offset_right = 50.0
-offset_bottom = 187.0
-text = "Back"
+[node name="HBoxContainer" type="HBoxContainer" parent="UI/MainMenu/MarginBox/Credits" unique_id=1949560525]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -81.0
+offset_right = 244.0
+grow_vertical = 0
 
-[node name="CreditPanel" type="Panel" parent="UI/MainMenu" unique_id=925261871]
+[node name="Back" type="Button" parent="UI/MainMenu/MarginBox/Credits/HBoxContainer" unique_id=1487493447]
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0.30588236, 0.3764706, 0.1882353, 1)
+theme_override_constants/outline_size = 11
+theme_override_fonts/font = ExtResource("49_j2jfr")
+theme_override_font_sizes/font_size = 60
+text = "BACK"
+flat = true
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="UI/MainMenu/MarginBox/Credits" unique_id=1617680202]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.25
+anchor_top = 1.0
+anchor_right = 0.75
+anchor_bottom = 1.0
+offset_top = 130.0
+
+[node name="ScrollContainer" type="ScrollContainer" parent="UI/MainMenu/MarginBox/Credits/HBoxContainer2" unique_id=1775771337]
+clip_contents = false
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/MainMenu/MarginBox/Credits/HBoxContainer2/ScrollContainer" unique_id=1864926612]
+custom_minimum_size = Vector2(0, 3000)
+layout_mode = 2
+theme_override_constants/separation = 50
+
+[node name="OptionsLabel" type="Label" parent="UI/MainMenu/MarginBox/Credits/HBoxContainer2/ScrollContainer/VBoxContainer" unique_id=1189921311]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = 2
+theme_override_fonts/font = ExtResource("49_j2jfr")
+theme_override_font_sizes/font_size = 50
+text = "Made by NOONE & KATIXA"
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="OptionsLabel2" type="Label" parent="UI/MainMenu/MarginBox/Credits/HBoxContainer2/ScrollContainer/VBoxContainer" unique_id=1824471588]
+custom_minimum_size = Vector2(900, 440)
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = 2
+theme_override_fonts/font = ExtResource("49_j2jfr")
+theme_override_font_sizes/font_size = 30
+text = "MODELS:
+- Lumberjack by metalmorag - sketchfab.com
+- Car Scene by toivo - sketfab.com
+- bonefire by ToxaGrom - fab.com
+- ToxaGrom by Mot Panda's Store - fab.com
+- stylized-nature-megakit by quaternius - itch.io
+- redacted Wooden Sign With Roof by KenVeel - fab.com
+- redacted little post by avatar
+Get Dead Entertainment - fab.com
+
+sounds: 
+- universal ui soundpack by cyrex-studios - itch.io
+- Page turns and book close/open by exterminat - freesound.org
+- hurts.wav by ttttrr - freesound.org
+- Huh (Relief) by soumen59 - freesound.org
+- turning pages by Luke100000 - freesound.org
+- Water_Drink.wav by Q.K. - freesound.org
+- open close glasses case sound effect by Garuda1982 - freesound.org
+- Manipulation with digital thermometer by MaslovyTygr - freesound.org
+
+UI: 
+- number icons by riajulislam - flaticon.com
+- kenney cursor pack by kenney - kenney.nl
+"
+autowrap_mode = 3
+uppercase = true
+
+[node name="Options" type="Panel" parent="UI/MainMenu/MarginBox" unique_id=925261871]
 layout_mode = 0
-offset_left = 60.0
+offset_left = -40.0
 offset_top = 350.0
-offset_right = 100.0
 offset_bottom = 390.0
 theme_override_styles/panel = SubResource("StyleBoxEmpty_o7ddy")
 
-[node name="Back" type="Button" parent="UI/MainMenu/CreditPanel" unique_id=1031357047]
+[node name="Back" type="Button" parent="UI/MainMenu/MarginBox/Options" unique_id=1031357047]
 layout_mode = 0
 offset_left = 4.0
 offset_top = 155.0
@@ -1654,18 +1730,7 @@ offset_right = 49.0
 offset_bottom = 186.0
 text = "Back"
 
-[node name="FadeBlack" type="ColorRect" parent="UI/MainMenu" unique_id=581402297]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
-color = Color(0, 0, 0, 0)
-
 [node name="MonologueUI" type="Control" parent="UI" unique_id=1742488310 node_paths=PackedStringArray("text_label", "continue_label")]
-visible = false
 custom_minimum_size = Vector2(600, 140)
 layout_mode = 3
 anchors_preset = 7
@@ -1741,7 +1806,6 @@ color = Color(0, 0, 0, 0)
 layer = 2
 
 [node name="EndScreen" type="Control" parent="UI/EndScreen" unique_id=57130299 node_paths=PackedStringArray("result_label", "play_again_button", "exit_button")]
-visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -1829,13 +1893,11 @@ draw_pass_1 = SubResource("QuadMesh_j2jfr")
 [connection signal="pressed" from="UI/BookUIButton/Close" to="UI/BookUIButton" method="_on_close_button_pressed"]
 [connection signal="pressed" from="UI/BookUIButton/HBoxContainer/Previous" to="UI/BookUIButton" method="_on_previous_button_pressed"]
 [connection signal="pressed" from="UI/BookUIButton/HBoxContainer/Next" to="UI/BookUIButton" method="_on_next_button_pressed"]
-[connection signal="mouse_entered" from="UI/MainMenu/Panel/HBoxContainer/MainMenuButtons/Start" to="Managers/MainMenuController" method="_on_mouse_entered"]
-[connection signal="pressed" from="UI/MainMenu/Panel/HBoxContainer/MainMenuButtons/Start" to="Managers/MainMenuController" method="_on_start_button_pressed"]
-[connection signal="mouse_entered" from="UI/MainMenu/Panel/HBoxContainer/MainMenuButtons/Options" to="Managers/MainMenuController" method="_on_mouse_entered"]
-[connection signal="pressed" from="UI/MainMenu/Panel/HBoxContainer/MainMenuButtons/Options" to="Managers/MainMenuController" method="_on_options_button_pressed"]
-[connection signal="mouse_entered" from="UI/MainMenu/Panel/HBoxContainer/MainMenuButtons/Credits" to="Managers/MainMenuController" method="_on_mouse_entered"]
-[connection signal="pressed" from="UI/MainMenu/Panel/HBoxContainer/MainMenuButtons/Credits" to="Managers/MainMenuController" method="_on_credits_button_pressed"]
-[connection signal="mouse_entered" from="UI/MainMenu/Panel/HBoxContainer/MainMenuButtons/Exit" to="Managers/MainMenuController" method="_on_mouse_entered"]
-[connection signal="pressed" from="UI/MainMenu/Panel/HBoxContainer/MainMenuButtons/Exit" to="Managers/MainMenuController" method="_on_exit_button_pressed"]
-[connection signal="pressed" from="UI/MainMenu/OptionsPanel/Back" to="Managers/MainMenuController" method="_on_back_button_pressed"]
-[connection signal="pressed" from="UI/MainMenu/CreditPanel/Back" to="Managers/MainMenuController" method="_on_back_button_pressed"]
+[connection signal="mouse_entered" from="UI/MainMenu/MarginBox/Panel/MainMenuButtons/Start" to="Managers/MainMenuController" method="_on_mouse_entered"]
+[connection signal="pressed" from="UI/MainMenu/MarginBox/Panel/MainMenuButtons/Start" to="Managers/MainMenuController" method="_on_start_button_pressed"]
+[connection signal="mouse_entered" from="UI/MainMenu/MarginBox/Panel/MainMenuButtons/Credits" to="Managers/MainMenuController" method="_on_mouse_entered"]
+[connection signal="pressed" from="UI/MainMenu/MarginBox/Panel/MainMenuButtons/Credits" to="Managers/MainMenuController" method="_on_credits_button_pressed"]
+[connection signal="mouse_entered" from="UI/MainMenu/MarginBox/Panel/MainMenuButtons/Exit" to="Managers/MainMenuController" method="_on_mouse_entered"]
+[connection signal="pressed" from="UI/MainMenu/MarginBox/Panel/MainMenuButtons/Exit" to="Managers/MainMenuController" method="_on_exit_button_pressed"]
+[connection signal="pressed" from="UI/MainMenu/MarginBox/Credits/HBoxContainer/Back" to="Managers/MainMenuController" method="_on_back_button_pressed"]
+[connection signal="pressed" from="UI/MainMenu/MarginBox/Options/Back" to="Managers/MainMenuController" method="_on_back_button_pressed"]

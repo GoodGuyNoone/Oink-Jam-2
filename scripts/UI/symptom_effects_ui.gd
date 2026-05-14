@@ -106,9 +106,7 @@ func start_breathing_audio() -> void:
 
 func start_heartbeat_audio() -> void:
 	active_heartbeat = true
-
-	if heartbeat_audio and not heartbeat_audio.playing:
-		heartbeat_audio.play()
+	AudioManager.play_sfx("heartbeat")
 
 
 func start_tremor_audio() -> void:

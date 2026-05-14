@@ -57,6 +57,9 @@ var sounds := {
 	"snakeRunAway": [
 		preload("res://assets/sound/snakeRunAway.ogg"),
 	],
+	"heartbeat": [
+		preload("res://assets/sound/kauasilbershlachparodes-heartbeat-sound-493999.ogg"),
+	],
 }
 
 var music := {

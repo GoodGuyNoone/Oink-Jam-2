@@ -13,12 +13,14 @@ class_name MainMenuController
 @export var inventory: Inventory
 @export var monologue_ui: MonologueUI
 @export var warning_screen: WarningScreen
+@export var credits_scroll: ScrollContainer
 
 @export var intro_duration: float = 3.0
 @export var fade_duration: float = 0.6
 
 @onready var player_camera: Camera3D = player.camera
 
+var credits_tween: Tween
 var starting_game := false
 
 
@@ -147,6 +149,7 @@ func _on_credits_button_pressed() -> void:
 	_on_other_pressed()
 	menu_panel.visible = false
 	credits_panel.visible = true
+	start_credits_scroll()
 
 
 func _on_back_button_pressed() -> void:
@@ -189,3 +192,23 @@ func _on_warning_continued() -> void:
 	credits_panel.visible = false
 
 	_fade_from_black()
+
+
+func start_credits_scroll() -> void:
+	credits_scroll.scroll_vertical = 0
+
+	await get_tree().process_frame
+
+	var max_scroll := (
+		credits_scroll.get_v_scroll_bar().max_value
+		+ credits_scroll.size.y
+	)
+
+	var tween := create_tween()
+
+	tween.tween_property(
+		credits_scroll,
+		"scroll_vertical",
+		max_scroll,
+		20.0
+	)

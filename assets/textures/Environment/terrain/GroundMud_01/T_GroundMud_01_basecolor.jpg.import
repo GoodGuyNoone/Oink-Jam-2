@@ -3,20 +3,19 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c1k1k37bltut0"
-path.s3tc="res://.godot/imported/T_GroundMud_01_basecolor.jpg-16f1e2cce4e0b6642bbf3d0ead4c1d21.s3tc.ctex"
+path="res://.godot/imported/T_GroundMud_01_basecolor.jpg-16f1e2cce4e0b6642bbf3d0ead4c1d21.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
-"vram_texture": true
+"vram_texture": false
 }
 
 [deps]
 
 source_file="res://assets/textures/Environment/terrain/GroundMud_01/T_GroundMud_01_basecolor.jpg"
-dest_files=["res://.godot/imported/T_GroundMud_01_basecolor.jpg-16f1e2cce4e0b6642bbf3d0ead4c1d21.s3tc.ctex"]
+dest_files=["res://.godot/imported/T_GroundMud_01_basecolor.jpg-16f1e2cce4e0b6642bbf3d0ead4c1d21.ctex"]
 
 [params]
 
-compress/mode=2
+compress/mode=3
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/uastc_level=0

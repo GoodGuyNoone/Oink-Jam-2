@@ -3,20 +3,19 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://1w5uw4rmey5w"
-path.s3tc="res://.godot/imported/GroundGrass_01_basecolor.jpg-26ff903012df9cac944e16b2f5a86889.s3tc.ctex"
+path="res://.godot/imported/GroundGrass_01_basecolor.jpg-26ff903012df9cac944e16b2f5a86889.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
-"vram_texture": true
+"vram_texture": false
 }
 
 [deps]
 
 source_file="res://assets/textures/Environment/terrain/GroundGrass_01/GroundGrass_01_basecolor.jpg"
-dest_files=["res://.godot/imported/GroundGrass_01_basecolor.jpg-26ff903012df9cac944e16b2f5a86889.s3tc.ctex"]
+dest_files=["res://.godot/imported/GroundGrass_01_basecolor.jpg-26ff903012df9cac944e16b2f5a86889.ctex"]
 
 [params]
 
-compress/mode=2
+compress/mode=3
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/uastc_level=0
