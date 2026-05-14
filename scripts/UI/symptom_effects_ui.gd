@@ -99,12 +99,12 @@ func start_heartbeat_visual() -> void:
 
 func start_breathing_audio() -> void:
 	active_breathing = true
-	AudioManager.play_sfx("heavyBreathing", -10)
+	AudioManager.play_sfx("heavyBreathing", -5.0, 1.0, 1.0, "Symptoms")
 
 
 func start_heartbeat_audio() -> void:
 	active_heartbeat = true
-	AudioManager.play_sfx("heartbeat", -10)
+	AudioManager.play_sfx("heartbeat", -4.0, 1.0, 1.0, "Symptoms")
 
 
 func start_tremor_audio() -> void:
@@ -148,14 +148,7 @@ func _reset_all_effects() -> void:
 	if tremor_timer:
 		tremor_timer.stop()
 
-	if tremor_audio:
-		tremor_audio.stop()
-
-	if breath_audio:
-		breath_audio.stop()
-
-	if heartbeat_audio:
-		heartbeat_audio.stop()
+	AudioManager.stop_bus("Symptoms")
 
 	if shader_material:
 		shader_material.set_shader_parameter("dizziness_intensity", 0.0)

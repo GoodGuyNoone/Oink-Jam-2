@@ -99,7 +99,7 @@ func _pickup_to_inventory() -> void:
 		return
 
 	if pickup_sound_id != "":
-		AudioManager.play_sfx(pickup_sound_id, -4.0, 0.95, 1.05)
+		AudioManager.play_sfx(pickup_sound_id, -4.0, 0.95, 1.05, "Symptoms")
 
 	used = true
 	queue_free()

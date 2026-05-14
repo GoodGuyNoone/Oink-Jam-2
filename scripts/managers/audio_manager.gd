@@ -1,5 +1,7 @@
 extends Node
 
+var active_sfx_players: Array[AudioStreamPlayer] = []
+
 var sounds := {
 	"openTablets": [
 		preload("res://assets/sound/openTablets.ogg"),
@@ -93,10 +95,38 @@ func play_music(music_id: String, volume_db := -14.0) -> void:
 	music_player.play()
 
 
-func play_sfx(sound_id: String, volume_db := 0.0, pitch_min := 0.96, pitch_max := 1.04, bus := "SFX") -> AudioStreamPlayer:
+func fade_out_music(duration := 2.0) -> void:
+	if music_player == null:
+		return
+
+	if not music_player.playing:
+		return
+
+	var tween := create_tween()
+
+	tween.tween_property(
+		music_player,
+		"volume_db",
+		-40.0,
+		duration
+	)
+
+	await tween.finished
+
+	music_player.stop()
+	music_player.volume_db = -14.0
+
+
+func play_sfx(
+	sound_id: String,
+	volume_db := 0.0,
+	pitch_min := 0.96,
+	pitch_max := 1.04,
+	bus := "SFX"
+) -> AudioStreamPlayer:
 	if not sounds.has(sound_id):
 		push_warning("AudioManager: missing sound id: " + sound_id)
-		return
+		return null
 
 	var stream: AudioStream = sounds[sound_id].pick_random()
 
@@ -108,9 +138,32 @@ func play_sfx(sound_id: String, volume_db := 0.0, pitch_min := 0.96, pitch_max :
 	player.volume_db = volume_db
 	player.pitch_scale = randf_range(pitch_min, pitch_max)
 
-	player.finished.connect(player.queue_free)
+	active_sfx_players.append(player)
+
+	player.finished.connect(func() -> void:
+		active_sfx_players.erase(player)
+
+		if is_instance_valid(player):
+			player.queue_free()
+	)
+
 	player.play()
 
 	return player
 
 
+func stop_bus(bus_name: String) -> void:
+	for player in active_sfx_players.duplicate():
+		if is_instance_valid(player) and player.bus == bus_name:
+			player.stop()
+			player.queue_free()
+			active_sfx_players.erase(player)
+
+
+func stop_all_sfx() -> void:
+	for player in active_sfx_players.duplicate():
+		if is_instance_valid(player):
+			player.stop()
+			player.queue_free()
+
+	active_sfx_players.clear()
