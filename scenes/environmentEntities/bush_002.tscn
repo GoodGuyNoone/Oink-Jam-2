@@ -1,9 +1,29 @@
 [gd_scene format=3 uid="uid://cfnd28wfs0rhv"]
 
 [ext_resource type="PackedScene" uid="uid://b1gw71wmjgc5g" path="res://assets/models/environmentEntities/bush002.glb" id="1_cpjhh"]
-[ext_resource type="Material" uid="uid://cohkajukv1be4" path="res://assets/materials/environmentEntities/environmentEntities.res" id="2_0ii3k"]
+[ext_resource type="Shader" uid="uid://bf8d7wgosc4cn" path="res://assets/materials/shader/wind_shader_simple.gdshader" id="2_albga"]
+[ext_resource type="Texture2D" uid="uid://mli6eycx3e2j" path="res://assets/textures/Environment/environmentEntities/plants_Material.001_BaseColor.png" id="3_hqhsu"]
+[ext_resource type="Texture2D" uid="uid://bvja5pyuj6c85" path="res://assets/textures/Environment/environmentEntities/Material.001_Normal.png" id="4_emxaq"]
+[ext_resource type="Texture2D" uid="uid://p2rrtgnqqd6p" path="res://assets/textures/Environment/environmentEntities/Material.001_Roughness.png" id="5_gp2fa"]
 
-[node name="bush002" unique_id=539586592 instance=ExtResource("1_cpjhh")]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_bec8a"]
+render_priority = 0
+shader = ExtResource("2_albga")
+shader_parameter/albedo_texture = ExtResource("3_hqhsu")
+shader_parameter/normal_texture = ExtResource("4_emxaq")
+shader_parameter/roughness_texture = ExtResource("5_gp2fa")
+shader_parameter/albedo_tint = Color(1, 1, 1, 1)
+shader_parameter/wind_strength = 0.1
+shader_parameter/wind_speed = 1.0
+shader_parameter/wind_scale = 1.2
+shader_parameter/stem_stiffness = 1.0
+shader_parameter/flower_sway = 0.4
+shader_parameter/normal_strength = 1.0
+shader_parameter/roughness_value = 0.8
+shader_parameter/use_normal_texture = true
+shader_parameter/use_roughness_texture = false
 
-[node name="Plane_061" parent="." index="0" unique_id=1498174531]
-surface_material_override/0 = ExtResource("2_0ii3k")
+[node name="bush002" unique_id=1728377782 instance=ExtResource("1_cpjhh")]
+
+[node name="Plane_061" parent="." index="0" unique_id=1871412172]
+surface_material_override/0 = SubResource("ShaderMaterial_bec8a")

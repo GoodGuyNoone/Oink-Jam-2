@@ -61,6 +61,7 @@ sky_material = SubResource("PanoramaSkyMaterial_cjqg0")
 [sub_resource type="Environment" id="Environment_txyw0"]
 background_mode = 2
 sky = SubResource("Sky_vchkt")
+sky_custom_fov = 3.0
 fog_enabled = true
 fog_mode = 1
 fog_light_color = Color(0.6413932, 0.7499518, 0.83428067, 1)
@@ -178,6 +179,8 @@ transform = Transform3D(-0.50000006, -0.7094065, 0.49673173, 0, 0.57357645, 0.81
 light_color = Color(0.99999946, 0.8360123, 0.52748644, 1)
 light_energy = 2.5
 shadow_enabled = true
+shadow_opacity = 0.65
+directional_shadow_max_distance = 1500.0
 
 [node name="Car" parent="Environment" unique_id=346548748 instance=ExtResource("16_j8jky")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -106.69824, 0.0006933212, -15.082748)
@@ -365,7 +368,7 @@ layout_mode = 2
 icon = ExtResource("28_nvyfr")
 flat = true
 
-[node name="InspectionUI" parent="UI" unique_id=494579209 node_paths=PackedStringArray("player", "inspection_sprite", "close_button") instance=ExtResource("32_qkpxi")]
+[node name="InspectionUI" parent="UI" unique_id=494579209 node_paths=PackedStringArray("player", "inspection_sprite", "close_button", "ruler_cursor_icon") instance=ExtResource("32_qkpxi")]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -382,6 +385,7 @@ player = NodePath("../../Environment/Player")
 inspection_sprite = NodePath("InspectionSprite")
 close_button = NodePath("Close")
 ruler_cursor = ExtResource("38_bu4jf")
+ruler_cursor_icon = NodePath("TextureRect")
 
 [node name="InspectionSprite" type="TextureRect" parent="UI/InspectionUI" unique_id=1304151410]
 layout_mode = 1
@@ -410,6 +414,14 @@ offset_bottom = -167.0
 icon = ExtResource("29_ty1g6")
 flat = true
 
+[node name="TextureRect" type="TextureRect" parent="UI/InspectionUI" unique_id=758860296]
+visible = false
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 2
+texture = ExtResource("38_bu4jf")
+
 [node name="InteractionLabel" type="Label" parent="UI" unique_id=1436390109]
 anchors_preset = -1
 anchor_left = 0.5
@@ -434,6 +446,8 @@ anchor_left = 0.5
 anchor_right = 0.5
 anchor_bottom = 1.0
 offset_bottom = -60.0
+grow_horizontal = 2
+grow_vertical = 2
 script = ExtResource("16_jbj1t")
 key_icons = Array[CompressedTexture2D]([ExtResource("23_pibwh"), ExtResource("24_c6pm6"), ExtResource("25_5he1u")])
 

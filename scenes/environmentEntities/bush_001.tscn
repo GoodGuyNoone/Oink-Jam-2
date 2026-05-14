@@ -1,9 +1,29 @@
 [gd_scene format=3 uid="uid://duc4qdfa6dx30"]
 
 [ext_resource type="PackedScene" uid="uid://bgvnqpjmcrja4" path="res://assets/models/environmentEntities/bush001.glb" id="1_48cnv"]
-[ext_resource type="Material" uid="uid://cohkajukv1be4" path="res://assets/materials/environmentEntities/environmentEntities.res" id="2_lyviw"]
+[ext_resource type="Shader" uid="uid://bf8d7wgosc4cn" path="res://assets/materials/shader/wind_shader_simple.gdshader" id="2_ucoab"]
+[ext_resource type="Texture2D" uid="uid://mli6eycx3e2j" path="res://assets/textures/Environment/environmentEntities/plants_Material.001_BaseColor.png" id="3_tfr1e"]
+[ext_resource type="Texture2D" uid="uid://bvja5pyuj6c85" path="res://assets/textures/Environment/environmentEntities/Material.001_Normal.png" id="4_n7is4"]
+[ext_resource type="Texture2D" uid="uid://p2rrtgnqqd6p" path="res://assets/textures/Environment/environmentEntities/Material.001_Roughness.png" id="5_j6o0u"]
 
-[node name="bush001" unique_id=2092807744 instance=ExtResource("1_48cnv")]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_dmp6n"]
+render_priority = 0
+shader = ExtResource("2_ucoab")
+shader_parameter/albedo_texture = ExtResource("3_tfr1e")
+shader_parameter/normal_texture = ExtResource("4_n7is4")
+shader_parameter/roughness_texture = ExtResource("5_j6o0u")
+shader_parameter/albedo_tint = Color(1, 1, 1, 1)
+shader_parameter/wind_strength = 0.1
+shader_parameter/wind_speed = 1.0
+shader_parameter/wind_scale = 1.0
+shader_parameter/stem_stiffness = 1.0
+shader_parameter/flower_sway = 1.4
+shader_parameter/normal_strength = 1.0
+shader_parameter/roughness_value = 0.8
+shader_parameter/use_normal_texture = true
+shader_parameter/use_roughness_texture = false
 
-[node name="Circle" parent="." index="0" unique_id=1506296385]
-surface_material_override/0 = ExtResource("2_lyviw")
+[node name="bush001" unique_id=868728533 instance=ExtResource("1_48cnv")]
+
+[node name="Circle" parent="." index="0" unique_id=618698551]
+surface_material_override/0 = SubResource("ShaderMaterial_dmp6n")

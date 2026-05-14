@@ -5,10 +5,16 @@ class_name InspectionUI
 @export var inspection_sprite: TextureRect
 @export var close_button: Button
 @export var ruler_cursor: Texture2D
+@export var ruler_cursor_icon: TextureRect
 
 
 var is_open := false
 var is_ruler_mode := false
+
+
+func _process(_delta: float) -> void:
+	if ruler_cursor_icon.visible:
+		ruler_cursor_icon.global_position = get_global_mouse_position() - ruler_cursor_icon.size * 0.5
 
 
 func _ready() -> void:
@@ -46,9 +52,11 @@ func close() -> void:
 
 
 func _on_sprite_mouse_entered() -> void:
-	if is_ruler_mode and ruler_cursor:
-		Input.set_custom_mouse_cursor(ruler_cursor)
+	if is_ruler_mode:
+		Input.mouse_mode = Input.MOUSE_MODE_HIDDEN
+		ruler_cursor_icon.visible = true
 
 
 func _on_sprite_mouse_exited() -> void:
-	Input.set_custom_mouse_cursor(player.cursor_open)
+	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+	ruler_cursor_icon.visible = false

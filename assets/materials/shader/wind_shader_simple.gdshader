@@ -7,12 +7,12 @@ uniform sampler2D normal_texture : hint_normal;
 uniform sampler2D roughness_texture;
 uniform vec4 albedo_tint : source_color = vec4(1.0);
 
-uniform float wind_strength = 0.15;
-uniform float wind_speed = 1.5;
-uniform float wind_scale = 1.2;
+uniform float wind_strength = 0.1;
+uniform float wind_speed = 1.0;
+uniform float wind_scale = 1.0;
 
 uniform float stem_stiffness = 1.0;
-uniform float flower_sway = 1.4;
+uniform float flower_sway = 0.8;
 
 uniform float normal_strength = 1.0;
 uniform float roughness_value = 0.8;

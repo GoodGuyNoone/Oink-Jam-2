@@ -3,23 +3,12 @@
 [ext_resource type="PackedScene" uid="uid://7dpmkicvsq7o" path="res://assets/models/snake.glb" id="1_a5f6l"]
 [ext_resource type="Script" uid="uid://b41gepk0al478" path="res://scripts/snake.gd" id="2_yc36x"]
 
-[node name="snake" unique_id=763236970 instance=ExtResource("1_a5f6l")]
+[node name="snake" unique_id=1523329325 instance=ExtResource("1_a5f6l")]
 script = ExtResource("2_yc36x")
 escape_speed = 3.0
 
-[node name="Armature" parent="." index="0" unique_id=318869698]
+[node name="Armature" parent="." index="0" unique_id=952955603]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 0)
-
-[node name="Skeleton3D" parent="Armature" index="0" unique_id=2049153124]
-bones/0/rotation = Quaternion(-0.11994036, 0.6872417, 0.70579064, 0.12317751)
-bones/1/rotation = Quaternion(-0.7128614, -0.03446178, -0.033822652, 0.69964063)
-bones/2/rotation = Quaternion(7.94473e-09, -4.1327258e-10, 0.0639847, 0.9979509)
-bones/3/rotation = Quaternion(9.992156e-10, -8.050871e-11, 0.14816727, 0.98896235)
-bones/4/rotation = Quaternion(-7.194632e-09, 1.4382562e-09, 0.19643736, 0.98051643)
-bones/5/rotation = Quaternion(6.988747e-09, -1.124583e-09, 0.21462956, 0.97669554)
-bones/6/rotation = Quaternion(1.6119465e-09, -3.7279066e-10, 0.19643736, 0.98051643)
-bones/7/rotation = Quaternion(-8.659941e-09, 9.2021957e-10, 0.14816731, 0.9889624)
-bones/8/rotation = Quaternion(-2.3643794e-09, -7.319194e-10, 0.079343826, 0.9968474)
 
 [node name="HeadPoint" type="Node3D" parent="." index="2" unique_id=2140209298]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.023662686, 0.061390787, 0.56154084)
