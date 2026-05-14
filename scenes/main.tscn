@@ -16,27 +16,45 @@
 [ext_resource type="Script" uid="uid://bmfg0xx8a43pl" path="res://scripts/Managers/game_manager.gd" id="10_choun"]
 [ext_resource type="PackedScene" uid="uid://dbo01qbg0nwcy" path="res://scenes/WorldItems/Book/Book.tscn" id="11_ya4ey"]
 [ext_resource type="Texture2D" uid="uid://bj0l7gh3mdtu6" path="res://assets/models/back_pack_0.jpg" id="13_chjal"]
+[ext_resource type="Shader" uid="uid://dajes8gei3nsd" path="res://assets/materials/shader/wind_shader.gdshader" id="13_fjhjs"]
 [ext_resource type="PackedScene" uid="uid://cyefpn0byux3" path="res://scenes/terrain.tscn" id="13_pibwh"]
 [ext_resource type="Script" uid="uid://d382l3gj2mtgw" path="res://scripts/Book/book_ui_button.gd" id="13_trceg"]
+[ext_resource type="PackedScene" uid="uid://l8uk0mvv7utf" path="res://scenes/environmentEntities/grassfoliage_001.tscn" id="14_bfu41"]
+[ext_resource type="Shader" uid="uid://bf8d7wgosc4cn" path="res://assets/materials/shader/wind_shader_simple.gdshader" id="15_r4ag1"]
 [ext_resource type="PackedScene" uid="uid://di12l7fw3q4ev" path="res://scenes/Car.tscn" id="16_j8jky"]
 [ext_resource type="Script" uid="uid://cvq5ydgjrhf1t" path="res://scripts/inventory.gd" id="16_jbj1t"]
 [ext_resource type="Texture2D" uid="uid://cljhsl1xngxhm" path="res://assets/icons/particle.png" id="16_ty1g6"]
+[ext_resource type="Texture2D" uid="uid://8dixojperwio" path="res://assets/textures/Leaves.png" id="16_v0wtd"]
+[ext_resource type="PackedScene" uid="uid://cjjudgfywtseg" path="res://scenes/environmentEntities/flower_002.tscn" id="17_sgvw8"]
 [ext_resource type="Script" uid="uid://ds3e3yy2chya6" path="res://scripts/Managers/symptom_effects_controller.gd" id="18_2f3dj"]
+[ext_resource type="PackedScene" uid="uid://cxv2pgxepnjef" path="res://scenes/environmentEntities/flower_001.tscn" id="18_6nfnn"]
+[ext_resource type="PackedScene" uid="uid://cfnd28wfs0rhv" path="res://scenes/environmentEntities/bush_002.tscn" id="19_4ue30"]
+[ext_resource type="PackedScene" uid="uid://cgonkprx2j4tf" path="res://scenes/environmentEntities/bush_003.tscn" id="20_k42av"]
+[ext_resource type="Texture2D" uid="uid://1w5uw4rmey5w" path="res://assets/textures/Environment/terrain/GroundGrass_01/GroundGrass_01_basecolor.jpg" id="21_gr8w0"]
+[ext_resource type="Texture2D" uid="uid://dkearerek3pkw" path="res://assets/textures/Environment/terrain/GroundGrass_01/GroundGrass_01_normal.jpg" id="22_673bd"]
 [ext_resource type="PackedScene" uid="uid://c8kb13vfc7awj" path="res://scenes/UI/inventory_slot.tscn" id="22_jscy8"]
+[ext_resource type="Texture2D" uid="uid://c1k1k37bltut0" path="res://assets/textures/Environment/terrain/GroundMud_01/T_GroundMud_01_basecolor.jpg" id="23_akjxb"]
 [ext_resource type="Texture2D" uid="uid://dsptciuxlr4i8" path="res://assets/icons/number-1.png" id="23_pibwh"]
 [ext_resource type="Texture2D" uid="uid://dq1ao432qyx2s" path="res://assets/icons/number-2.png" id="24_c6pm6"]
+[ext_resource type="Texture2D" uid="uid://droprjerh1bwy" path="res://assets/textures/Environment/terrain/GroundMud_01/T_GroundMud_01_normal.jpg" id="24_vrx01"]
+[ext_resource type="Texture2D" uid="uid://dwldhgfdbpye7" path="res://assets/textures/Environment/terrain/GroundDirt_05/GroundDirt_05_basecolor.jpg" id="25_1uevf"]
 [ext_resource type="Texture2D" uid="uid://bpdlf6yd1imh1" path="res://assets/icons/number-3.png" id="25_5he1u"]
 [ext_resource type="Script" uid="uid://bdf01al51qwut" path="res://scripts/Managers/end_sequence_controller.gd" id="25_nvyfr"]
 [ext_resource type="Script" uid="uid://cn1shumrhj2g6" path="res://scripts/UI/clock_ui.gd" id="26_2wyq8"]
+[ext_resource type="Texture2D" uid="uid://bo4todb0ed1ca" path="res://assets/textures/Environment/terrain/GroundDirt_05/GroundDirt_05_normal.jpg" id="26_tc087"]
 [ext_resource type="Texture2D" uid="uid://c3cgb3natf6w4" path="res://assets/icons/clock.png" id="27_2f3dj"]
+[ext_resource type="Texture2D" uid="uid://dv1ntgcbo6blt" path="res://assets/textures/Environment/terrain/GroundDirt_03/T_GroundDirt_03_basecolor.jpg" id="27_73205"]
 [ext_resource type="Script" uid="uid://4xo6fc5m8k2g" path="res://scripts/Managers/main_menu_controller.gd" id="27_j2jfr"]
 [ext_resource type="Texture2D" uid="uid://cbtxy6avmtpa3" path="res://assets/icons/navigation_w.png" id="27_vc5cj"]
+[ext_resource type="Texture2D" uid="uid://cdwgmmyemfb5i" path="res://assets/textures/Environment/terrain/GroundDirt_03/T_GroundDirt_03_normal.jpg" id="28_0tljd"]
 [ext_resource type="Texture2D" uid="uid://bm1ff06334v6a" path="res://assets/icons/navigation_e.png" id="28_nvyfr"]
 [ext_resource type="Texture2D" uid="uid://dherag82lusrj" path="res://assets/textures/snakes/01_swelling_ redness_largebite.png" id="29_chjal"]
+[ext_resource type="Texture2D" uid="uid://dw1ldmm5xosjb" path="res://assets/textures/Environment/terrain/StoneWall_01/StoneWall_01_basecolor.jpg" id="29_mgpkq"]
 [ext_resource type="Resource" uid="uid://cbpsdo1ki36iq" path="res://resources/snakes/StoneViper.tres" id="29_o7ddy"]
 [ext_resource type="Texture2D" uid="uid://dahgp4jmmk80s" path="res://assets/icons/clockProgress.png" id="29_pibwh"]
 [ext_resource type="Texture2D" uid="uid://6neuxn8bvvqt" path="res://assets/icons/cross_large.png" id="29_ty1g6"]
 [ext_resource type="Resource" uid="uid://beqlk387rwe8k" path="res://resources/snakes/ClayStinger.tres" id="30_0loja"]
+[ext_resource type="Texture2D" uid="uid://cydm54s32bwr6" path="res://assets/textures/Environment/terrain/StoneWall_01/StoneWall_01_normal.jpg" id="30_xmrkg"]
 [ext_resource type="Resource" uid="uid://dc07ogf3i4b64" path="res://resources/snakes/AmberRibbonsnake.tres" id="31_ids8r"]
 [ext_resource type="Resource" uid="uid://dciv01pvefdil" path="res://resources/snakes/BlackleafPitViper.tres" id="32_dnhof"]
 [ext_resource type="PackedScene" uid="uid://c5cmxhagp5ibg" path="res://scenes/UI/inspection_ui.tscn" id="32_qkpxi"]
@@ -48,9 +66,12 @@
 [ext_resource type="AudioStream" uid="uid://b1hxcmvfn8i4v" path="res://assets/sound/human-vocal-male-groan-painful-short-06.ogg" id="43_chjal"]
 [ext_resource type="AudioStream" uid="uid://cw0w35pbkt1yw" path="res://assets/sound/freesound_community-heavy-breath-male-63980.ogg" id="43_vchkt"]
 [ext_resource type="AudioStream" uid="uid://cv8ff8cm7x64c" path="res://assets/sound/kauasilbershlachparodes-heartbeat-sound-493999.ogg" id="44_txyw0"]
+[ext_resource type="Script" uid="uid://fw8wb4ykhsfg" path="res://scripts/UI/warning_screen.gd" id="46_gdvew"]
 [ext_resource type="Script" uid="uid://5dn74137aacg" path="res://scripts/UI/monologue_ui.gd" id="49_bjg73"]
 [ext_resource type="FontFile" uid="uid://cswe24d1aqfk0" path="res://assets/font/Chango/Chango-Regular.ttf" id="49_j2jfr"]
 [ext_resource type="PackedScene" uid="uid://csoupdmbu5v1d" path="res://scenes/environmentEntities/post002.scn" id="50_bjg73"]
+[ext_resource type="Texture2D" uid="uid://d1awccmok4jvu" path="res://assets/import/Name.png" id="67_mlv25"]
+[ext_resource type="Script" uid="uid://d1mp6j4qxt0jw" path="res://scripts/UI/end_screen.gd" id="70_a82wo"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_cjqg0"]
 panorama = ExtResource("1_chjal")
@@ -110,6 +131,857 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_g4a8n")
 
+[sub_resource type="Gradient" id="Gradient_j8jky"]
+offsets = PackedFloat32Array(0.2, 1)
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_kmb1v"]
+noise_type = 2
+frequency = 0.03
+cellular_jitter = 3.0
+cellular_return_type = 0
+domain_warp_enabled = true
+domain_warp_type = 1
+domain_warp_amplitude = 50.0
+domain_warp_fractal_type = 2
+domain_warp_fractal_lacunarity = 1.5
+domain_warp_fractal_gain = 1.0
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_fuf3a"]
+noise = SubResource("FastNoiseLite_kmb1v")
+color_ramp = SubResource("Gradient_j8jky")
+seamless = true
+
+[sub_resource type="Shader" id="Shader_owmfx"]
+code = "shader_type spatial;
+render_mode blend_mix,depth_draw_opaque,cull_back,diffuse_burley,specular_schlick_ggx,skip_vertex_transform;
+
+// COMPATIBILITY_DEFINES - This code block is added and removed by the editor, do not modify it.
+// This is added automatically when in compatibility mode. It is not required for Mobile or Forward+.
+#define IS_COMPATIBILITY
+#define fma(a, b, c) (a) * (b) + (c)
+#define dFdxCoarse(a) dFdx(a)
+#define dFdyCoarse(a) dFdy(a)
+#define textureQueryLod(a, b) vec4(0.0)
+#define texelOffset(b, c) ivec3(ivec2(b.xy * _region_size + c - 0.4979), int(b.z))
+#define textureGather(a, b) vec4( \\
+    texelFetch(a, texelOffset(b, vec2(0,1)), 0).r, \\
+    texelFetch(a, texelOffset(b, vec2(1,1)), 0).r, \\
+    texelFetch(a, texelOffset(b, vec2(1,0)), 0).r, \\
+    texelFetch(a, texelOffset(b, vec2(0,0)), 0).r  \\
+)
+// END_COMPAT_DEFINES
+
+/* This shader is generated based upon the debug views you have selected.
+ * The terrain function depends on this shader. So don't change:
+ * - vertex positioning in vertex()
+ * - terrain normal calculation in fragment()
+ * - the last function being fragment() as the editor injects code before the closing }
+ *
+ * Most will only want to customize the material calculation and PBR application in fragment()
+ *
+ * Uniforms that begin with _ are private and will not display in the inspector. However, 
+ * you can set them via code. You are welcome to create more of your own hidden uniforms.
+ *
+ * This system only supports albedo, height, normal, roughness. Most textures don't need the other
+ * PBR channels. Height can be used as an approximation for AO. For the rare textures do need
+ * additional channels, you can add maps for that one texture. e.g. an emissive map for lava.
+ *
+ */
+
+// Private uniforms
+
+uniform float _region_size = 1024.0;
+uniform float _region_texel_size = 0.0009765625; // = 1/1024
+uniform float _vertex_spacing = 1.0;
+uniform float _vertex_density = 1.0; // = 1/_vertex_spacing
+uniform int _region_map_size = 32;
+uniform int _region_map[1024];
+uniform vec2 _region_locations[1024];
+uniform highp sampler2DArray _height_maps : repeat_disable;
+uniform highp sampler2DArray _control_maps : repeat_disable;
+uniform highp sampler2DArray _color_maps : source_color, filter_linear_mipmap_anisotropic, repeat_disable;
+uniform highp sampler2DArray _texture_array_albedo : source_color, filter_linear_mipmap_anisotropic, repeat_enable;
+uniform highp sampler2DArray _texture_array_normal : hint_normal, filter_linear_mipmap_anisotropic, repeat_enable;
+uniform highp sampler2D noise_texture : source_color, filter_linear_mipmap_anisotropic, repeat_enable;
+
+uniform float _texture_uv_scale_array[32];
+uniform float _texture_detile_array[32];
+uniform vec4 _texture_color_array[32];
+uniform uint _background_mode = 1u;  // NONE = 0, FLAT = 1, NOISE = 2
+uniform uint _mouse_layer = 0x80000000u; // Layer 32
+
+// Public uniforms
+uniform float vertex_normals_distance : hint_range(0, 1024) = 128.0;
+uniform bool height_blending = true;
+uniform float blend_sharpness : hint_range(0, 1) = 0.87;
+uniform float auto_slope : hint_range(0, 10) = 1.0;
+uniform float auto_height_reduction : hint_range(0, 1) = 0.1;
+uniform int auto_base_texture : hint_range(0, 31) = 0;
+uniform int auto_overlay_texture : hint_range(0, 31) = 1;
+
+uniform int dual_scale_texture : hint_range(0,31) = 0;
+uniform float dual_scale_reduction : hint_range(0.001,1) = 0.3;
+uniform float tri_scale_reduction : hint_range(0.001,1) = 0.3;
+uniform float dual_scale_far : hint_range(0,1000) = 170.0;
+uniform float dual_scale_near : hint_range(0,1000) = 100.0;
+
+uniform vec3 macro_variation1 : source_color = vec3(1.);
+uniform vec3 macro_variation2 : source_color = vec3(1.);
+
+// Generic noise at 3 scales, which can be used for anything 
+uniform float noise1_scale : hint_range(0.001, 1.) = 0.04;	// Used for macro variation 1. Scaled up 10x
+uniform float noise1_angle : hint_range(0, 6.283) = 0.;
+uniform vec2 noise1_offset = vec2(0.5);
+uniform float noise2_scale : hint_range(0.001, 1.) = 0.076;	// Used for macro variation 2. Scaled up 10x
+uniform float noise3_scale : hint_range(0.001, 1.) = 0.225;  // Used for texture blending edge.
+
+// Varyings & Types
+
+struct Material {
+	vec4 alb_ht;
+	vec4 nrm_rg;
+	int base;
+	int over;
+	float blend;
+};
+
+varying flat vec3 v_vertex;	// World coordinate vertex location
+varying flat vec3 v_camera_pos;
+varying float v_vertex_xz_dist;
+varying flat ivec3 v_region;
+varying flat vec2 v_uv_offset;
+varying flat vec2 v_uv2_offset;
+varying vec3 v_normal;
+varying float v_region_border_mask;
+
+////////////////////////
+// Vertex
+////////////////////////
+
+// Takes in UV world space coordinates, returns ivec3 with:
+// XY: (0 to _region_size) coordinates within a region
+// Z: layer index used for texturearrays, -1 if not in a region
+ivec3 get_region_uv(const vec2 uv) {
+	ivec2 pos = ivec2(floor(uv * _region_texel_size)) + (_region_map_size / 2);
+	int bounds = int(uint(pos.x | pos.y) < uint(_region_map_size));
+	int layer_index = _region_map[ pos.y * _region_map_size + pos.x ] * bounds - 1;
+	return ivec3(ivec2(mod(uv,_region_size)), layer_index);
+}
+
+// Takes in UV2 region space coordinates, returns vec3 with:
+// XY: (0 to 1) coordinates within a region
+// Z: layer index used for texturearrays, -1 if not in a region
+vec3 get_region_uv2(const vec2 uv2) {
+	// Remove Texel Offset to ensure correct region index.
+	ivec2 pos = ivec2(floor(uv2 - vec2(_region_texel_size * 0.5))) + (_region_map_size / 2);
+	int bounds = int(uint(pos.x | pos.y) < uint(_region_map_size));
+	int layer_index = _region_map[ pos.y * _region_map_size + pos.x ] * bounds - 1;
+	return vec3(uv2 - _region_locations[layer_index], float(layer_index));
+}
+
+// World Noise
+uniform float world_noise_region_blend : hint_range(0.05, 0.95, 0.01) = 0.33;
+uniform int world_noise_max_octaves : hint_range(0, 15) = 4;
+uniform int world_noise_min_octaves : hint_range(0, 15) = 2;
+uniform float world_noise_lod_distance : hint_range(0, 40000, 1) = 7500.;
+uniform float world_noise_scale : hint_range(0.25, 20, 0.01) = 5.0;
+uniform float world_noise_height : hint_range(0, 1000, 0.1) = 64.0;
+uniform vec3 world_noise_offset = vec3(0.0);
+
+// Takes in UV2 region space coordinates, returns 1.0 or 0.0 if a region is present or not.
+float check_region(const vec2 uv2) {
+	ivec2 pos = ivec2(floor(uv2)) + (_region_map_size / 2);
+	int layer_index = 0;
+	if (uint(pos.x | pos.y) < uint(_region_map_size)) {
+		layer_index = clamp(_region_map[ pos.y * _region_map_size + pos.x ] - 1, -1, 0) + 1;
+	}
+	return float(layer_index);
+}
+
+// Takes in UV2 region space coordinates, returns a blend value (0 - 1 range) between empty, and valid regions
+float region_blend(vec2 uv2) {
+	uv2 -= 0.5;
+	const vec2 offset = vec2(0.0,1.0);
+	float a = check_region(uv2 + offset.xy);
+	float b = check_region(uv2 + offset.yy);
+	float c = check_region(uv2 + offset.yx);
+	float d = check_region(uv2 + offset.xx);
+	vec2 w = smoothstep(vec2(0.0), vec2(1.0), fract(uv2));
+	float blend = mix(mix(d, c, w.x), mix(a, b, w.x), w.y);
+    return 1.0 - blend;
+}
+
+float hashf(float f) {
+	return fract(sin(f) * 1e4);
+}
+
+float hashv2(vec2 v) {
+	return fract(1e4 * sin(17.0 * v.x + v.y * 0.1) * (0.1 + abs(sin(v.y * 13.0 + v.x))));
+}
+
+// https://iquilezles.org/articles/morenoise/
+vec3 noise2D(vec2 x) {
+    vec2 f = fract(x);
+    // Quintic Hermine Curve.  Similar to SmoothStep()
+    vec2 u = f*f*f*(f*(f*6.0-15.0)+10.0);
+    vec2 du = 30.0*f*f*(f*(f-2.0)+1.0);
+
+    vec2 p = floor(x);
+
+	// Four corners in 2D of a tile
+	float a = hashv2( p+vec2(0,0) );
+    float b = hashv2( p+vec2(1,0) );
+    float c = hashv2( p+vec2(0,1) );
+    float d = hashv2( p+vec2(1,1) );
+
+    // Mix 4 corner percentages
+    float k0 =   a;
+    float k1 =   b - a;
+    float k2 =   c - a;
+    float k3 =   a - b - c + d;
+    return vec3( k0 + k1 * u.x + k2 * u.y + k3 * u.x * u.y,
+                du * ( vec2(k1, k2) + k3 * u.yx) );
+}
+
+float world_noise(vec2 p) {
+    float a = 0.0;
+    float b = 1.0;
+    vec2  d = vec2(0.0);
+
+    int octaves = int( clamp(
+	float(world_noise_max_octaves) - floor(v_vertex_xz_dist/(world_noise_lod_distance)),
+    float(world_noise_min_octaves), float(world_noise_max_octaves)) );
+	
+    for( int i=0; i < octaves; i++ ) {
+        vec3 n = noise2D(p);
+        d += n.yz;
+        a += b * n.x / (1.0 + dot(d,d));
+        b *= 0.5;
+        p = mat2( vec2(0.8, -0.6), vec2(0.6, 0.8) ) * p * 2.0;
+    }
+    return a;
+}
+
+float get_noise_height(const vec2 uv) {
+	float weight = region_blend(uv);
+	// only calculate world noise when it could be visibile.
+	if (weight <= 1.0 - world_noise_region_blend) {
+		return 0.0;
+	}
+	//TODO: Offset/scale UVs are semi-dependent upon region size 1024. Base on v_vertex.xz instead
+	float noise = world_noise((uv + world_noise_offset.xz * 1024. / _region_size) * world_noise_scale * _region_size / 1024. * .1) *
+            world_noise_height * 10. + world_noise_offset.y * 100.;
+	weight = smoothstep(1.0 - world_noise_region_blend, 1.0, weight);
+	return mix(0.0, noise, weight);
+}
+
+// World Noise end
+
+// 1 lookup
+float get_height(vec2 uv) {
+	highp float height = 0.0;
+	vec3 region = get_region_uv2(uv);
+	if (region.z >= 0.) {
+		height = texture(_height_maps, region).r;
+	}
+	// World Noise
+   	if (_background_mode == 2u) {
+	    height += get_noise_height(uv);
+    }
+ 	return height;
+}
+
+void vertex() {
+	// Get camera pos in world vertex coords
+	v_camera_pos = INV_VIEW_MATRIX[3].xyz;
+
+	// Get vertex of flat plane in world coordinates and set world UV
+	v_vertex = (MODEL_MATRIX * vec4(VERTEX, 1.0)).xyz;
+
+	// Camera distance to vertex on flat plane
+	v_vertex_xz_dist = length(v_vertex.xz - v_camera_pos.xz);
+
+	// UV coordinates in world space. Values are 0 to _region_size within regions
+	UV = round(v_vertex.xz * _vertex_density);
+
+	// UV coordinates in region space + texel offset. Values are 0 to 1 within regions
+	UV2 = fma(UV, vec2(_region_texel_size), vec2(0.5 * _region_texel_size));
+
+	// Discard vertices for Holes. 1 lookup
+	v_region = get_region_uv(UV);
+	uint control = floatBitsToUint(texelFetch(_control_maps, v_region, 0).r);
+	bool hole = bool(control >>2u & 0x1u);
+
+	// Show holes to all cameras except mouse camera (on exactly 1 layer)
+	if ( !(CAMERA_VISIBLE_LAYERS == _mouse_layer) && 
+			(hole || (_background_mode == 0u && (get_region_uv(UV - _region_texel_size) & v_region).z < 0))) {
+		VERTEX.x = 0. / 0.;
+	} else {		
+		// Set final vertex height & calculate vertex normals. 3 lookups.
+		VERTEX.y = get_height(UV2);
+		v_vertex.y = VERTEX.y;
+		v_normal = vec3(
+			v_vertex.y - get_height(UV2 + vec2(_region_texel_size, 0)),
+			_vertex_spacing,
+			v_vertex.y - get_height(UV2 + vec2(0, _region_texel_size))
+		);
+		// Due to a bug caused by the GPUs linear interpolation across edges of region maps,
+		// mask region edges and use vertex normals only across region boundaries.
+		v_region_border_mask = mod(UV.x + 2.5, _region_size) - fract(UV.x) < 5.0 || mod(UV.y + 2.5, _region_size) - fract(UV.y) < 5.0 ? 1. : 0.;
+	}
+		
+	// Transform UVs to local to avoid poor precision during varying interpolation.
+	v_uv_offset = MODEL_MATRIX[3].xz * _vertex_density;
+	UV -= v_uv_offset;
+	v_uv2_offset = v_uv_offset * _region_texel_size;
+	UV2 -= v_uv2_offset;
+
+	// Convert model space to view space w/ skip_vertex_transform render mode
+	VERTEX = (MODEL_MATRIX * vec4(VERTEX, 1.0)).xyz;
+	VERTEX = (VIEW_MATRIX * vec4(VERTEX, 1.0)).xyz;
+	NORMAL = normalize((MODELVIEW_MATRIX * vec4(NORMAL, 0.0)).xyz);
+	BINORMAL = normalize((MODELVIEW_MATRIX * vec4(BINORMAL, 0.0)).xyz);
+	TANGENT = normalize((MODELVIEW_MATRIX * vec4(TANGENT, 0.0)).xyz);
+}
+
+////////////////////////
+// Fragment
+////////////////////////
+
+// 0 - 3 lookups
+vec3 get_normal(vec2 uv, out vec3 tangent, out vec3 binormal) {
+	float u, v, height;
+	vec3 normal;
+	// Use vertex normals within radius of vertex_normals_distance, and along region borders.
+	if ((v_region_border_mask > 0.5 || v_vertex_xz_dist < vertex_normals_distance) && v_region.z >= 0) {
+		normal = normalize(v_normal);
+	} else {
+		height = get_height(uv);
+		u = height - get_height(uv + vec2(_region_texel_size, 0));
+		v = height - get_height(uv + vec2(0, _region_texel_size));
+		normal = normalize(vec3(u, _vertex_spacing, v));
+	}
+	tangent = normalize(cross(normal, vec3(0, 0, 1)));
+	binormal = normalize(cross(normal, tangent));
+	return normal;
+}
+
+vec3 unpack_normal(vec4 rgba) {
+	vec3 n = rgba.xzy * 2.0 - vec3(1.0);
+	n.z *= -1.0;
+	return n;
+}
+
+vec4 pack_normal(vec3 n, float a) {
+	n.z *= -1.0;
+	return vec4((n.xzy + vec3(1.0)) * 0.5, a);
+}
+
+float random(in vec2 xy) {
+	return fract(sin(dot(xy, vec2(12.9898, 78.233))) * 43758.5453);
+}
+
+vec2 rotate(vec2 v, float cosa, float sina) {
+	return vec2(cosa * v.x - sina * v.y, sina * v.x + cosa * v.y);
+}
+
+// Moves a point around a pivot point.
+vec2 rotate_around(vec2 point, vec2 pivot, float angle){
+	float x = pivot.x + (point.x - pivot.x) * cos(angle) - (point.y - pivot.y) * sin(angle);
+	float y = pivot.y + (point.x - pivot.x) * sin(angle) + (point.y - pivot.y) * cos(angle);
+	return vec2(x, y);
+}
+
+vec4 height_blend(vec4 a_value, float a_height, vec4 b_value, float b_height, float blend) {
+	if(height_blending) {
+		float ma = max(a_height + (1.0 - blend), b_height + blend) - (1.001 - blend_sharpness);
+	    float b1 = max(a_height + (1.0 - blend) - ma, 0.0);
+	    float b2 = max(b_height + blend - ma, 0.0);
+	    return (a_value * b1 + b_value * b2) / (b1 + b2);
+	} else {
+		float contrast = 1.0 - blend_sharpness;
+		float factor = (blend - contrast) / contrast;
+		return mix(a_value, b_value, clamp(factor, 0.0, 1.0));
+	}
+}
+
+vec2 detiling(vec2 uv, vec2 uv_center, int mat_id, inout float normal_rotation){
+	if (_texture_detile_array[mat_id] >= 0.001){
+		uv_center = floor(uv_center) + 0.5;
+		float detile = (random(uv_center) - 0.5) * 2.0 * TAU * _texture_detile_array[mat_id]; // -180deg to 180deg
+		uv = rotate_around(uv, uv_center, detile);
+		// Accumulate total rotation for normal rotation
+		normal_rotation += detile;
+	}
+	return uv;
+}
+
+vec2 rotate_normal(vec2 normal, float angle) {
+	angle += PI * 0.5;
+	float new_y = dot(vec2(cos(angle), sin(angle)), normal);
+	angle -= PI * 0.5;
+	float new_x = dot(vec2(cos(angle) ,sin(angle)) ,normal);
+	return vec2(new_x, new_y);
+}
+
+// 2-4 lookups
+void get_material(vec2 base_uv, uint control, ivec3 iuv_center, vec3 normal, out Material out_mat) {
+	out_mat = Material(vec4(0.), vec4(0.), 0, 0, 0.0);
+	vec2 uv_center = vec2(iuv_center.xy);
+	int region = iuv_center.z;
+
+	// Enable Autoshader if outside regions or painted in regions, otherwise manual painted
+	bool auto_shader = region < 0 || bool(control & 0x1u);
+	out_mat.base = int(auto_shader) * auto_base_texture + int(!auto_shader) * int(control >>27u & 0x1Fu);
+	out_mat.over = int(auto_shader) * auto_overlay_texture + int(!auto_shader) * int(control >> 22u & 0x1Fu);
+	out_mat.blend = float(auto_shader) * clamp(
+			dot(vec3(0., 1., 0.), normal * auto_slope * 2. - (auto_slope * 2. - 1.)) 
+			- auto_height_reduction * .01 * v_vertex.y // Reduce as vertices get higher
+			, 0., 1.) + 
+			 float(!auto_shader) * float(control >>14u & 0xFFu) * 0.003921568627450; // 1./255.0		
+
+	// Control map scale & rotation, apply to both base and 
+	// uv_center. Translate uv center to the current region.
+	uv_center += _region_locations[region] * _region_size;
+	// Define base scale from control map value as array index. 0.5 as baseline.
+	float[8] scale_array = { 0.5, 0.4, 0.3, 0.2, 0.1, 0.8, 0.7, 0.6};
+	float control_scale = scale_array[(control >>7u & 0x7u)];
+	base_uv *= control_scale;
+	uv_center *=  control_scale;
+	// calculate baseline derivatives
+	vec2 ddx = dFdxCoarse(base_uv);
+	vec2 ddy = dFdyCoarse(base_uv);
+	// Apply global uv rotation from control map.
+	float uv_rotation = float(control >>10u & 0xFu) / 16. * TAU;
+	base_uv = rotate_around(base_uv, vec2(0), uv_rotation);
+	uv_center = rotate_around(uv_center, vec2(0), uv_rotation);
+
+	vec2 matUV = base_uv;
+	vec4 albedo_ht = vec4(0.);
+	vec4 normal_rg = vec4(0.5f, 0.5f, 1.0f, 1.0f);
+	vec4 albedo_far = vec4(0.);
+	vec4 normal_far = vec4(0.5f, 0.5f, 1.0f, 1.0f);
+	float mat_scale = _texture_uv_scale_array[out_mat.base];
+	float normal_angle = uv_rotation;
+	vec2 ddx1 = ddx;
+	vec2 ddy1 = ddy;
+	
+	// If dual scaling, apply to base texture
+	if(region < 0) {
+		mat_scale *= tri_scale_reduction;
+	}
+	//each time we change scale, recalculate antitiling from baseline to maintain continuity.
+	matUV = detiling(base_uv * mat_scale, uv_center * mat_scale, out_mat.base, normal_angle);
+	ddx1 *= mat_scale;
+	ddy1 *= mat_scale;
+	albedo_ht = textureGrad(_texture_array_albedo, vec3(matUV, float(out_mat.base)), ddx1, ddy1);
+	normal_rg = textureGrad(_texture_array_normal, vec3(matUV, float(out_mat.base)), ddx1, ddy1);
+
+	// Unpack & rotate base normal for blending
+	normal_rg.xz = unpack_normal(normal_rg).xz;
+	normal_rg.xz = rotate_normal(normal_rg.xz, normal_angle);
+
+	if(out_mat.base == dual_scale_texture || out_mat.over == dual_scale_texture) {
+		mat_scale *= dual_scale_reduction;
+		ddx1 *= dual_scale_reduction;
+		ddy1 *= dual_scale_reduction;
+		float dual_scale_normal = uv_rotation; //do not add near & far rotations
+		// Do not apply detiling if tri-scale reduction occurs.
+		matUV = region < 0 ? base_uv * mat_scale : detiling(base_uv * mat_scale, uv_center * mat_scale, dual_scale_texture, dual_scale_normal);
+		albedo_far = textureGrad(_texture_array_albedo, vec3(matUV, float(dual_scale_texture)), ddx1, ddy1);
+		normal_far = textureGrad(_texture_array_normal, vec3(matUV, float(dual_scale_texture)), ddx1, ddy1);
+
+		// Unpack & rotate dual scale normal for blending
+		normal_far.xz = unpack_normal(normal_far).xz;
+		normal_far.xz = rotate_normal(normal_far.xz, dual_scale_normal);
+	}
+
+	float far_factor = clamp(smoothstep(dual_scale_near, dual_scale_far, length(v_vertex - v_camera_pos)), 0.0, 1.0);
+	if(out_mat.base == dual_scale_texture) {
+		albedo_ht = mix(albedo_ht, albedo_far, far_factor);
+		normal_rg = mix(normal_rg, normal_far, far_factor);
+	}
+
+	// Apply color to base
+	albedo_ht.rgb *= _texture_color_array[out_mat.base].rgb;
+
+	// Setup overlay texture to blend
+	float mat_scale2 = _texture_uv_scale_array[out_mat.over];
+	float normal_angle2 = uv_rotation;
+	vec2 matUV2 = detiling(base_uv * mat_scale2, uv_center * mat_scale2, out_mat.over, normal_angle2);
+	vec2 ddx2 = ddx * mat_scale2;
+	vec2 ddy2 = ddy * mat_scale2;
+	vec4 albedo_ht2 = textureGrad(_texture_array_albedo, vec3(matUV2, float(out_mat.over)), ddx2, ddy2);
+	vec4 normal_rg2 = textureGrad(_texture_array_normal, vec3(matUV2, float(out_mat.over)), ddx2, ddy2);
+
+	// Though it would seem having the above lookups in this block, or removing the branch would
+	// be more optimal, the first introduces artifacts #276, and the second is noticably slower. 
+	// It seems the branching off dual scaling and the color array lookup is more optimal.
+	if (out_mat.blend > 0.f) {
+		// Unpack & rotate overlay normal for blending
+		normal_rg2.xz = unpack_normal(normal_rg2).xz;
+		normal_rg2.xz = rotate_normal(normal_rg2.xz, normal_angle2);
+
+		// If dual scaling, apply to overlay texture
+		if(out_mat.over == dual_scale_texture) {
+			albedo_ht2 = mix(albedo_ht2, albedo_far, far_factor);
+			normal_rg2 = mix(normal_rg2, normal_far, far_factor);
+		}
+
+		// Apply color to overlay
+		albedo_ht2.rgb *= _texture_color_array[out_mat.over].rgb;
+
+		// Blend overlay and base
+		albedo_ht = height_blend(albedo_ht, albedo_ht.a, albedo_ht2, albedo_ht2.a, out_mat.blend);
+		normal_rg = height_blend(normal_rg, albedo_ht.a, normal_rg2, albedo_ht2.a, out_mat.blend);
+	}
+	
+	// Repack normals and return material
+	normal_rg = pack_normal(normal_rg.xyz, normal_rg.a);
+	out_mat.alb_ht = albedo_ht;
+	out_mat.nrm_rg = normal_rg;
+	return;
+}
+
+float blend_weights(float weight, float detail) {
+	weight = smoothstep(0.0, 1.0, weight);
+	weight = sqrt(weight * 0.5);
+	float result = max(0.1 * weight, 10.0 * (weight + detail) + 1.0f - (detail + 10.0));
+	return result;
+}
+
+void fragment() {
+	// Recover UVs
+	vec2 uv = UV + v_uv_offset;
+	vec2 uv2 = UV2 + v_uv2_offset;
+
+	// Calculate Terrain Normals. 4 lookups
+	vec3 w_normal = normalize(v_normal);
+	vec3 w_tangent = normalize(cross(w_normal, vec3(0, 0, 1)));
+	vec3 w_binormal = normalize(cross(w_normal, w_tangent));
+	NORMAL = mat3(VIEW_MATRIX) * w_normal;
+	TANGENT = mat3(VIEW_MATRIX) * w_tangent;
+	BINORMAL = mat3(VIEW_MATRIX) * w_binormal;
+		
+	// Idenfity 4 vertices surrounding this pixel
+	vec2 texel_pos = uv;
+	highp vec2 texel_pos_floor = floor(uv);
+	
+	// Create a cross hatch grid of alternating 0/1 horizontal and vertical stripes 1 unit wide in XY 
+	vec4 mirror = vec4(fract(texel_pos_floor * 0.5) * 2.0, 1.0, 1.0);
+	// And the opposite grid in ZW
+	mirror.zw = vec2(1.0) - mirror.xy;
+
+	// Get the region and control map ID for the vertices
+	ivec3 indexUV[4] = {
+		get_region_uv(texel_pos_floor + mirror.xy),
+		get_region_uv(texel_pos_floor + mirror.xw),
+		get_region_uv(texel_pos_floor + mirror.zy),
+		get_region_uv(texel_pos_floor + mirror.zw)
+	};
+
+	// Lookup adjacent vertices. 4 lookups
+	uint control[4] = {
+		floatBitsToUint(texelFetch(_control_maps, indexUV[0], 0).r),
+		floatBitsToUint(texelFetch(_control_maps, indexUV[1], 0).r),
+		floatBitsToUint(texelFetch(_control_maps, indexUV[2], 0).r),
+		floatBitsToUint(texelFetch(_control_maps, indexUV[3], 0).r)
+	};
+
+	// Get the textures for each vertex. 8-16 lookups (2-4 ea)
+	Material mat[4];
+	get_material(uv, control[0], indexUV[0], w_normal, mat[0]);
+	get_material(uv, control[1], indexUV[1], w_normal, mat[1]);
+	get_material(uv, control[2], indexUV[2], w_normal, mat[2]);
+	get_material(uv, control[3], indexUV[3], w_normal, mat[3]);
+
+	// Calculate weight for the pixel position between the vertices
+	// Bilinear interpolation of difference of uv and floor(uv)
+	vec2 weights1 = clamp(texel_pos - texel_pos_floor, 0, 1);
+	weights1 = mix(weights1, vec2(1.0) - weights1, mirror.xy);
+	vec2 weights0 = vec2(1.0) - weights1;
+	// Adjust final weights by texture's height/depth + noise. 1 lookup
+	float noise3 = texture(noise_texture, uv*noise3_scale).r;
+	vec4 weights;
+	weights.x = blend_weights(weights0.x * weights0.y, clamp(mat[0].alb_ht.a + noise3, 0., 1.));
+	weights.y = blend_weights(weights0.x * weights1.y, clamp(mat[1].alb_ht.a + noise3, 0., 1.));
+	weights.z = blend_weights(weights1.x * weights0.y, clamp(mat[2].alb_ht.a + noise3, 0., 1.));
+	weights.w = blend_weights(weights1.x * weights1.y, clamp(mat[3].alb_ht.a + noise3, 0., 1.));
+	float weight_sum = weights.x + weights.y + weights.z + weights.w;
+	float weight_inv = 1.0 / weight_sum;
+
+	// Weighted average of albedo & height
+	vec4 albedo_height = weight_inv * (
+		mat[0].alb_ht * weights.x +
+		mat[1].alb_ht * weights.y +
+		mat[2].alb_ht * weights.z +
+		mat[3].alb_ht * weights.w );
+
+	// Weighted average of normal & rough
+	vec4 normal_rough = weight_inv * (
+		mat[0].nrm_rg * weights.x +
+		mat[1].nrm_rg * weights.y +
+		mat[2].nrm_rg * weights.z +
+		mat[3].nrm_rg * weights.w );
+
+	// Determine if we're in a region or not (region_uv.z>0)
+	vec3 region_uv = get_region_uv2(uv2);
+
+	// Colormap. 1 lookup
+	vec4 color_map = vec4(1., 1., 1., .5);
+	if (region_uv.z >= 0.) {
+		float lod = textureQueryLod(_color_maps, uv2.xy).y;
+		color_map = textureLod(_color_maps, region_uv, lod);
+	}
+
+	// Macro variation. 2 Lookups
+	float noise1 = texture(noise_texture, rotate(uv*noise1_scale * .1, cos(noise1_angle), sin(noise1_angle)) + noise1_offset).r;
+	float noise2 = texture(noise_texture, uv*noise2_scale * .1).r;
+	vec3 macrov = mix(macro_variation1, vec3(1.), clamp(noise1 + v_vertex_xz_dist * .0002, 0., 1.));
+	macrov *= mix(macro_variation2, vec3(1.), clamp(noise2 + v_vertex_xz_dist * .0002, 0., 1.));
+
+	// Wetness/roughness modifier, converting 0-1 range to -1 to 1 range
+	float roughness = fma(color_map.a - 0.5, 2.0, normal_rough.a);
+
+	// Apply PBR
+	ALBEDO = albedo_height.rgb * color_map.rgb * macrov;
+	ROUGHNESS = roughness;
+	SPECULAR = 1. - normal_rough.a;
+	NORMAL_MAP = normal_rough.rgb;
+	NORMAL_MAP_DEPTH = 1.0;
+
+}"
+
+[sub_resource type="Terrain3DMaterial" id="Terrain3DMaterial_pibwh"]
+_shader_parameters = {
+&"auto_base_texture": null,
+&"auto_height_reduction": null,
+&"auto_overlay_texture": null,
+&"auto_slope": null,
+&"bias_distance": 512.0,
+&"blend_sharpness": 0.0,
+&"depth_blur": 0.0,
+&"dual_scale_far": null,
+&"dual_scale_near": null,
+&"dual_scale_reduction": null,
+&"dual_scale_texture": null,
+&"enable_macro_variation": true,
+&"enable_projection": true,
+&"flat_terrain_normals": false,
+&"height_blending": null,
+&"macro_variation1": Color(1, 1, 1, 1),
+&"macro_variation2": Color(1, 1, 1, 1),
+&"macro_variation_slope": 0.333,
+&"mipmap_bias": 1.0,
+&"noise1_angle": 0.0,
+&"noise1_offset": Vector2(0.5, 0.5),
+&"noise1_scale": 0.04,
+&"noise2_scale": 0.5550000263625,
+&"noise3_scale": null,
+&"noise_texture": SubResource("NoiseTexture2D_fuf3a"),
+&"projection_threshold": 0.8,
+&"tri_scale_reduction": null,
+&"vertex_normals_distance": null,
+&"world_noise_height": 64.0,
+&"world_noise_lod_distance": 7500.0,
+&"world_noise_max_octaves": 4,
+&"world_noise_min_octaves": 2,
+&"world_noise_offset": Vector3(0, 0, 0),
+&"world_noise_region_blend": 0.33,
+&"world_noise_scale": 5.0
+}
+world_background = 0
+shader_override = SubResource("Shader_owmfx")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cd6m4"]
+transparency = 4
+cull_mode = 2
+vertex_color_use_as_albedo = true
+backlight_enabled = true
+backlight = Color(0.5, 0.5, 0.5, 1)
+distance_fade_mode = 1
+distance_fade_min_distance = 128.0
+distance_fade_max_distance = 96.0
+
+[sub_resource type="Terrain3DMeshAsset" id="Terrain3DMeshAsset_5he1u"]
+generated_type = 1
+height_offset = 0.5
+material_override = SubResource("StandardMaterial3D_cd6m4")
+last_lod = 0
+last_shadow_lod = 0
+lod0_range = 128.0
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_cd6m4"]
+noise_type = 3
+seed = 7
+frequency = 0.0036
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_1qugv"]
+noise = SubResource("FastNoiseLite_cd6m4")
+seamless = true
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_0ftus"]
+render_priority = 0
+shader = ExtResource("13_fjhjs")
+shader_parameter/sway = 0.19
+shader_parameter/sway_ = 0.34
+shader_parameter/sway_pow = 1.3
+shader_parameter/grass_roughness = 0.3
+shader_parameter/sway_noise_sampeling_scale = 0.12
+shader_parameter/sway_time_scale = 0.05
+shader_parameter/sway_dir = Vector3(1, 0, 1)
+shader_parameter/sway_noise = SubResource("NoiseTexture2D_1qugv")
+shader_parameter/color_scale = 0.3
+shader_parameter/color_grad_height = -0.5
+shader_parameter/top_color = Color(0.4765696, 0.77115065, 0.4061069, 1)
+shader_parameter/bot_color = Color(0.22622505, 0.3611254, 0.15447155, 1)
+shader_parameter/grass_scale = Vector3(1, 1, 1)
+
+[sub_resource type="Terrain3DMeshAsset" id="Terrain3DMeshAsset_0ftus"]
+name = "grassfoliage_001"
+id = 1
+scene_file = ExtResource("14_bfu41")
+material_override = SubResource("ShaderMaterial_0ftus")
+last_lod = 0
+last_shadow_lod = 0
+lod0_range = 128.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_1qugv"]
+render_priority = 0
+shader = ExtResource("15_r4ag1")
+shader_parameter/albedo_texture = ExtResource("16_v0wtd")
+shader_parameter/albedo_tint = Color(1, 1, 1, 1)
+shader_parameter/wind_strength = 0.15
+shader_parameter/wind_speed = 1.0
+shader_parameter/wind_scale = 0.5
+shader_parameter/stem_stiffness = 1.0
+shader_parameter/flower_sway = 1.2
+shader_parameter/normal_strength = 1.0
+shader_parameter/roughness_value = 0.8
+shader_parameter/use_normal_texture = true
+shader_parameter/use_roughness_texture = false
+
+[sub_resource type="Terrain3DMeshAsset" id="Terrain3DMeshAsset_11xjt"]
+name = "flower_002"
+id = 2
+scene_file = ExtResource("17_sgvw8")
+material_override = SubResource("ShaderMaterial_1qugv")
+last_lod = 0
+last_shadow_lod = 0
+lod0_range = 128.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_8utcv"]
+render_priority = 0
+shader = ExtResource("15_r4ag1")
+shader_parameter/albedo_texture = ExtResource("16_v0wtd")
+shader_parameter/albedo_tint = Color(1, 1, 1, 1)
+shader_parameter/wind_strength = 0.1
+shader_parameter/wind_speed = 1.0
+shader_parameter/wind_scale = 1.2
+shader_parameter/stem_stiffness = 1.0
+shader_parameter/flower_sway = 1.2
+shader_parameter/normal_strength = 1.0
+shader_parameter/roughness_value = 0.8
+shader_parameter/use_normal_texture = true
+shader_parameter/use_roughness_texture = false
+
+[sub_resource type="Terrain3DMeshAsset" id="Terrain3DMeshAsset_pr5xe"]
+name = "flower_001"
+id = 3
+scene_file = ExtResource("18_6nfnn")
+material_override = SubResource("ShaderMaterial_8utcv")
+last_lod = 0
+last_shadow_lod = 0
+lod0_range = 128.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_03rfc"]
+transparency = 4
+cull_mode = 2
+vertex_color_use_as_albedo = true
+backlight_enabled = true
+backlight = Color(0.5, 0.5, 0.5, 1)
+distance_fade_mode = 1
+distance_fade_min_distance = 128.0
+distance_fade_max_distance = 96.0
+
+[sub_resource type="Terrain3DMeshAsset" id="Terrain3DMeshAsset_c7ldm"]
+id = 4
+generated_type = 1
+height_offset = 0.5
+material_override = SubResource("StandardMaterial3D_03rfc")
+last_lod = 0
+last_shadow_lod = 0
+lod0_range = 128.0
+
+[sub_resource type="Terrain3DMeshAsset" id="Terrain3DMeshAsset_43436"]
+name = "bush_002"
+id = 5
+scene_file = ExtResource("19_4ue30")
+density = 0.23949566
+last_lod = 0
+last_shadow_lod = 0
+lod0_range = 128.0
+
+[sub_resource type="Terrain3DMeshAsset" id="Terrain3DMeshAsset_03rfc"]
+name = "bush_003"
+id = 6
+scene_file = ExtResource("20_k42av")
+density = 0.22232932
+last_lod = 0
+last_shadow_lod = 0
+lod0_range = 128.0
+
+[sub_resource type="Terrain3DTextureAsset" id="Terrain3DTextureAsset_fuf3a"]
+name = "grass"
+albedo_color = Color(0.6345357, 1, 0.6392856, 1)
+albedo_texture = ExtResource("21_gr8w0")
+normal_texture = ExtResource("22_673bd")
+uv_scale = 0.265
+detiling_rotation = 0.25
+detiling_shift = 0.25
+
+[sub_resource type="Terrain3DTextureAsset" id="Terrain3DTextureAsset_vc5cj"]
+name = "wetdirt"
+id = 1
+albedo_texture = ExtResource("23_akjxb")
+normal_texture = ExtResource("24_vrx01")
+uv_scale = 0.5
+detiling_rotation = 0.25
+detiling_shift = 0.25
+
+[sub_resource type="Terrain3DTextureAsset" id="Terrain3DTextureAsset_nvyfr"]
+name = "dirt"
+id = 2
+albedo_texture = ExtResource("25_1uevf")
+normal_texture = ExtResource("26_tc087")
+normal_depth = 2.0
+uv_scale = 1.269
+detiling_rotation = 0.259
+detiling_shift = 0.25
+
+[sub_resource type="Terrain3DTextureAsset" id="Terrain3DTextureAsset_ty1g6"]
+name = "dirt + grass"
+id = 3
+albedo_texture = ExtResource("27_73205")
+normal_texture = ExtResource("28_0tljd")
+uv_scale = 0.5
+detiling_rotation = 0.25
+detiling_shift = 0.25
+
+[sub_resource type="Terrain3DTextureAsset" id="Terrain3DTextureAsset_c7ldm"]
+name = "stone"
+id = 4
+albedo_texture = ExtResource("29_mgpkq")
+normal_texture = ExtResource("30_xmrkg")
+uv_scale = 0.25
+detiling_rotation = 0.25
+detiling_shift = 0.25
+
+[sub_resource type="Terrain3DAssets" id="Terrain3DAssets_5poiv"]
+mesh_list = Array[Terrain3DMeshAsset]([SubResource("Terrain3DMeshAsset_5he1u"), SubResource("Terrain3DMeshAsset_0ftus"), SubResource("Terrain3DMeshAsset_11xjt"), SubResource("Terrain3DMeshAsset_pr5xe"), SubResource("Terrain3DMeshAsset_c7ldm"), SubResource("Terrain3DMeshAsset_43436"), SubResource("Terrain3DMeshAsset_03rfc")])
+texture_list = Array[Terrain3DTextureAsset]([SubResource("Terrain3DTextureAsset_fuf3a"), SubResource("Terrain3DTextureAsset_vc5cj"), SubResource("Terrain3DTextureAsset_nvyfr"), SubResource("Terrain3DTextureAsset_ty1g6"), SubResource("Terrain3DTextureAsset_c7ldm")])
+
 [sub_resource type="Gradient" id="Gradient_j2jfr"]
 
 [sub_resource type="GradientTexture1D" id="GradientTexture1D_bjg73"]
@@ -143,7 +1015,7 @@ material = SubResource("StandardMaterial3D_nvyfr")
 size = Vector2(0.08, 0.08)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_trceg"]
-size = Vector3(7.017578, 6, 1)
+size = Vector3(16.57727, 6, 1)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_vchkt"]
 shader = ExtResource("42_cjqg0")
@@ -183,7 +1055,7 @@ shadow_opacity = 0.65
 directional_shadow_max_distance = 1500.0
 
 [node name="Car" parent="Environment" unique_id=346548748 instance=ExtResource("16_j8jky")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -106.69824, 0.0006933212, -15.082748)
+transform = Transform3D(0.94997203, 0, 0.31233492, 0, 1, 0, -0.31233492, 0, 0.94997203, -106.4252, 0.00069379807, -20.25536)
 
 [node name="Medkit" parent="Environment/Car" unique_id=926718135 groups=["interactable"] instance=ExtResource("3_trceg")]
 transform = Transform3D(0.5325217, 0, -0.8464163, 0, 1, 0, 0.8464163, 0, 0.5325217, 2.0272102, 0.42105407, 0.5070152)
@@ -233,10 +1105,11 @@ transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, 0, 0, 0)
 mesh = SubResource("ArrayMesh_v7atb")
 
 [node name="Terrain3D" parent="Environment" unique_id=830004836 instance=ExtResource("13_pibwh")]
-collision_mode = 1
+material = SubResource("Terrain3DMaterial_pibwh")
+assets = SubResource("Terrain3DAssets_5poiv")
 
 [node name="Player" parent="Environment" unique_id=1589132169 node_paths=PackedStringArray("interaction_label", "crosshair") instance=ExtResource("2_0wfyh")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -73.966576, 3.767775, -64.70341)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -73.966576, 3.8631778, -63.4128)
 interaction_label = NodePath("../../UI/InteractionLabel")
 crosshair = NodePath("../../UI/Crosshair")
 
@@ -256,7 +1129,7 @@ transform = Transform3D(-0.59274495, 0.39227775, -0.7034001, 0, 0.87336546, 0.48
 transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 1, -23.952454, 6.2621975, 40.059227)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="SnakeTrigger" unique_id=1217238549]
-transform = Transform3D(1.000001, 0, 0, 0, 1.0000004, 0, 0, 0, 1.0000045, 1.6417713, -2.4110641, -3.945259)
+transform = Transform3D(0.9822367, 0, -0.18772852, 0, 1.0000004, 0, 0.18772437, 0, 0.98222625, 3.4278717, -2.4110641, -3.603897)
 shape = SubResource("BoxShape3D_trceg")
 
 [node name="Managers" type="Node" parent="." unique_id=1877332994]
@@ -266,7 +1139,7 @@ script = ExtResource("4_tipki")
 snakes = Array[ExtResource("5_85g3d")]([ExtResource("29_o7ddy"), ExtResource("30_0loja"), ExtResource("31_ids8r"), ExtResource("32_dnhof")])
 time_to_die = 300.0
 correct_item_bonus_time = 20.0
-wrong_item_penalty_time = 60.0
+wrong_item_penalty_time = 120.0
 
 [node name="GameManager" type="Node" parent="Managers" unique_id=242879686 node_paths=PackedStringArray("player", "poison_manager", "inventory", "symptom_effects_controller", "inspection_ui", "end_sequence_controller")]
 script = ExtResource("10_choun")
@@ -290,7 +1163,7 @@ script = ExtResource("18_2f3dj")
 poison_manager = NodePath("../PoisonManager")
 effect_trigger_times = Array[float]([30.0, 40.0, 50.0, 60.0])
 
-[node name="EndSequenceController" type="Node" parent="Managers" unique_id=1614686351 node_paths=PackedStringArray("player", "black_fade")]
+[node name="EndSequenceController" type="Node" parent="Managers" unique_id=1614686351 node_paths=PackedStringArray("player", "black_fade", "end_screen_ui")]
 script = ExtResource("25_nvyfr")
 player = NodePath("../../Environment/Player")
 black_fade = NodePath("../../UI/EndFadeLayer/ColorRect")
@@ -298,8 +1171,9 @@ spiral_duration = 20.0
 spiral_radius = 1.0
 spiral_height = 3.0
 spiral_back_distance = 10.0
+end_screen_ui = NodePath("../../UI/EndScreen/EndScreen")
 
-[node name="MainMenuController" type="Node" parent="Managers" unique_id=1173312354 node_paths=PackedStringArray("player", "menu_camera", "main_menu", "menu_panel", "options_panel", "credits_panel", "fade_black", "terrain", "inventory", "monologue_ui")]
+[node name="MainMenuController" type="Node" parent="Managers" unique_id=1173312354 node_paths=PackedStringArray("player", "menu_camera", "main_menu", "menu_panel", "options_panel", "credits_panel", "fade_black", "terrain", "inventory", "monologue_ui", "warning_screen")]
 script = ExtResource("27_j2jfr")
 player = NodePath("../../Environment/Player")
 menu_camera = NodePath("../../MenuCamera")
@@ -311,6 +1185,7 @@ fade_black = NodePath("../../UI/MainMenu/FadeBlack")
 terrain = NodePath("../../Environment/Terrain3D")
 inventory = NodePath("../../UI/Inventory")
 monologue_ui = NodePath("../../UI/MonologueUI")
+warning_screen = NodePath("../../UI/WarningScreen/WarningScreen")
 intro_duration = 5.0
 
 [node name="SnakeSpawn" type="Node3D" parent="." unique_id=1205766575]
@@ -319,7 +1194,79 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.885784, 3.393488, 35.9026
 [node name="SnakeRunPoint" type="Node3D" parent="." unique_id=503469683]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.7325006, 3.3210037, 37.4596)
 
+[node name="sign02" parent="." unique_id=1384859664 instance=ExtResource("50_bjg73")]
+transform = Transform3D(0.8953571, -0.09297883, 0.43553483, 0.08361144, 0.9956681, 0.040671702, -0.43742973, 0, 0.89925253, -37.8878, 0.7500125, 48.98715)
+
 [node name="UI" type="CanvasLayer" parent="." unique_id=1809641575]
+
+[node name="WarningScreen" type="CanvasLayer" parent="UI" unique_id=1952853964]
+layer = 3
+
+[node name="WarningScreen" type="Control" parent="UI/WarningScreen" unique_id=1462785445 node_paths=PackedStringArray("continue_button")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("46_gdvew")
+continue_button = NodePath("Panel/VBoxContainer/Continue")
+
+[node name="FadeBlack" type="ColorRect" parent="UI/WarningScreen/WarningScreen" unique_id=1550470967]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Panel" type="Panel" parent="UI/WarningScreen/WarningScreen" unique_id=516432499]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/WarningScreen/WarningScreen/Panel" unique_id=1288298957]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -392.0
+offset_top = -120.0
+offset_right = 392.0
+offset_bottom = 120.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 15
+
+[node name="WarningLabel" type="Label" parent="UI/WarningScreen/WarningScreen/Panel/VBoxContainer" unique_id=1715061851]
+custom_minimum_size = Vector2(900, 440)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("49_j2jfr")
+theme_override_font_sizes/font_size = 30
+text = "This game contains blood, injury, and snake bite themes.
+
+The first few moments may stutter while the browser loads terrain, shaders, and environment assets.
+
+If that happens, slowly look around for a few seconds so everything can finish loading.
+
+Sorry for the inconvenience.
+
+This is a game jam build."
+autowrap_mode = 3
+
+[node name="Continue" type="Button" parent="UI/WarningScreen/WarningScreen/Panel/VBoxContainer" unique_id=1174899336]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("49_j2jfr")
+theme_override_font_sizes/font_size = 37
+text = "Continue
+"
 
 [node name="BookUIButton" type="Control" parent="UI" unique_id=1143446681 node_paths=PackedStringArray("player")]
 layout_mode = 3
@@ -384,7 +1331,6 @@ script = ExtResource("33_5q0nq")
 player = NodePath("../../Environment/Player")
 inspection_sprite = NodePath("InspectionSprite")
 close_button = NodePath("Close")
-ruler_cursor = ExtResource("38_bu4jf")
 ruler_cursor_icon = NodePath("TextureRect")
 
 [node name="InspectionSprite" type="TextureRect" parent="UI/InspectionUI" unique_id=1304151410]
@@ -515,6 +1461,7 @@ tremor_timer = NodePath("Timer")
 [node name="SceenFXLayer" type="CanvasLayer" parent="UI/SymptomEffectsUI" unique_id=569711925]
 
 [node name="SymptomOverlay" type="ColorRect" parent="UI/SymptomEffectsUI/SceenFXLayer" unique_id=30472095]
+visible = false
 material = SubResource("ShaderMaterial_vchkt")
 anchors_preset = 15
 anchor_right = 1.0
@@ -568,18 +1515,8 @@ offset_bottom = 43.0
 texture = ExtResource("37_c6pm6")
 stretch_mode = 2
 
-[node name="EndFadeLayer" type="CanvasLayer" parent="UI" unique_id=915743636]
-
-[node name="ColorRect" type="ColorRect" parent="UI/EndFadeLayer" unique_id=1127335992]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
-color = Color(0, 0, 0, 0)
-
 [node name="MainMenu" type="Control" parent="UI" unique_id=2111624270]
+visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -671,6 +1608,19 @@ shift - sprint
 e - interact"
 horizontal_alignment = 2
 uppercase = true
+
+[node name="TextureRect" type="TextureRect" parent="UI/MainMenu/Panel" unique_id=1486329052]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -382.5
+offset_top = 500.0
+offset_right = 382.5
+offset_bottom = 114.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("67_mlv25")
 
 [node name="OptionsPanel" type="Panel" parent="UI/MainMenu" unique_id=624227045]
 layout_mode = 0
@@ -775,8 +1725,88 @@ grow_horizontal = 0
 grow_vertical = 0
 text = "Continue >>"
 
-[node name="sign02" parent="UI/MonologueUI" unique_id=891839412 instance=ExtResource("50_bjg73")]
-transform = Transform3D(0.8953571, -0.09297883, 0.43553483, 0.08361144, 0.9956681, 0.040671702, -0.43742973, 0, 0.89925253, -37.8878, 0.7500125, 48.98715)
+[node name="EndFadeLayer" type="CanvasLayer" parent="UI" unique_id=915743636]
+
+[node name="ColorRect" type="ColorRect" parent="UI/EndFadeLayer" unique_id=1127335992]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 0)
+
+[node name="EndScreen" type="CanvasLayer" parent="UI" unique_id=2036332100]
+layer = 2
+
+[node name="EndScreen" type="Control" parent="UI/EndScreen" unique_id=57130299 node_paths=PackedStringArray("result_label", "play_again_button", "exit_button")]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("70_a82wo")
+result_label = NodePath("VBoxContainer/ResultLabel")
+play_again_button = NodePath("VBoxContainer/VBoxContainer/PlayAgainButton")
+exit_button = NodePath("VBoxContainer/VBoxContainer/ExitButton")
+
+[node name="BlackBackground" type="ColorRect" parent="UI/EndScreen/EndScreen" unique_id=1302089733]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/EndScreen/EndScreen" unique_id=805431524]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -450.0
+offset_top = -232.0
+offset_right = 450.0
+offset_bottom = 232.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 54
+
+[node name="ResultLabel" type="Label" parent="UI/EndScreen/EndScreen/VBoxContainer" unique_id=1480765566]
+custom_minimum_size = Vector2(900, 440)
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("49_j2jfr")
+theme_override_font_sizes/font_size = 30
+text = "Well... that could've gone better.
+
+At least now you know that “random pills and optimism” isn't a medically approved treatment plan.
+
+Seriously though — snake bites are DANGEROUS.
+
+In real life, seek professional medical help IMMEDIATLY."
+autowrap_mode = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/EndScreen/EndScreen/VBoxContainer" unique_id=701951388]
+layout_mode = 2
+theme_override_constants/separation = 15
+
+[node name="PlayAgainButton" type="Button" parent="UI/EndScreen/EndScreen/VBoxContainer/VBoxContainer" unique_id=1102821467]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("49_j2jfr")
+theme_override_font_sizes/font_size = 37
+text = "PLAY AGAIN"
+
+[node name="ExitButton" type="Button" parent="UI/EndScreen/EndScreen/VBoxContainer/VBoxContainer" unique_id=979351245]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("49_j2jfr")
+theme_override_font_sizes/font_size = 37
+text = "EXIT"
 
 [node name="Sounds" type="Node" parent="." unique_id=956839637]
 
@@ -784,7 +1814,7 @@ transform = Transform3D(0.8953571, -0.09297883, 0.43553483, 0.08361144, 0.995668
 stream = ExtResource("43_chjal")
 
 [node name="MenuCamera" type="Camera3D" parent="." unique_id=1483972559]
-transform = Transform3D(0.99757755, 0.009927055, 0.06885143, 0, 0.9897653, -0.14270514, -0.0695634, 0.14235945, 0.9873676, -17.87733, 15.191156, 3.8401601)
+transform = Transform3D(0.99757755, 0.009927059, 0.068851426, -0.018835578, 0.99133855, 0.12997371, -0.06696481, -0.1309557, 0.98912406, -21.37596, 20.448586, 3.8401601)
 far = 200.0
 
 [node name="FloatinParticles2" type="GPUParticles3D" parent="." unique_id=1879605551]

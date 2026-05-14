@@ -46,7 +46,6 @@ func _on_poison_ended(success: bool) -> void:
 
 
 func _on_inventory_item_used(item: ItemData) -> void:
-	print("Inventory item triggered:", item.item_id)
 
 	close_all_item_views()
 

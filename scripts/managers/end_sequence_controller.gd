@@ -9,6 +9,7 @@ class_name EndSequenceController
 @export var spiral_height: float = 1.4
 @export var spiral_back_distance: float = 2.0
 @export var spiral_rotations: float = 0.65
+@export var end_screen_ui: EndScreen
 
 @onready var camera = player.camera_mount
 
@@ -45,9 +46,9 @@ func _play_end_sequence(success: bool) -> void:
 	await  _spiral_camera_away()
 
 	if success:
-		print("SUCCESS END SCREEN")
+		end_screen_ui.show_success()
 	else:
-		print("DEATH END SCREEN")
+		end_screen_ui.show_death()
 
 	
 func _spiral_camera_away() -> void:

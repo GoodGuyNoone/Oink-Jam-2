@@ -2,10 +2,19 @@
 
 [ext_resource type="PackedScene" uid="uid://cl5qf45fom5ms" path="res://assets/models/environmentEntities/fence.glb" id="1_abpcn"]
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_abpcn"]
+size = Vector3(3.729004, 0.42199707, 1)
+
 [node name="fence" unique_id=516231714 instance=ExtResource("1_abpcn")]
 
 [node name="PipeFence1_1m_Pipefence1a_0" parent="." index="0" unique_id=1075376122]
 transform = Transform3D(1, 0, 0, 0, -3.5762787e-07, 0.99999994, 0, -0.99999994, -3.5762787e-07, -1.4781134, 0, 0)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="PipeFence1_1m_Pipefence1a_0" index="0" unique_id=1920005442]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PipeFence1_1m_Pipefence1a_0/StaticBody3D" index="0" unique_id=1071721344]
+transform = Transform3D(1, 0, 0, 0, 0.99999076, -4.973799e-12, 0, 4.973799e-12, 0.99999076, 1.635498, -0.008239117, -3.4217074e-13)
+shape = SubResource("BoxShape3D_abpcn")
 
 [node name="PipeFence1_2m_Pipefence1a_0" parent="." index="1" unique_id=1278607876]
 transform = Transform3D(1, 0, 0, 0, -3.5762787e-07, 0.99999994, 0, -0.99999994, -3.5762787e-07, 0, 0, 0)

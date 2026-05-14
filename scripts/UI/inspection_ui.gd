@@ -4,7 +4,7 @@ class_name InspectionUI
 @export var player: Player
 @export var inspection_sprite: TextureRect
 @export var close_button: Button
-@export var ruler_cursor: Texture2D
+# @export var ruler_cursor: Texture2D
 @export var ruler_cursor_icon: TextureRect
 
 

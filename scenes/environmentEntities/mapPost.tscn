@@ -4,12 +4,23 @@
 [ext_resource type="Texture2D" uid="uid://bab26ayq3uwp6" path="res://assets/icons/mariposa-grove-map-960w.jpg" id="2_64y4b"]
 [ext_resource type="Material" uid="uid://c6hjxovx6l1oi" path="res://assets/materials/environmentEntities/Wood.res" id="2_mtf73"]
 [ext_resource type="Texture2D" uid="uid://b4ei3qv0jdyfy" path="res://assets/icons/9WtY3N.png" id="3_8j6f8"]
+[ext_resource type="Texture2D" uid="uid://b7j2bdxh4y8gl" path="res://assets/import/Caution_snakes.png" id="4_ktbhy"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_mtf73"]
+size = Vector3(2.2000003, 2.4330552, 0.75756645)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8j6f8"]
 albedo_texture = ExtResource("2_64y4b")
 
 [sub_resource type="QuadMesh" id="QuadMesh_mtf73"]
 material = SubResource("StandardMaterial3D_8j6f8")
+size = Vector2(0.7, 0.7)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xfyxh"]
+albedo_texture = ExtResource("4_ktbhy")
+
+[sub_resource type="QuadMesh" id="QuadMesh_4b7q4"]
+material = SubResource("StandardMaterial3D_xfyxh")
 size = Vector2(0.7, 0.7)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mtf73"]
@@ -24,10 +35,20 @@ material = SubResource("StandardMaterial3D_mtf73")
 [node name="Board" parent="." index="0" unique_id=1125972267]
 surface_material_override/0 = ExtResource("2_mtf73")
 
+[node name="StaticBody3D" type="StaticBody3D" parent="Board" index="0" unique_id=667285592]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Board/StaticBody3D" index="0" unique_id=141204055]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.031306744, 1.1924608, -0.17685395)
+shape = SubResource("BoxShape3D_mtf73")
+
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." index="1" unique_id=680367591]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3098289, 0.1719662)
 mesh = SubResource("QuadMesh_mtf73")
 
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="." index="2" unique_id=797064184]
-transform = Transform3D(0.36126935, -0.06744455, 0, 0.1401344, 0.17387344, 0, 0, 0, 1, -0.5385028, 1.510008, 0.1719662)
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="." index="2" unique_id=1789980070]
+transform = Transform3D(0.36412624, 0.16556597, 0, -0.16556597, 0.36412624, 0, 0, 0, 0.4, 0.69506145, 1.3147725, 0.1719662)
+mesh = SubResource("QuadMesh_4b7q4")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="." index="3" unique_id=797064184]
+transform = Transform3D(0.46615875, -0.08679381, 0, 0.18082044, 0.2237562, 0, 0, 0, 1.292, -0.6781086, 1.4779774, 0.1719662)
 mesh = SubResource("QuadMesh_ktbhy")

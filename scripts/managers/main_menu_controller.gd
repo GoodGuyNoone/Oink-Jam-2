@@ -12,6 +12,7 @@ class_name MainMenuController
 @export var terrain: Terrain3D
 @export var inventory: Inventory
 @export var monologue_ui: MonologueUI
+@export var warning_screen: WarningScreen
 
 @export var intro_duration: float = 3.0
 @export var fade_duration: float = 0.6
@@ -22,6 +23,10 @@ var starting_game := false
 
 
 func _ready() -> void:
+	main_menu.visible = false
+	warning_screen.visible = true
+	warning_screen.continued.connect(_on_warning_continued)
+
 	AudioManager.play_music("ambient")
 	player.set_ui_mode(true)
 	player.set_control_enabled(false)
@@ -82,20 +87,37 @@ func _start_game() -> void:
 
 
 func _move_menu_camera_to_player_camera() -> void:
-	var target_transform: Transform3D = player_camera.global_transform
+	var start_transform: Transform3D = menu_camera.global_transform
+	var end_transform: Transform3D = player_camera.global_transform
 
-	var tween := create_tween()
-	tween.set_trans(Tween.TRANS_SINE)
-	tween.set_ease(Tween.EASE_IN_OUT)
+	var start_pos: Vector3 = start_transform.origin
+	var end_pos: Vector3 = end_transform.origin
 
-	tween.tween_property(
-		menu_camera,
-		"global_transform",
-		target_transform,
-		intro_duration
-	)
+	var mid_pos: Vector3 = (start_pos + end_pos) * 0.5
+	mid_pos.y += 4.0 # lift camera over terrain
 
-	await tween.finished
+	var elapsed := 0.0
+
+	while elapsed < intro_duration:
+		var delta := get_process_delta_time()
+		elapsed += delta
+
+		var t = clamp(elapsed / intro_duration, 0.0, 1.0)
+		var eased := ease(t, -2.0)
+
+		var a := start_pos.lerp(mid_pos, eased)
+		var b := mid_pos.lerp(end_pos, eased)
+		var curved_pos := a.lerp(b, eased)
+
+		menu_camera.global_position = curved_pos
+		menu_camera.global_basis = start_transform.basis.slerp(
+			end_transform.basis,
+			eased
+		)
+
+		await get_tree().process_frame
+
+	menu_camera.global_transform = end_transform
 
 
 func _fade_menu_out() -> void:
@@ -158,3 +180,12 @@ func _on_mouse_entered() -> void:
 
 func _on_other_pressed() -> void:
 	AudioManager.play_sfx("otherClicked")
+
+
+func _on_warning_continued() -> void:
+	main_menu.visible = true
+	menu_panel.visible = true
+	options_panel.visible = false
+	credits_panel.visible = false
+
+	_fade_from_black()

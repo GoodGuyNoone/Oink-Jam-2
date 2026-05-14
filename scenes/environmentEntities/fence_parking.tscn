@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://r2gmxp76pngj"]
+
+[ext_resource type="PackedScene" uid="uid://boi2le2rppav7" path="res://assets/models/fenceParking.glb" id="1_ykwvy"]
+
+[node name="fenceParking" unique_id=746809698 instance=ExtResource("1_ykwvy")]
+
+[node name="PipeFence1_GatePost_Pipefence1a_0" parent="." index="0" unique_id=1836657963]
+transform = Transform3D(1, 0, 0, 0, -3.5762787e-07, 0.99999994, 0, -0.99999994, -3.5762787e-07, 0.15153325, 0, 0)
+
+[node name="PipeFence1_GateStripes" parent="." index="1" unique_id=1258116604]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="PipeFenceSignLg" parent="." index="2" unique_id=822302626]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="PipeFenceSignLg_Pipefence1a_0" parent="PipeFenceSignLg/Object_21" parent_id_path=PackedInt32Array(924936121) index="0" unique_id=59779388]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.888406, 0, 0.06824541)
+
+[node name="PipeFenceSignStop" parent="." index="3" unique_id=1261668063]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.93637466, 0, 0.05698228)
